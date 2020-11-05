@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &480449765
 Transform:
   m_ObjectHideFlags: 0
@@ -196,10 +196,10 @@ Transform:
   m_GameObject: {fileID: 480449764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21, y: -34.68, z: -0.048}
-  m_LocalScale: {x: 0.9999998, y: 79.90113, z: 3.2315836}
+  m_LocalScale: {x: 1, y: 79.90113, z: 3.2315836}
   m_Children: []
   m_Father: {fileID: 1686381379}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &480449766
 BoxCollider:
@@ -221,7 +221,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480449764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -378,7 +378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &657130923
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 657130922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21, y: -34.68, z: -0.048}
-  m_LocalScale: {x: 0.9999998, y: 79.90113, z: 3.2315836}
+  m_LocalScale: {x: 1, y: 79.90113, z: 3.2315836}
   m_Children: []
   m_Father: {fileID: 1686381379}
   m_RootOrder: 1
@@ -413,7 +413,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657130922}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -841,9 +841,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1929398202}
-  - {fileID: 657130923}
   - {fileID: 480449765}
+  - {fileID: 657130923}
+  - {fileID: 1929398202}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1152,7 +1152,7 @@ Transform:
   m_Children:
   - {fileID: 1743668428}
   m_Father: {fileID: 1686381379}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1929398203
 MonoBehaviour:
@@ -1168,6 +1168,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 20
   _moveSpeedGeneral: 5
+  _moveSpeedTouh: 10
+  curveMovement:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &1929398204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1182,7 +1207,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1929398205
 MonoBehaviour:

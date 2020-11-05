@@ -11,7 +11,8 @@ public class MovementZWorld : MonoBehaviour
 
     [SerializeField] private EditorPath PathFollow;
 
-    [SerializeField] private int CurrentWayPointID=0;
+    [SerializeField] private int 
+        CurrentWayPointID=0;
     [SerializeField] private float speed;
 
     private float reachDistance = 1.0f;
@@ -49,6 +50,7 @@ public class MovementZWorld : MonoBehaviour
     private void Update()
     {
         float _distance = Vector3.Distance(PathFollow1.path_objs[CurrentWayPointID1].position,transform.position);
+
         transform.position = Vector3.MoveTowards(transform.position, PathFollow1.path_objs[CurrentWayPointID1].position,Time.deltaTime * Speed);
 
 
@@ -67,12 +69,13 @@ public class MovementZWorld : MonoBehaviour
 
         if (_distance <= reachDistance)
         {
-            CurrentWayPointID1++;
+            if (CurrentWayPointID1 < PathFollow1.path_objs.Count - 1)
+            {
+                // CurrentWayPointID1 = 0;
+                CurrentWayPointID1++;
+            }
         }
-        if(CurrentWayPointID1>= PathFollow1.path_objs.Count)
-        {
-            CurrentWayPointID1 = 0;
-        }
+       
 
     }
 

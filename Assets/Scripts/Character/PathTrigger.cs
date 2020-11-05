@@ -21,16 +21,15 @@ public class PathTrigger : MonoBehaviour
 
              
             _namePath = other.name;
-           
 
-            if (_namePath != null)
-            {
+
+            
                 _mvmZWorld.CurrentWayPointID1 = 0;
-                _mvmZWorld.PathFollow1 = GameObject.Find(_namePath).GetComponent<EditorPath>();
+                _mvmZWorld.PathFollow1 = other.GetComponent<EditorPath>();
                 _mvmZWorld.PathName = _namePath;
 
 
-            }
+            
           //  _mvmZWorld.pathName = _namePath;
 
         }

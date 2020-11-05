@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5556930978606016185}
   - component: {fileID: 355643864935896344}
   m_Layer: 0
-  m_Name: LevelBlock S to East 1
+  m_Name: LevelBlock E to North 1
   m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,8 +88,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.036101304, y: 84.89723, z: 1.0570523}
-  m_Center: {x: 0.51669705, y: -41.948616, z: -0.018606262}
+  m_Size: {x: 0.16137786, y: 84.89723, z: 1.0570523}
+  m_Center: {x: 0.5793342, y: -41.948616, z: -0.018606262}
 --- !u!1 &2061525201679881255
 GameObject:
   m_ObjectHideFlags: 0
