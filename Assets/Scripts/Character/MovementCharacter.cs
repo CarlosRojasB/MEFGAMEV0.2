@@ -56,60 +56,54 @@ public class MovementCharacter : MonoBehaviour
             else MovementTocuh();
 
         }
-        framingTransposer.m_DeadZoneWidth = (curveMovement.Evaluate((Mathf.Abs(transform.localPosition.x) /17.5f)))*0.32f;
-     
     }
     void MovementTocuh()
     {
+        if (Input.touches.Length > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
-            if (Input.touches.Length > 0)
+            // Movimiento
+            if (touch.position.x <= (width / 2f) - (0.1f * width))
             {
-                Touch touch = Input.GetTouch(0);
-
-                // Movimiento
-                if (touch.position.x <= (width / 2) - (0.1f * width))
-                {
-                    if (transform.localPosition.x > 0)
-                        rbPlayer.velocity = (-transform.right * MoveSpeed)/2;
-                    else if (transform.localPosition.x <= 0)
-                        rbPlayer.velocity = (-transform.right * MoveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
-
-                }
-                else if (touch.position.x >= (width / 2) + (0.1f * width))
-                {
-                    if (transform.localPosition.x < 0)
-                        rbPlayer.velocity = (transform.right * MoveSpeed) / 2;
-                    else if (transform.localPosition.x >= 0)
-                        rbPlayer.velocity = (transform.right * MoveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
-
-                }
-
-                //Rotacion
-                if (touch.position.x <= (width / 2) - (0.1f * width))
-                {
-                    virtualCamera.m_Lens.Dutch -= 0.1f;
-
-                    if (virtualCamera.m_Lens.Dutch < -12.5f)
-                        virtualCamera.m_Lens.Dutch = -12.5f;
-                }
-                else if (touch.position.x >= (width / 2) + (0.1f * width))
-                {
-                    virtualCamera.m_Lens.Dutch += 0.1f;
-
-                    if (virtualCamera.m_Lens.Dutch > 12.5f)
-                        virtualCamera.m_Lens.Dutch = 12.5f;
-                }
-
-
-
-
-
+                if (transform.localPosition.x > 0f)
+                    rbPlayer.velocity = -transform.right * MoveSpeed;
+                else if (transform.localPosition.x <= 0f)
+                    rbPlayer.velocity = (-transform.right * MoveSpeed) * curveMovement.Evaluate(1f - (Mathf.Abs(transform.localPosition.x) / 18f));
+            }
+            else if (touch.position.x >= (width / 2f) + (0.1f * width))
+            {
+                if (transform.localPosition.x < 0f)
+                    rbPlayer.velocity = transform.right * MoveSpeed;
+                else if (transform.localPosition.x >= 0f)
+                    rbPlayer.velocity = (transform.right * MoveSpeed) * curveMovement.Evaluate(1f - (Mathf.Abs(transform.localPosition.x) / 18f));
 
             }
-            else
-                rbPlayer.velocity = Vector3.zero;
 
-        
+            //Rotacion
+            if (touch.position.x <= (width / 2) - (0.1f * width))
+            {
+                virtualCamera.m_Lens.Dutch -= 0.1f;
+
+                if (virtualCamera.m_Lens.Dutch < -12.5f)
+                    virtualCamera.m_Lens.Dutch = -12.5f;
+            }
+            else if (touch.position.x >= (width / 2) + (0.1f * width))
+            {
+                virtualCamera.m_Lens.Dutch += 0.1f;
+
+                if (virtualCamera.m_Lens.Dutch > 12.5f)
+                    virtualCamera.m_Lens.Dutch = 12.5f;
+            }
+
+            //Screen Y
+            //framingTransposer.m_ScreenY = curveMovement.Evaluate(1f - (Mathf.Abs(transform.localPosition.x) / 36f)) * 0.948f;
+
+            virtualCamera.m_Lens.FieldOfView = curveMovement.Evaluate(1f - (Mathf.Abs(transform.localPosition.x) / 40.5f)) * 40f;
+
+        }
+        else
+            rbPlayer.velocity = Vector3.zero;
     }
 
     void movementWithAcelerometer()
@@ -118,10 +112,5 @@ public class MovementCharacter : MonoBehaviour
 
        // rbPlayer.velocity = (transform.right * _dirx);
         rbPlayer.velocity = (transform.right * _dirx) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
-    }
-
-
-    
-
-   
+    } 
 }
