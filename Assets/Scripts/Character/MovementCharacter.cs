@@ -70,7 +70,7 @@ public class MovementCharacter : MonoBehaviour
                 if (touch.position.x <= (width / 2) - (0.1f * width))
                 {
                     if (transform.localPosition.x > 0)
-                        rbPlayer.velocity = -transform.right * MoveSpeed;
+                        rbPlayer.velocity = (-transform.right * MoveSpeed)/2;
                     else if (transform.localPosition.x <= 0)
                         rbPlayer.velocity = (-transform.right * MoveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
 
@@ -78,7 +78,7 @@ public class MovementCharacter : MonoBehaviour
                 else if (touch.position.x >= (width / 2) + (0.1f * width))
                 {
                     if (transform.localPosition.x < 0)
-                        rbPlayer.velocity = transform.right * MoveSpeed;
+                        rbPlayer.velocity = (transform.right * MoveSpeed) / 2;
                     else if (transform.localPosition.x >= 0)
                         rbPlayer.velocity = (transform.right * MoveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
 

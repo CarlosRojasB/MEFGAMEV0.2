@@ -10,6 +10,8 @@ public class Stalactita : MonoBehaviour
    
     
     private Rigidbody RbStalactita;
+    public static float sppedBala=1000;
+ 
 
 
     
@@ -32,7 +34,7 @@ public class Stalactita : MonoBehaviour
     void shot()
    {
 
-        RbStalactita.velocity = new Vector3(0, -velBala*Time.deltaTime, 0);
+        RbStalactita.velocity = new Vector3(0, -sppedBala*Time.deltaTime, 0);
 
        // RbStalactita.AddForce(-Vector3.up, ForceMode.Impulse);
         //RbStalactita.useGravity = true;      
@@ -51,14 +53,11 @@ public class Stalactita : MonoBehaviour
     }
 
     void Realese()
-    {
-        //RbStalactita.AddForce(new Vector3(0, 0, 0), ForceMode.Impulse);
-       // RbStalactita.useGravity = false;
-       
-        gameObject.SetActive(false);
+    {          
+       gameObject.SetActive(false);
     }
 
 
-
+    
 
 }

@@ -48,12 +48,12 @@ public class MovementZWorldBezier : MonoBehaviour
     void PlusVelocityInTime()
     {
         counter += Time.deltaTime;
-        if (counter >= 10)
+        if (counter >= 10f)
         {
-            print("Entro");
-            Time.timeScale += 0.1f;
-            //movementSpeed += 0.03f;
+            print("Entro");            
+            movementSpeed += 0.03f;
             counter = 0;
+            Stalactita.sppedBala += 300;
         }
     }
 
