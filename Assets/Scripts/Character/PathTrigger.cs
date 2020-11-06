@@ -22,8 +22,6 @@ public class PathTrigger : MonoBehaviour
              
             _namePath = other.name;
 
-
-            
                 _mvmZWorld.CurrentWayPointID1 = 0;
                 _mvmZWorld.PathFollow1 = other.GetComponent<EditorPath>();
                 _mvmZWorld.PathName = _namePath;
