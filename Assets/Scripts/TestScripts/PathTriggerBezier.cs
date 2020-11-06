@@ -14,9 +14,8 @@ public class PathTriggerBezier : MonoBehaviour
     MovementZWorldBezier movementZWorldBezier;
     private void Awake()
     {
-        movementZWorldBezier = gameObject.GetComponentInParent<MovementZWorldBezier>();
+        movementZWorldBezier = gameObject.transform.parent.parent.gameObject.GetComponent<MovementZWorldBezier>();
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Path")

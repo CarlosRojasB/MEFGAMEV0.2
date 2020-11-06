@@ -236,10 +236,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 0.5, y: -0.2, z: 0}
-      - {x: 0.07025931, y: -0.19937499, z: -0.010431743}
-      - {x: -0.0032290649, y: -0.1996875, z: 0.18623564}
-      - {x: 0, y: -0.2, z: 0.5}
+      - {x: 0.5, y: -0.22, z: 0}
+      - {x: 0.07025931, y: -0.22, z: -0.010431743}
+      - {x: -0.0032290649, y: -0.22, z: 0.18623564}
+      - {x: 0, y: -0.22, z: 0.5}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
       perAnchorNormalsAngle:
       - 0
       - 0
-      globalNormalsAngle: 0
+      globalNormalsAngle: 85
       flipNormals: 0
     vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
     showPathOptions: 1
     showVertexPathDisplayOptions: 0
     showVertexPathOptions: 1
-    showNormals: 0
+    showNormals: 1
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1

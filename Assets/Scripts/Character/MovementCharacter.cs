@@ -16,13 +16,20 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField] float _moveSpeedTouh;
     [SerializeField]
     AnimationCurve curveMovement;
+    [SerializeField]
+    bool ActiveAcelerometer;
 
     [Space]
     #region Components
     [Header("Components")]
     [SerializeField]
     CinemachineVirtualCamera virtualCamera;
+    CinemachineFramingTransposer framingTransposer;
+
+    public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
     #endregion
+
+
 
     private void Awake()
     {
@@ -31,6 +38,7 @@ public class MovementCharacter : MonoBehaviour
 
     private void Start()
     {
+        framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         rbPlayer = GetComponent<Rigidbody>();
     }
 
@@ -38,13 +46,21 @@ public class MovementCharacter : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.WindowsEditor)
         {
-            _dirx = Input.GetAxisRaw("Horizontal") * _moveSpeed;
+            _dirx = Input.GetAxisRaw("Horizontal") * MoveSpeed;
 
             rbPlayer.velocity = (transform.right * _dirx);
         }
         if (Application.platform == RuntimePlatform.Android)
         {
-            // movementWithAcelerometer();
+            if (ActiveAcelerometer == true) movementWithAcelerometer();
+            else MovementTocuh();
+
+        }
+        framingTransposer.m_DeadZoneWidth = (curveMovement.Evaluate((Mathf.Abs(transform.localPosition.x) /17.5f)))*0.32f;
+     
+    }
+    void MovementTocuh()
+    {
 
             if (Input.touches.Length > 0)
             {
@@ -54,18 +70,18 @@ public class MovementCharacter : MonoBehaviour
                 if (touch.position.x <= (width / 2) - (0.1f * width))
                 {
                     if (transform.localPosition.x > 0)
-                        rbPlayer.velocity = -transform.right * _moveSpeed;
-                    else if(transform.localPosition.x <= 0)
-                        rbPlayer.velocity = (-transform.right * _moveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 20));
-                    
+                        rbPlayer.velocity = -transform.right * MoveSpeed;
+                    else if (transform.localPosition.x <= 0)
+                        rbPlayer.velocity = (-transform.right * MoveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
+
                 }
                 else if (touch.position.x >= (width / 2) + (0.1f * width))
                 {
                     if (transform.localPosition.x < 0)
-                        rbPlayer.velocity = transform.right * _moveSpeed;
+                        rbPlayer.velocity = transform.right * MoveSpeed;
                     else if (transform.localPosition.x >= 0)
-                         rbPlayer.velocity = (transform.right * _moveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 20));
-                    
+                        rbPlayer.velocity = (transform.right * MoveSpeed) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
+
                 }
 
                 //Rotacion
@@ -83,18 +99,29 @@ public class MovementCharacter : MonoBehaviour
                     if (virtualCamera.m_Lens.Dutch > 12.5f)
                         virtualCamera.m_Lens.Dutch = 12.5f;
                 }
+
+
+
+
+
+
             }
             else
                 rbPlayer.velocity = Vector3.zero;
-        }
+
+        
     }
-
-
 
     void movementWithAcelerometer()
     {
-        _dirx = Input.acceleration.x * _moveSpeed;
+        _dirx = Input.acceleration.x * MoveSpeed;      
 
-        rbPlayer.velocity = (transform.right * _dirx);
+       // rbPlayer.velocity = (transform.right * _dirx);
+        rbPlayer.velocity = (transform.right * _dirx) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
     }
+
+
+    
+
+   
 }

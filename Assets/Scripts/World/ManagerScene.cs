@@ -9,18 +9,24 @@ public class ManagerScene : GeneralSingleton<ManagerScene>
    
 
     public void GoToLose()
-    {
-     
-        SceneManager.LoadScene("LoseSceneGame", LoadSceneMode.Single);
-      
+    {     
+        SceneManager.LoadScene("LoseSceneGame", LoadSceneMode.Single);    
      
     }
 
     public void GoTOGame()
+    {     
+      SceneManager.LoadScene("MenuTestForChooseControl", LoadSceneMode.Single);     
+    }
+
+
+    public void GoToAcelerometer()
     {
-     
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
-     
+        SceneManager.LoadScene("GameAcelerometer", LoadSceneMode.Single);
+    }
+    public void GoToTouchScene()
+    {
+        SceneManager.LoadScene("GameTocuhScreen", LoadSceneMode.Single);
     }
 
 

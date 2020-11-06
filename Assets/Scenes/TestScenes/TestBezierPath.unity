@@ -133,11 +133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBlock S to East 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2061525201651107736, guid: 20a4bfd144aaa10459233b03a4b5fbb2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2061525201651107739, guid: 20a4bfd144aaa10459233b03a4b5fbb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,11 +294,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBlock S to West 1
       objectReference: {fileID: 0}
-    - target: {fileID: 96203448602124193, guid: f7c4a2c3c9cd1c44f972893aef1b23a3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 96203448602124194, guid: f7c4a2c3c9cd1c44f972893aef1b23a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -427,11 +417,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelBlock S to North 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3204036720407628046, guid: 6bbdb95da934d564db71e6d7a5541a9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bbdb95da934d564db71e6d7a5541a9b, type: 3}
@@ -638,11 +623,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBlock W to North 2
       objectReference: {fileID: 0}
-    - target: {fileID: 96203448602124193, guid: 9580aa74a80a782468039b8475a3cd33,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 96203448602124194, guid: 9580aa74a80a782468039b8475a3cd33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -719,19 +699,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1966313899, guid: 6cbdfc9eb4ba91943992087d47856739, type: 3}
-      propertyPath: editorData.showNormals
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8341305917156023220, guid: 6cbdfc9eb4ba91943992087d47856739,
         type: 3}
       propertyPath: m_Name
       value: LevelBlock E to North 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341305917156023220, guid: 6cbdfc9eb4ba91943992087d47856739,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8341305917156023223, guid: 6cbdfc9eb4ba91943992087d47856739,
         type: 3}

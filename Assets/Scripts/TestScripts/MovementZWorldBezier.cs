@@ -18,12 +18,19 @@ public class MovementZWorldBezier : MonoBehaviour
 
     //Variables privadas
     float distance;
+    private float counter;
+    MovementCharacter mvcharacter;
 
     //Variables encapsuladas
     public PathCreator PathCreator { get => pathCreator; set => pathCreator = value;}
     public string PathTofollowBezzier { get => pathTofollowBezzier; set => pathTofollowBezzier = value; }
     public float Distance { get => distance; set => distance = value; }
 
+
+    private void Start()
+    {
+       mvcharacter=gameObject.transform.GetChild(0).GetChild(0).GetComponent<MovementCharacter>();
+    }
     private void Update()
     {
         Distance += movementSpeed * Time.deltaTime;
@@ -33,11 +40,21 @@ public class MovementZWorldBezier : MonoBehaviour
         transform.rotation = pathCreator.path.GetRotationAtDistance(Distance, endOfPathInstruction: EndOfPathInstruction.Loop);
 
 
-
+        PlusVelocityInTime();
 
         //transform.position = pathCreator.path.GetPointAtTime(distance);
 
     }
-
+    void PlusVelocityInTime()
+    {
+        counter += Time.deltaTime;
+        if (counter >= 10)
+        {
+            print("Entro");
+            Time.timeScale += 0.1f;
+            //movementSpeed += 0.03f;
+            counter = 0;
+        }
+    }
 
 }
