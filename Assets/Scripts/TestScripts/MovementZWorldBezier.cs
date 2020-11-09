@@ -42,7 +42,7 @@ public class MovementZWorldBezier : MonoBehaviour
 
         PlusVelocityInTime();
 
-        //transform.position = pathCreator.path.GetPointAtTime(distance);
+       
 
     }
     void PlusVelocityInTime()
