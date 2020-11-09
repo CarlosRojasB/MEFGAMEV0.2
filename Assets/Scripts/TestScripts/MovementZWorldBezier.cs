@@ -26,6 +26,8 @@ public class MovementZWorldBezier : MonoBehaviour
     public string PathTofollowBezzier { get => pathTofollowBezzier; set => pathTofollowBezzier = value; }
     public float Distance { get => distance; set => distance = value; }
 
+    // Eventos
+    public Action OnEndPath;
 
     private void Start()
     {
@@ -35,26 +37,25 @@ public class MovementZWorldBezier : MonoBehaviour
     {
         Distance += movementSpeed * Time.deltaTime;
 
+        if (distance >= pathCreator.path.length)
+        {
+            OnEndPath?.Invoke();
+        }
 
-        transform.position = pathCreator.path.GetPointAtDistance(Distance,endOfPathInstruction:EndOfPathInstruction.Loop);
+        transform.position = pathCreator.path.GetPointAtDistance(Distance, endOfPathInstruction: EndOfPathInstruction.Loop);
         transform.rotation = pathCreator.path.GetRotationAtDistance(Distance, endOfPathInstruction: EndOfPathInstruction.Loop);
 
-
         PlusVelocityInTime();
-
-       
-
     }
     void PlusVelocityInTime()
     {
         counter += Time.deltaTime;
+
         if (counter >= 10f)
-        {
-            print("Entro");            
+        {         
             movementSpeed += 0.03f;
             counter = 0;
             Stalactita.sppedBala += 300;
         }
     }
-
 }

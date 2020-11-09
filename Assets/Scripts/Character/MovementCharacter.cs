@@ -30,7 +30,6 @@ public class MovementCharacter : MonoBehaviour
     #endregion
 
 
-
     private void Awake()
     {
         width = Screen.width;

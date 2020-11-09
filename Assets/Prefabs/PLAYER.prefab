@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7921608385312317844}
-  - component: {fileID: 7921608385312317843}
   - component: {fileID: 7921608385312317842}
   m_Layer: 0
-  m_Name: PLAYER
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,24 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7921608385312317843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7921608385312317845}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e02c55bfe51804aab6657f09912921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PathFollow: {fileID: 0}
-  CurrentWayPointID: 0
-  speed: 20
-  rotationSpeed: 5
-  pathName: 
-  rotationSpeedSoft: 5
 --- !u!114 &7921608385312317842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +62,6 @@ GameObject:
   - component: {fileID: 7921608385706820968}
   - component: {fileID: 7921608385706820971}
   - component: {fileID: 7921608385706820972}
-  - component: {fileID: 7921608385706820970}
   - component: {fileID: 7921608385706820887}
   - component: {fileID: 7921608385706820886}
   - component: {fileID: 7921608385706820885}
@@ -236,18 +216,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   ActiveAcelerometer: 0
   virtualCamera: {fileID: 0}
---- !u!114 &7921608385706820970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7921608385706820961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a559bb94c6318347a478d88bd7775e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7921608385706820887
 MonoBehaviour:
   m_ObjectHideFlags: 0

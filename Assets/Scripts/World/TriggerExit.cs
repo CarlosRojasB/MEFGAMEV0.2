@@ -13,8 +13,7 @@ public class TriggerExit : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        PlayerTag plTag = other.GetComponent<PlayerTag>();
-        if (plTag != null)
+        if (other.gameObject.tag == "Player")
         {
             if (!exited)
             {

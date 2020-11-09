@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    private int plLifes=1;
+    int plLifes =1;
 
     public int PlLifes { get => plLifes; set => plLifes = value; }
-
-
-
 }

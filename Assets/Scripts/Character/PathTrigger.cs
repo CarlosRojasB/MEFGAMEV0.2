@@ -19,17 +19,14 @@ public class PathTrigger : MonoBehaviour
         if (other.tag == "Path")
         {
 
-             
             _namePath = other.name;
 
-                _mvmZWorld.CurrentWayPointID1 = 0;
-                _mvmZWorld.PathFollow1 = other.GetComponent<EditorPath>();
-                _mvmZWorld.PathName = _namePath;
+            _mvmZWorld.CurrentWayPointID1 = 0;
+            _mvmZWorld.PathFollow1 = other.GetComponent<EditorPath>();
+            _mvmZWorld.PathName = _namePath;
 
 
-            
           //  _mvmZWorld.pathName = _namePath;
-
         }
     }
 

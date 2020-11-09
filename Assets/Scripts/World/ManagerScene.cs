@@ -6,29 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class ManagerScene : GeneralSingleton<ManagerScene>
 {
-   
-
     public void GoToLose()
     {     
-        SceneManager.LoadScene("LoseSceneGame", LoadSceneMode.Single);    
+        SceneManager.LoadScene("Lose", LoadSceneMode.Single);    
      
     }
 
     public void GoTOGame()
     {     
-      SceneManager.LoadScene("MenuTestForChooseControl", LoadSceneMode.Single);     
+      SceneManager.LoadScene("Game Menu", LoadSceneMode.Single);     
     }
 
 
     public void GoToAcelerometer()
     {
-        SceneManager.LoadScene("GameAcelerometer", LoadSceneMode.Single);
+        SceneManager.LoadScene("Accelerometer Game", LoadSceneMode.Single);
     }
     public void GoToTouchScene()
     {
-        SceneManager.LoadScene("GameTocuhScreen", LoadSceneMode.Single);
+        SceneManager.LoadScene("Touch Game", LoadSceneMode.Single);
     }
-
-
-
 }
