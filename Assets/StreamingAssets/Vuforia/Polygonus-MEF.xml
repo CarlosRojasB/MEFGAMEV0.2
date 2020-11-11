@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="ImageTree" size="21.000000 13.858789" />
     <ImageTarget name="PAGINACODETEST" size="21.000000 14.949153" />
     <ImageTarget name="PAGINACENTERTEST" size="21.000000 12.826154" />
     <ImageTarget name="PAGINATEST2" size="21.000000 14.040505" />
     <ImageTarget name="Eldrag" size="21.000000 13.876833" />
-    <ImageTarget name="testpage_" size="21.000000 13.876833" />
   </Tracking>
 </QCARConfig>

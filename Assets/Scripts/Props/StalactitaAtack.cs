@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StalactitaAtack : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class StalactitaAtack : MonoBehaviour
             _plLife = other.GetComponent<PlayerLife>();
             _plLife.PlLifes--;
             ManagerScene.Instance.GoToLose();
-            
+
 
         }
     }

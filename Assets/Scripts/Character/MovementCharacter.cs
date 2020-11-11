@@ -1,6 +1,4 @@
 ﻿using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementCharacter : MonoBehaviour
@@ -26,8 +24,10 @@ public class MovementCharacter : MonoBehaviour
     CinemachineVirtualCamera virtualCamera;
     CinemachineFramingTransposer framingTransposer;
 
+    private Quaternion calibrationQuaternion;
     public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
     #endregion
+
 
 
     private void Awake()
@@ -37,6 +37,7 @@ public class MovementCharacter : MonoBehaviour
 
     private void Start()
     {
+        CalibrateAccelerometer();
         framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         rbPlayer = GetComponent<Rigidbody>();
     }
@@ -95,21 +96,37 @@ public class MovementCharacter : MonoBehaviour
                     virtualCamera.m_Lens.Dutch = 12.5f;
             }
 
-            //Screen Y
-            //framingTransposer.m_ScreenY = curveMovement.Evaluate(1f - (Mathf.Abs(transform.localPosition.x) / 36f)) * 0.948f;
-
             virtualCamera.m_Lens.FieldOfView = curveMovement.Evaluate(1f - (Mathf.Abs(transform.localPosition.x) / 40.5f)) * 40f;
-
         }
         else
             rbPlayer.velocity = Vector3.zero;
     }
+    void CalibrateAccelerometer()
+    {
+        Vector3 accelerationSnapShot = Input.acceleration;
+        Quaternion rotateQuaternion = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), accelerationSnapShot);
+        calibrationQuaternion = Quaternion.Inverse(rotateQuaternion);
+
+    }
+    Vector3 FixedAccelerometer(Vector3 acceleration)
+    {
+        Vector3 fixedAcceleration = calibrationQuaternion * acceleration;
+        return fixedAcceleration;
+    }
 
     void movementWithAcelerometer()
     {
-        _dirx = Input.acceleration.x * MoveSpeed;      
+        /*_dirx = Input.acceleration.x * MoveSpeed;
+        rbPlayer.velocity = new Vector2(_dirx, transform.position.y) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));*/
 
-       // rbPlayer.velocity = (transform.right * _dirx);
-        rbPlayer.velocity = (transform.right * _dirx) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));
-    } 
+        Vector3 accelerationRaw = Input.acceleration;
+        if (accelerationRaw.sqrMagnitude > 1) accelerationRaw.Normalize();
+        Vector3 acceleration = FixedAccelerometer(accelerationRaw);
+        Vector3 movement = (new Vector3(acceleration.x, transform.localPosition.y, 0f) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18)));
+        rbPlayer.velocity = movement * _moveSpeed;
+
+    }
+
+
+
 }

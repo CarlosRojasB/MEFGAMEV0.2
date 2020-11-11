@@ -23,13 +23,13 @@ public class StalackticaGenerator : MonoBehaviour
     private void Awake()
     {
         pointToSpawnPosition = new List<Vector3>();
-        lastPos=0;
-       // objPool = GetComponent<ObjectPool>();
+        lastPos = 0;
+        // objPool = GetComponent<ObjectPool>();
     }
 
     private void Start()
     {
-       // Invoke("InitializeSpawns", startTime);
+        // Invoke("InitializeSpawns", startTime);
     }
 
     public bool ActivatorStalacktitas(bool _activator)
@@ -38,9 +38,9 @@ public class StalackticaGenerator : MonoBehaviour
         {
             Invoke("InitializeSpawns", startTime);
         }
-        
-         return false;
-            
+
+        return false;
+
     }
     private void InitializeSpawns()
     {
@@ -54,7 +54,7 @@ public class StalackticaGenerator : MonoBehaviour
     private IEnumerator LaunchStalactita(float fireRate)
     {
         int nextPointToSpawn = UnityEngine.Random.Range(0, pointToSpawnPosition.Count);
-        if (lastPos==nextPointToSpawn)
+        if (lastPos == nextPointToSpawn)
         {
             //ChangeSpawnPos
             StartCoroutine(LaunchStalactita(fireRate));
@@ -64,8 +64,8 @@ public class StalackticaGenerator : MonoBehaviour
         {
             //Normal Instanciate
 
-            GameObject myStalactita = ObjectPool.Instance.GetPooleObject(); 
-            if(myStalactita!=null && stalacticaCounter < cantidadToSpawn)
+            GameObject myStalactita = ObjectPool.Instance.GetPooleObject();
+            if (myStalactita != null && stalacticaCounter < cantidadToSpawn)
             {
                 stalacticaCounter += 1;
                 //Get spawnPos
@@ -73,7 +73,7 @@ public class StalackticaGenerator : MonoBehaviour
 
                 //Change stalactita position 
                 myStalactita.transform.position = stalctitaPos;
-                myStalactita.SetActive(true);             
+                myStalactita.SetActive(true);
 
             }
 
@@ -84,7 +84,7 @@ public class StalackticaGenerator : MonoBehaviour
         }
         lastPos = nextPointToSpawn;
         yield return new WaitForSeconds(fireRate);
-        StartCoroutine(LaunchStalactita(fireRate));  
+        StartCoroutine(LaunchStalactita(fireRate));
 
 
     }
