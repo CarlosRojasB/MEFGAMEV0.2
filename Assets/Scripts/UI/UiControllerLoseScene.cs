@@ -1,24 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class UiControllerLoseScene : MonoBehaviour
 {
-    TextMeshProUGUI txtFinalDistance;
+    #pragma warning disable CS0649
+
+    TextMeshProUGUI finalScoreTxt;
     private void Start()
     {
-        txtFinalDistance = GameObject.Find("FinalScore").GetComponent<TextMeshProUGUI>();
-        txtFinalDistance.text = DistanceScore.distance.ToString("F1")+"Ft";
-        if (DistanceScore.distance >= 1000)
-        {
-            txtFinalDistance.text = (DistanceScore.distance / 1000).ToString("F1") + "mille";
-        }
+        GameObject score = GameObject.Find("Distance Score Txt");
 
-      
-        
+        if (score != null)
+            finalScoreTxt.text = score.GetComponent<TextMeshProUGUI>().text;
     }
-
-
-
 }

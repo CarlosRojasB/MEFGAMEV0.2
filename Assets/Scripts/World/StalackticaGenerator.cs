@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StalackticaGenerator : MonoBehaviour
 {
+    #pragma warning disable CS0649
+    #pragma warning disable CS0414
+
     [SerializeField]
     float fireRate, startTime;
     [SerializeField]
@@ -64,7 +67,7 @@ public class StalackticaGenerator : MonoBehaviour
         {
             //Normal Instanciate
 
-            GameObject myStalactita = ObjectPool.Instance.GetPooleObject();
+            GameObject myStalactita = TPool.Instance.GetPooleObject();
             if (myStalactita != null && stalacticaCounter < cantidadToSpawn)
             {
                 stalacticaCounter += 1;
@@ -85,7 +88,5 @@ public class StalackticaGenerator : MonoBehaviour
         lastPos = nextPointToSpawn;
         yield return new WaitForSeconds(fireRate);
         StartCoroutine(LaunchStalactita(fireRate));
-
-
     }
 }

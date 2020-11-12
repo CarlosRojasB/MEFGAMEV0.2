@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,17 +14,17 @@ public class WorldGenerator : MonoBehaviour
     public int chunkToSpawn = 10;
     private int Countchunkname = 0;
 
-     void OnEnable()
+    void OnEnable()
     {
-        TriggerExit.OnChunkExited += PickAndSpawnChunk;
+        ChunkExit.OnChunkExited += PickAndSpawnChunk;
     }
 
     private void OnDisable()
     {
-        TriggerExit.OnChunkExited -= PickAndSpawnChunk;
+        ChunkExit.OnChunkExited -= PickAndSpawnChunk;
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -36,18 +33,15 @@ public class WorldGenerator : MonoBehaviour
         }
     }
 
-    private void Start()
+    void Awake()
     {
         previuosChunk = firstChunk;
         for (int i = 0; i < chunkToSpawn; i++)
         {
             PickAndSpawnChunk();
             Countchunkname++;
-
         }
     }
-
- 
 
     LevelChunkData PickNextChunk()
     {
@@ -62,7 +56,6 @@ public class WorldGenerator : MonoBehaviour
                 nextRequiereDirection = LevelChunkData.Direction.South;
                 spawnPosition = spawnPosition + new Vector3(0f, 0, previuosChunk.chunckSize.y);
                
-
                 break;
             case LevelChunkData.Direction.East:
                 nextRequiereDirection = LevelChunkData.Direction.West;
@@ -93,8 +86,6 @@ public class WorldGenerator : MonoBehaviour
         nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
 
         return nextChunk;
-       
-
     }
 
     private void PickAndSpawnChunk()
@@ -103,17 +94,12 @@ public class WorldGenerator : MonoBehaviour
 
         LevelChunkData chunkToSpawn = PickNextChunk();        
         GameObject objFromChunk = chunkToSpawn.levelChunks[Random.Range(0, chunkToSpawn.levelChunks.Length)];
-        objFromChunk.name = "Path" + Countchunkname;
         previuosChunk = chunkToSpawn;        
-        Instantiate(objFromChunk, spawnPosition + spawnOrigin, Quaternion.identity);
-
+        Instantiate(objFromChunk, spawnPosition + spawnOrigin, Quaternion.identity, transform);
     }
 
     public void UpdateSpawnOrigin(Vector3 originDelta)
     {
         spawnOrigin = spawnOrigin + originDelta;
     }
-
-
-
 }

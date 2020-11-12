@@ -181,7 +181,7 @@ namespace PathCreation {
         }
 
         /// Gets forward direction on path based on distance travelled.
-        public Vector3 GetDirectionAtDistance (float dst, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop) {
+        public Vector3 GetDirectionAtDistance (float dst, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop, EndOfPathInstruction EndOfPathInstruction = default) {
             float t = dst / length;
             return GetDirection (t, endOfPathInstruction);
         }

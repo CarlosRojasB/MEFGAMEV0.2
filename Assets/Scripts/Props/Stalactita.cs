@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Stalactita : MonoBehaviour
 {
+    #pragma warning disable CS0649
+
     private bool shootACtive;
     [SerializeField]
     private float timeToShot, velBala;
@@ -10,8 +12,6 @@ public class Stalactita : MonoBehaviour
 
     private Rigidbody RbStalactita;
     public static float sppedBala = 1000;
-
-
 
 
     private void Awake()
@@ -32,7 +32,6 @@ public class Stalactita : MonoBehaviour
     }
     void shot()
     {
-
         RbStalactita.velocity = new Vector3(0, -sppedBala * Time.deltaTime, 0);
 
         // RbStalactita.AddForce(-Vector3.up, ForceMode.Impulse);
@@ -55,8 +54,4 @@ public class Stalactita : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-
-
-
 }
