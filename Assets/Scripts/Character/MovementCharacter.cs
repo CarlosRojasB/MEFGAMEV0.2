@@ -4,43 +4,42 @@ using UnityEngine;
 
 public class MovementCharacter : MonoBehaviour
 {
-    #pragma warning disable CS0649
+#pragma warning disable CS0649
 
     #region Information
-    float xDirection;
-    float width;
     [Header("Movimiento")]
     [SerializeField] float speed = 1f;
-    float Δspeed = 50f;
-    [SerializeField] AnimationCurve curveMovement;
-    [SerializeField]
-    bool ActiveAcelerometer;
-    private Quaternion calibrationQuaternion;
-    public float MoveSpeed { get => speed; set => speed = value; }
+    [SerializeField] float horizontalLimit = 15f;
+    float Δspeed = 0.5f;
+    [SerializeField] AnimationCurve horizontalSpeedCurve;
     float distance = 0;
+    [SerializeField] Transform chunks;
+    PathCreator pathCreator;
+    Transform model;
+    [SerializeField] bool ActiveAcelerometer;
+    private Quaternion calibrationQuaternion;
     #endregion
 
     [Space]
 
     #region Components
+    new Transform transform;
     Rigidbody rbPlayer;
     [Header("Components")]
     [SerializeField] CinemachineVirtualCamera virtualCamera;
     CinemachineFramingTransposer framingTransposer;
-    [SerializeField] Transform chunks;
-    PathCreator pathCreator;
     #endregion
-
-    private void Awake()
-    {
-        width = Screen.width;
-    }
 
     private void Start()
     {
         CalibrateAccelerometer();
-       
+
+        transform = GetComponent<Transform>();
+
+        model = transform.GetChild(0).GetComponent<Transform>();
+
         rbPlayer = GetComponent<Rigidbody>();
+
         framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
 
         pathCreator = chunks.GetChild(0).GetChild(0).gameObject.GetComponent<PathCreator>();
@@ -50,25 +49,18 @@ public class MovementCharacter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveSpeed += Time.deltaTime * (Δspeed / 100f);
+        speed += Time.deltaTime * Δspeed;
 
-        if (MoveSpeed >= 75f)
-            MoveSpeed = 75f;
+        if (speed >= 100f)
+            speed = 100f;
 
-        if (Application.platform == RuntimePlatform.WindowsEditor)
-        {
-            xDirection = Input.GetAxisRaw("Horizontal") * MoveSpeed;
-        }
+        ForwardMovement();
 
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (ActiveAcelerometer == true) movementWithAcelerometer();
-            else MovementTocuh();
-        }
+        HorizontalMove();
     }
-    void MovementTocuh()
+
+    void ForwardMovement()
     {
-        // Forward Movement
         Vector3 initialPosition = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction: EndOfPathInstruction.Loop);
 
         if (distance + (speed * Time.deltaTime) >= pathCreator.path.length)
@@ -82,46 +74,47 @@ public class MovementCharacter : MonoBehaviour
 
         Vector3 finalPosition = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction: EndOfPathInstruction.Loop);
 
-        rbPlayer.velocity = (finalPosition - initialPosition).normalized * MoveSpeed;
+        rbPlayer.velocity = (finalPosition - initialPosition).normalized * speed;
 
         // Rotacion
         transform.forward = (finalPosition - initialPosition).normalized;
-
+    }
+    void HorizontalMove()
+    {
         if (Input.touches.Length > 0)
         {
             Touch touch = Input.GetTouch(0);
 
             // Movimiento
-            if (touch.position.x <= (width / 2f) - (0.1f * width))
+            if (touch.position.x <= (Screen.width / 2f) - (0.1f * Screen.width))
             {
-                if (transform.position.x > 0f)
-                    rbPlayer.velocity += -transform.right * MoveSpeed;
-                else if (transform.position.x <= 0f)
-                    rbPlayer.velocity += (-transform.right * MoveSpeed) * curveMovement.Evaluate(1f - (Mathf.Abs(transform.position.x) / 18f));
+                if (model.localPosition.x >= 0)
+                    model.localPosition += -Vector3.right * speed * Time.deltaTime;
+                else
+                    model.localPosition += (-Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
-            else if (touch.position.x >= (width / 2f) + (0.1f * width))
+            else if (touch.position.x >= (Screen.width / 2f) + (0.1f * Screen.width))
             {
-                if (transform.position.x < 0f)
-                    rbPlayer.velocity += transform.right * MoveSpeed;
-                else if (transform.position.x >= 0f)
-                    rbPlayer.velocity += (transform.right * MoveSpeed) * curveMovement.Evaluate(1f - (Mathf.Abs(transform.position.x) / 18f));
+                if (model.localPosition.x <= 0)
+                    model.localPosition += Vector3.right * speed * Time.deltaTime;
+                else
+                    model.localPosition += (Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
 
             // Rotacion de la camara
-            if (touch.position.x <= (width / 2) - (0.1f * width))
-            {
-                virtualCamera.m_Lens.Dutch -= 0.1f;
+            /*
+             * Puntos (x) (y)
+                    1 -horizontalLimit -12.5
+                    2  horizontalLimit  12.5
 
-                if (virtualCamera.m_Lens.Dutch < -12.5f)
-                    virtualCamera.m_Lens.Dutch = -12.5f;
-            }
-            else if (touch.position.x >= (width / 2) + (0.1f * width))
-            {
-                virtualCamera.m_Lens.Dutch += 0.1f;
+                y - b = b2 - b1 / a2 - a1 (x - a)
+                y - 12.5 = (25/2*hl)(x-hl)
+                y = (25/2*horizontalLimit)(x-horizontalLimit) + 12.5
+             */
+            virtualCamera.m_Lens.Dutch = ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f;
 
-                if (virtualCamera.m_Lens.Dutch > 12.5f)
-                    virtualCamera.m_Lens.Dutch = 12.5f;
-            }
+            //Rotacion
+            model.localEulerAngles = new Vector3(0f, 0f, virtualCamera.m_Lens.Dutch);
         }
     }
     void CalibrateAccelerometer()
@@ -129,23 +122,20 @@ public class MovementCharacter : MonoBehaviour
         Vector3 accelerationSnapShot = Input.acceleration;
         Quaternion rotateQuaternion = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), accelerationSnapShot);
         calibrationQuaternion = Quaternion.Inverse(rotateQuaternion);
-
     }
+
+    void AcelerometerMovement()
+    {
+        Vector3 accelerationRaw = Input.acceleration;
+        if (accelerationRaw.sqrMagnitude > 1) accelerationRaw.Normalize();
+        Vector3 acceleration = FixedAccelerometer(accelerationRaw);
+        Vector3 movement = (new Vector3(acceleration.x, transform.localPosition.y, 0f) * horizontalSpeedCurve.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18)));
+        rbPlayer.velocity = movement * speed;
+    }
+
     Vector3 FixedAccelerometer(Vector3 acceleration)
     {
         Vector3 fixedAcceleration = calibrationQuaternion * acceleration;
         return fixedAcceleration;
-    }
-
-    void movementWithAcelerometer()
-    {
-        /*_dirx = Input.acceleration.x * MoveSpeed;
-        rbPlayer.velocity = new Vector2(_dirx, transform.position.y) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18));*/
-
-        Vector3 accelerationRaw = Input.acceleration;
-        if (accelerationRaw.sqrMagnitude > 1) accelerationRaw.Normalize();
-        Vector3 acceleration = FixedAccelerometer(accelerationRaw);
-        Vector3 movement = (new Vector3(acceleration.x, transform.localPosition.y, 0f) * curveMovement.Evaluate(1 - (Mathf.Abs(transform.localPosition.x) / 18)));
-        rbPlayer.velocity = movement * speed;
     }
 }
