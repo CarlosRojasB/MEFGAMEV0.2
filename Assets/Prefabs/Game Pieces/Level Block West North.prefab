@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   editorData:
     _bezierPath:
       points:
@@ -145,7 +146,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 85
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0
     vertexPathMinVertexSpacing: 0
     showTransformTool: 1

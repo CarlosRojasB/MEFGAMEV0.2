@@ -1,8 +1,19 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace PathCreation {
-    public class PathCreator : MonoBehaviour {
+#region Enum
+public enum BezierType
+{
+    linear,
+    curve
+}
+#endregion
+
+namespace PathCreation 
+{
+    public class PathCreator : MonoBehaviour 
+    {
+        //Custom variables
+        public BezierType type;
 
         /// This class stores data for the path editor, and provides accessors to get the current vertex and bezier path.
         /// Attach to a GameObject to create a new path editor.
@@ -17,27 +28,32 @@ namespace PathCreation {
         GlobalDisplaySettings globalEditorDisplaySettings;
 
         // Vertex path created from the current bezier path
-        public VertexPath path {
-            get {
-                if (!initialized) {
+        public VertexPath path 
+        {
+            get 
+            {
+                if (!initialized) 
                     InitializeEditorData (false);
-                }
+                
                 return editorData.GetVertexPath(transform);
             }
         }
 
         // The bezier path created in the editor
-        public BezierPath bezierPath {
-            get {
-                if (!initialized) {
+        public BezierPath bezierPath 
+        {
+            get 
+            {
+                if (!initialized) 
                     InitializeEditorData (false);
-                }
+
                 return editorData.bezierPath;
             }
-            set {
-                if (!initialized) {
+            set 
+            {
+                if (!initialized) 
                     InitializeEditorData (false);
-                }
+                
                 editorData.bezierPath = value;
             }
         }
@@ -56,24 +72,21 @@ namespace PathCreation {
             initialized = true;
         }
 
-        public PathCreatorData EditorData {
-            get {
-                return editorData;
-            }
-
+        public PathCreatorData EditorData 
+        {
+            get { return editorData; }
         }
 
-        public void TriggerPathUpdate () {
-            if (pathUpdated != null) {
+        public void TriggerPathUpdate () 
+        {
+            if (pathUpdated != null) 
                 pathUpdated ();
-            }
         }
 
-#if UNITY_EDITOR
-
+        #if UNITY_EDITOR
         // Draw the path when path objected is not selected (if enabled in settings)
-        void OnDrawGizmos () {
-
+        void OnDrawGizmos () 
+        {
             // Only draw path gizmo if the path object is not selected
             // (editor script is resposible for drawing when selected)
             GameObject selectedObj = UnityEditor.Selection.activeGameObject;
@@ -105,7 +118,7 @@ namespace PathCreation {
                 }
             }
         }
-#endif
+        #endif
 
         #endregion
     }

@@ -5,12 +5,13 @@ using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace PathCreationEditor {
+namespace PathCreationEditor 
+{
     /// Editor class for the creation of Bezier and Vertex paths
 
     [CustomEditor (typeof (PathCreator))]
-    public class PathEditor : Editor {
-
+    public class PathEditor : Editor 
+    {
         #region Fields
 
         // Interaction:
@@ -67,9 +68,11 @@ namespace PathCreationEditor {
 
         #region Inspectors
 
-        public override void OnInspectorGUI () {
+        public override void OnInspectorGUI () 
+        {
             // Initialize GUI styles
-            if (boldFoldoutStyle == null) {
+            if (boldFoldoutStyle == null) 
+            {
                 boldFoldoutStyle = new GUIStyle (EditorStyles.foldout);
                 boldFoldoutStyle.fontStyle = FontStyle.Bold;
             }
@@ -78,13 +81,15 @@ namespace PathCreationEditor {
 
             // Draw Bezier and Vertex tabs
             int tabIndex = GUILayout.Toolbar (data.tabIndex, tabNames);
-            if (tabIndex != data.tabIndex) {
+            if (tabIndex != data.tabIndex) 
+            {
                 data.tabIndex = tabIndex;
                 TabChanged ();
             }
 
             // Draw inspector for active tab
-            switch (data.tabIndex) {
+            switch (data.tabIndex) 
+            {
                 case bezierPathTab:
                     DrawBezierPathInspector ();
                     break;
@@ -100,15 +105,17 @@ namespace PathCreationEditor {
         }
 
         void DrawBezierPathInspector () {
-            using (var check = new EditorGUI.ChangeCheckScope ()) {
+            using (var check = new EditorGUI.ChangeCheckScope ()) 
+            {
                 // Path options:
                 data.showPathOptions = EditorGUILayout.Foldout (data.showPathOptions, new GUIContent ("Bézier Path Options"), true, boldFoldoutStyle);
-                if (data.showPathOptions) {
+                if (data.showPathOptions) 
+                {
+                    creator.type = (BezierType)EditorGUILayout.EnumPopup("Type", creator.type);
                     bezierPath.Space = (PathSpace) EditorGUILayout.Popup ("Space", (int) bezierPath.Space, spaceNames);
                     bezierPath.ControlPointMode = (BezierPath.ControlMode) EditorGUILayout.EnumPopup (new GUIContent ("Control Mode"), bezierPath.ControlPointMode);
-                    if (bezierPath.ControlPointMode == BezierPath.ControlMode.Automatic) {
+                    if (bezierPath.ControlPointMode == BezierPath.ControlMode.Automatic) 
                         bezierPath.AutoControlLength = EditorGUILayout.Slider (new GUIContent ("Control Spacing"), bezierPath.AutoControlLength, 0, 1);
-                    }
 
                     bezierPath.IsClosed = EditorGUILayout.Toggle ("Closed Path", bezierPath.IsClosed);
                     data.showTransformTool = EditorGUILayout.Toggle (new GUIContent ("Enable Transforms"), data.showTransformTool);
@@ -116,23 +123,26 @@ namespace PathCreationEditor {
                     Tools.hidden = !data.showTransformTool;
 
                     // Check if out of bounds (can occur after undo operations)
-                    if (handleIndexToDisplayAsTransform >= bezierPath.NumPoints) {
+                    if (handleIndexToDisplayAsTransform >= bezierPath.NumPoints)
                         handleIndexToDisplayAsTransform = -1;
-                    }
 
                     // If a point has been selected
-                    if (handleIndexToDisplayAsTransform != -1) {
+                    if (handleIndexToDisplayAsTransform != -1) 
+                    {
                         EditorGUILayout.LabelField ("Selected Point: " + handleIndexToDisplayAsTransform.ToString());
 
-                        using (new EditorGUI.IndentLevelScope ()) {
+                        using (new EditorGUI.IndentLevelScope ()) 
+                        {
                             var currentPosition = creator.bezierPath[handleIndexToDisplayAsTransform];
                             var newPosition = EditorGUILayout.Vector3Field ("Position", currentPosition);
-                            if (newPosition != currentPosition) {
+                            if (newPosition != currentPosition) 
+                            {
                                 Undo.RecordObject (creator, "Move point");
                                 creator.bezierPath.MovePoint (handleIndexToDisplayAsTransform, newPosition);
                             }
                             // Don't draw the angle field if we aren't selecting an anchor point/not in 3d space
-                            if (handleIndexToDisplayAsTransform % 3 == 0 && creator.bezierPath.Space == PathSpace.xyz) {
+                            if (handleIndexToDisplayAsTransform % 3 == 0 && creator.bezierPath.Space == PathSpace.xyz) 
+                            {
                                 var anchorIndex = handleIndexToDisplayAsTransform / 3;
                                 var currentAngle = creator.bezierPath.GetAnchorNormalAngle (anchorIndex);
                                 var newAngle = EditorGUILayout.FloatField ("Angle", currentAngle);
@@ -144,12 +154,14 @@ namespace PathCreationEditor {
                         }
                     }
 
-                    if (data.showTransformTool & (handleIndexToDisplayAsTransform == -1)) {
+                    if (data.showTransformTool & (handleIndexToDisplayAsTransform == -1)) 
+                    {
                         if (GUILayout.Button ("Centre Transform")) {
 
                             Vector3 worldCentre = bezierPath.CalculateBoundsWithTransform (creator.transform).center;
                             Vector3 transformPos = creator.transform.position;
-                            if (bezierPath.Space == PathSpace.xy) {
+                            if (bezierPath.Space == PathSpace.xy) 
+                            {
                                 transformPos = new Vector3 (transformPos.x, transformPos.y, 0);
                             } else if (bezierPath.Space == PathSpace.xz) {
                                 transformPos = new Vector3 (transformPos.x, 0, transformPos.z);

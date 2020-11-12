@@ -168,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  model: {fileID: 4587039558663128362}
+  horizontalLimit: 15
   horizontalSpeedCurve:
     serializedVersion: 2
     m_Curve:
