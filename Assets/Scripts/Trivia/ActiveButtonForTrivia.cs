@@ -1,33 +1,28 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActiveButtonForTrivia : MonoBehaviour
 {
-    #region Information
-    [SerializeField] Transform btnForTrivia;
+    #region Information   
     [SerializeField] Camera mycamera;
+    [SerializeField] Transform btnForTrivia;
     [SerializeField] GameObject Trivia;
+    RaycastHit hit;
     #endregion
 
     private void Start()
     {
-        mycamera = Camera.main;
-       
+        mycamera = Camera.main;      
     }
 
     private void Update()
     {
-        RaycastHit hit;
         Vector3 CameraCenter = mycamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, mycamera.nearClipPlane));
+
         if (Physics.Raycast(CameraCenter, transform.forward, out hit))
-        {
             btnForTrivia.gameObject.SetActive(true);
-        }
         else
-        {
             btnForTrivia.gameObject.SetActive(false);
-        }
     }
 
 
@@ -35,7 +30,4 @@ public class ActiveButtonForTrivia : MonoBehaviour
     {
         Trivia.SetActive(true);
     }
-
-
-
 }

@@ -15,6 +15,8 @@ public class MovementCharacter : MonoBehaviour
     float Δspeed = 0.5f;
     [SerializeField] AnimationCurve horizontalSpeedCurve;
     float distance = 0;
+    Vector3 finalPosition;
+    float Δposition = 1f;
     [SerializeField] Transform chunks;
     PathCreator pathCreator;
     Vector3 lowPassValue;
@@ -49,6 +51,9 @@ public class MovementCharacter : MonoBehaviour
         if (speed >= 125f)
             speed = 125f;
 
+        if (speed >= 125f)
+            Δposition = 1.0001f;
+
         ForwardMovement();
 
         HorizontalMove();
@@ -65,9 +70,9 @@ public class MovementCharacter : MonoBehaviour
             distance = 0;
         }
         else
-            distance += speed * Time.fixedDeltaTime;
+            distance += speed * Δposition * Time.fixedDeltaTime;
 
-        Vector3 finalPosition = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction: EndOfPathInstruction.Loop);
+        finalPosition = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction: EndOfPathInstruction.Loop);
 
         rbPlayer.velocity = (finalPosition - initialPosition).normalized * speed;
 
@@ -153,6 +158,10 @@ public class MovementCharacter : MonoBehaviour
     {
         if (model != null)
         {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(finalPosition, 0.5f);
+
+            Gizmos.color = Color.white;
             Gizmos.DrawSphere(model.position + (model.right * horizontalLimit), 0.5f);
             Gizmos.DrawLine(model.position - (model.right * horizontalLimit), model.position + (model.right * horizontalLimit));
             Gizmos.DrawSphere(model.position - (model.right * horizontalLimit), 0.5f);

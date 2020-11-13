@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,12 +8,14 @@ public class WorldGenerator : MonoBehaviour
     public LevelChunkData[] levelChunkdata;
     public LevelChunkData firstChunk;
 
-    private LevelChunkData previuosChunk;
+    LevelChunkData previuosChunk;
     public Vector3 spawnOrigin;
 
-    private Vector3 spawnPosition;
+    Vector3 spawnPosition;
     public int chunkToSpawn = 10;
-    private int Countchunkname = 0;
+    int Countchunkname = 0;
+
+    float speed;
 
     void OnEnable()
     {
@@ -46,6 +49,7 @@ public class WorldGenerator : MonoBehaviour
     LevelChunkData PickNextChunk()
     {
         List<LevelChunkData> allowedChunkList = new List<LevelChunkData>();
+
         LevelChunkData nextChunk = null;
 
         LevelChunkData.Direction nextRequiereDirection = LevelChunkData.Direction.North;
@@ -79,10 +83,10 @@ public class WorldGenerator : MonoBehaviour
         for (int i = 0; i < levelChunkdata.Length; i++)
         {
             if (levelChunkdata[i].entryDirection == nextRequiereDirection)
-            {
                 allowedChunkList.Add(levelChunkdata[i]);
-            }
+
         }
+
         nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
 
         return nextChunk;
@@ -92,9 +96,12 @@ public class WorldGenerator : MonoBehaviour
     {
         Countchunkname++;
 
-        LevelChunkData chunkToSpawn = PickNextChunk();        
+        LevelChunkData chunkToSpawn = PickNextChunk(); 
+        
         GameObject objFromChunk = chunkToSpawn.levelChunks[Random.Range(0, chunkToSpawn.levelChunks.Length)];
-        previuosChunk = chunkToSpawn;        
+
+        previuosChunk = chunkToSpawn;     
+        
         Instantiate(objFromChunk, spawnPosition + spawnOrigin, Quaternion.identity, transform);
     }
 

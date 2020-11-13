@@ -1046,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 4587039558673561025, guid: 0195b3554b514354da0d35eaad6f4b0b,
         type: 3}
       propertyPath: horizontalLimit
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4587039558673561025, guid: 0195b3554b514354da0d35eaad6f4b0b,
         type: 3}
