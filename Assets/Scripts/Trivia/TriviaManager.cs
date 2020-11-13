@@ -11,11 +11,16 @@ public class TriviaManager : MonoBehaviour
     RectTransform history;
     [SerializeField]
     AnimationCurve curve;
+    [SerializeField]
+    GameObject btnActiveTrivia;
     #endregion
 
-   public void UserResponse()
+    
+
+    public void UserResponse()
    {
-        StartCoroutine(ActiveHistory());
+        StartCoroutine(ActiveHistory());       
+        btnActiveTrivia.SetActive(false);
    }
   
    IEnumerator ActiveHistory()
@@ -51,5 +56,11 @@ public class TriviaManager : MonoBehaviour
         }
 
         history.localPosition = Vector3.zero;
+    }
+
+
+    public void closeBtn()
+    {
+        gameObject.SetActive(false);
     }
 }
