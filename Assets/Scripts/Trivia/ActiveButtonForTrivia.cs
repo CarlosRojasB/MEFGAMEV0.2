@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActiveButtonForTrivia : MonoBehaviour
 {
     #region Information   
     [Header("Collision objects", order = 0)]
     [SerializeField] Camera mycamera;
-    [SerializeField] LayerMask TriviaLayer, NinphasLayer, FondoLayer;
+    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer;
 
     RaycastHit hit;
     bool posibleActive = true;
@@ -20,7 +19,10 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [Header("Nhymphas objects", order = 3)]
     [SerializeField]
     AudioSource audSourceNhymps;
+    [SerializeField]
+    AnimationCurve curveNhymphs;
     bool ActiveSound=false;
+
 
 
     [Header("Fonndo Objects", order = 4)]
@@ -28,7 +30,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     RectTransform imgFondo;
     [SerializeField]
     AudioSource audSourceFondo;
-    bool Activesoundfondo;
+    bool Activesoundfondo=false;
 
     #endregion
 
@@ -45,27 +47,34 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
         //Active Tree
         if (posibleActive)
-        {              
-          if (Physics.Raycast(CameraCenter, transform.forward, out hit,TriviaLayer)) btnForTrivia.gameObject.SetActive(true);
-          else btnForTrivia.gameObject.SetActive(false);
+        {
+            if (Physics.Raycast(CameraCenter, transform.forward, out hit, TriviaLayer)) btnForTrivia.gameObject.SetActive(true);
+            else btnForTrivia.gameObject.SetActive(false);
         }
 
         //Active Nhymphas sound
-        if (Physics.Raycast(CameraCenter, transform.forward, out hit, NinphasLayer)) ActiveSound = true;
+        if (Physics.Raycast(CameraCenter, transform.forward, out hit, NinphasLayer))
+        {
+            ActiveSound = true;
+          
+        }
         else ActiveSound = false;
 
         //Active Fondo
-        if (Physics.Raycast(CameraCenter, transform.forward, out hit, FondoLayer))
+        if (Physics.Raycast(CameraCenter, transform.forward, out hit, _FondoLayer))
         {
-            Activesoundfondo = true;           
+            print("Entrto");
+            Activesoundfondo = true;
             imgFondo.gameObject.SetActive(true);
+
         }
         else Activesoundfondo = false;
 
         //Function to call Audios
         ActiveAudioNhymphas();
         ActiveFondoSound();
-     
+
+
     }
 
 
@@ -79,8 +88,14 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
     void ActiveAudioNhymphas()
     {
+
+     
         if (ActiveSound && !audSourceNhymps.isPlaying) audSourceNhymps.Play();
-        else if(!ActiveSound && audSourceNhymps.isPlaying) audSourceNhymps.Stop();
+        else if (!ActiveSound && audSourceNhymps.isPlaying)
+        {
+
+            audSourceNhymps.Stop();
+        }
     }
     void ActiveFondoSound()
     {
