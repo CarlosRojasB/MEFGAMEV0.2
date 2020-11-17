@@ -111,7 +111,6 @@ namespace PathCreationEditor
                 data.showPathOptions = EditorGUILayout.Foldout (data.showPathOptions, new GUIContent ("Bézier Path Options"), true, boldFoldoutStyle);
                 if (data.showPathOptions) 
                 {
-                    creator.type = (BezierType)EditorGUILayout.EnumPopup("Type", creator.type);
                     bezierPath.Space = (PathSpace) EditorGUILayout.Popup ("Space", (int) bezierPath.Space, spaceNames);
                     bezierPath.ControlPointMode = (BezierPath.ControlMode) EditorGUILayout.EnumPopup (new GUIContent ("Control Mode"), bezierPath.ControlPointMode);
                     if (bezierPath.ControlPointMode == BezierPath.ControlMode.Automatic) 

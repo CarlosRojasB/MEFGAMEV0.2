@@ -4,30 +4,34 @@ using UnityEngine;
 
 public class MovementCharacter : MonoBehaviour
 {
-#pragma warning disable CS0649
+    #pragma warning disable CS0649
 
     #region Information
     [Header("Movimiento")]
-    [Range(0, 125f)]
-    [SerializeField] float speed = 1f;
-    [SerializeField] Transform model;
+    [Range(0, 150f)]
+    [SerializeField] float speed = 25f;
+    float speedscale = 1f;
     [SerializeField] float horizontalLimit = 15f;
-    float Δspeed = 0.5f;
     [SerializeField] AnimationCurve horizontalSpeedCurve;
     float distance = 0;
     Vector3 finalPosition;
-    float Δposition = 1f;
+    Vector3 initialPosition;
     [SerializeField] Transform chunks;
     PathCreator pathCreator;
     Vector3 lowPassValue;
-    [SerializeField] bool ActiveAcelerometer;
-    private Quaternion calibrationQuaternion;
+    #endregion
+
+    #region Events
+    public event System.Action<float> OnMove;
     #endregion
 
     [Space]
 
     #region Components
     new Transform transform;
+    [Header("Components")]
+    [SerializeField] Transform model;
+    Transform camera;
     Rigidbody rbPlayer;
     #endregion
 
@@ -37,22 +41,23 @@ public class MovementCharacter : MonoBehaviour
 
         rbPlayer = GetComponent<Rigidbody>();
 
+        camera = model.GetChild(0).gameObject.transform;
+
         pathCreator = chunks.GetChild(0).GetChild(0).gameObject.GetComponent<PathCreator>();
 
-        transform.position = pathCreator.path.GetPointAtDistance(0, endOfPathInstruction: EndOfPathInstruction.Loop);
+        transform.position = pathCreator.path.GetPointAtDistance(0);
+
+        initialPosition = transform.position;
 
         lowPassValue = Input.acceleration;
     }
 
     private void FixedUpdate()
     {
-        speed += Time.fixedDeltaTime * Δspeed;
-
-        if (speed >= 125f)
-            speed = 125f;
-
-        if (speed >= 125f)
-            Δposition = 1.0001f;
+        if (speed < 150f)
+            speed += Time.fixedDeltaTime;
+        else if (speed >= 150f)
+            speed = 105f;
 
         ForwardMovement();
 
@@ -61,27 +66,33 @@ public class MovementCharacter : MonoBehaviour
 
     void ForwardMovement()
     {
-        Vector3 initialPosition = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction: EndOfPathInstruction.Loop);
+        if (finalPosition != Vector3.zero)
+            initialPosition = finalPosition;
 
-        if (distance + (speed * Time.fixedDeltaTime) >= pathCreator.path.length)
+        float nextDistance = distance + (((speed + Time.fixedDeltaTime) * speedscale) * Time.deltaTime);
+
+        OnMove?.Invoke(nextDistance - distance);
+
+        if (nextDistance >= pathCreator.path.length)
         {
-            pathCreator = chunks.GetChild(pathCreator.gameObject.transform.parent.GetSiblingIndex() + 1).GetChild(0).gameObject.GetComponent<PathCreator>();
+            distance = nextDistance - pathCreator.path.length;
 
-            distance = 0;
+            pathCreator = chunks.GetChild(pathCreator.gameObject.transform.parent.GetSiblingIndex() + 1).GetChild(0).gameObject.GetComponent<PathCreator>();
         }
         else
-            distance += speed * Δposition * Time.fixedDeltaTime;
+            distance += ((speed * speedscale)* Time.fixedDeltaTime);
 
-        finalPosition = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction: EndOfPathInstruction.Loop);
+        finalPosition = pathCreator.path.GetPointAtDistance(distance);
 
-        rbPlayer.velocity = (finalPosition - initialPosition).normalized * speed;
+        rbPlayer.MovePosition(finalPosition);
 
         // Rotacion
         transform.forward = (finalPosition - initialPosition).normalized;
     }
+
     void HorizontalMove()
     {
-        if (Application.platform == RuntimePlatform.WindowsEditor)
+        #if UNITY_EDITOR
         {
             if (Input.touches.Length > 0)
             {
@@ -103,22 +114,11 @@ public class MovementCharacter : MonoBehaviour
                         model.localPosition += (Vector3.right * speed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
                 }
 
-                // Rotacion de la camara
-                /*
-                 * Puntos (x) (y)
-                        1 -horizontalLimit -12.5
-                        2  horizontalLimit  12.5
-
-                    y - b = b2 - b1 / a2 - a1 (x - a)
-                    y - 12.5 = (25/2*hl)(x-hl)
-                    y = (25/2*horizontalLimit)(x-horizontalLimit) + 12.5
-                 */
-
                 //Rotacion
-                model.localEulerAngles = new Vector3(0f, 0f, ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f);
+                camera.localEulerAngles = new Vector3(0f, -(((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f), ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f);
             }
         }
-        else if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        #else
         {
             Vector3 filteredAccelValue = filterAccelValue(true);
 
@@ -139,8 +139,9 @@ public class MovementCharacter : MonoBehaviour
             }
 
             //Rotacion
-            model.localEulerAngles = new Vector3(0f, 0f, ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f);
+            camera.localEulerAngles = new Vector3(0f, -(((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f), ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f);
         }
+        #endif
     }
 
     Vector3 filterAccelValue(bool smooth)
@@ -159,7 +160,7 @@ public class MovementCharacter : MonoBehaviour
         if (model != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(finalPosition, 0.5f);
+            Gizmos.DrawSphere(initialPosition, 0.5f);
 
             Gizmos.color = Color.white;
             Gizmos.DrawSphere(model.position + (model.right * horizontalLimit), 0.5f);
@@ -167,5 +168,5 @@ public class MovementCharacter : MonoBehaviour
             Gizmos.DrawSphere(model.position - (model.right * horizontalLimit), 0.5f);
         }
     }
-    #endif
+#endif
 }

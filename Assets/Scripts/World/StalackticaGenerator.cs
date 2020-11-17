@@ -38,9 +38,7 @@ public class StalackticaGenerator : MonoBehaviour
     public bool ActivatorStalacktitas(bool _activator)
     {
         if (_activator == true)
-        {
             Invoke("InitializeSpawns", startTime);
-        }
 
         return false;
 
@@ -51,6 +49,7 @@ public class StalackticaGenerator : MonoBehaviour
         {
             pointToSpawnPosition.Add(item.transform.position);
         }
+
         StartCoroutine(LaunchStalactita(fireRate));
     }
 
@@ -66,11 +65,11 @@ public class StalackticaGenerator : MonoBehaviour
         else
         {
             //Normal Instanciate
-
             GameObject myStalactita = TPool.Instance.GetPooleObject();
             if (myStalactita != null && stalacticaCounter < cantidadToSpawn)
             {
                 stalacticaCounter += 1;
+
                 //Get spawnPos
                 Vector3 stalctitaPos = pointToSpawnPosition[nextPointToSpawn];
 
@@ -85,8 +84,11 @@ public class StalackticaGenerator : MonoBehaviour
                 yield break;
             }
         }
+
         lastPos = nextPointToSpawn;
+
         yield return new WaitForSeconds(fireRate);
+
         StartCoroutine(LaunchStalactita(fireRate));
     }
 }

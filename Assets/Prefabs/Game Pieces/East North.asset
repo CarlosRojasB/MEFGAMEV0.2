@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: East North
   m_EditorClassIdentifier: 
   chunckSize: {x: 100, y: 100}
-  levelChunks:
-  - {fileID: 9053789593874011482, guid: bd95f2f6b451ee24b87b318db0542efe, type: 3}
+  levelChunk: {fileID: 9053789593874011482, guid: bd95f2f6b451ee24b87b318db0542efe,
+    type: 3}
   entryDirection: 1
   exitDirection: 0

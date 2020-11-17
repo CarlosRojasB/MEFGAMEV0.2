@@ -1,33 +1,34 @@
 ﻿using UnityEngine;
 using TMPro;
+using System;
 
 public class TravelToAlphaCetiGameUIController : MonoBehaviour
 {
-    #pragma warning disable CS0649
-
-    //Atributes for GameScene
-    float counter;
-    private float millesize = 1000;
+#pragma warning disable CS0649
 
     #region Score
-    [Header("Score")]
+    float score;
+    [Header("Score", order = 0)]
     [SerializeField] TextMeshProUGUI distanceTxt;
     #endregion
+    [Space(order = 1)]
+    #region Components
+    [Header("Components", order = 2)]
+    [SerializeField] MovementCharacter movementCharacter;
+    #endregion
 
-    private void Update()
+    private void Awake()
     {
-        counter += Time.deltaTime;
+        distanceTxt.text = "Distance: 0 Ft";
 
-        ActualizarScoreDistance();        
+        movementCharacter.OnMove += UpdateDistance;
     }
 
-    public void ActualizarScoreDistance()
+    public void UpdateDistance(float distance)
     {
-        distanceTxt.text = "Distance: " + counter.ToString("F1") + " Ft";
+        score = score + distance;
 
-        if (counter >= millesize)
-        {
-            distanceTxt.text = "Distance" + (counter / millesize).ToString("F1") + "mille";
-        }
+        if (score >= 1000)
+            distanceTxt.text = "Distance: " + Math.Round(score / 1000, 1).ToString() + " Mille";
     }
 }

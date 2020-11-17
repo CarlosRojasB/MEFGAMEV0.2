@@ -5,17 +5,14 @@ using Random = UnityEngine.Random;
 
 public class WorldGenerator : MonoBehaviour
 {
-    public LevelChunkData[] levelChunkdata;
     public LevelChunkData firstChunk;
-
     LevelChunkData previuosChunk;
-    public Vector3 spawnOrigin;
+    public LevelChunkData[] levelChunkdata;
 
+    public int chunkToSpawn = 8;
     Vector3 spawnPosition;
-    public int chunkToSpawn = 10;
-    int Countchunkname = 0;
 
-    float speed;
+    float linearChunkPercentage = 70;
 
     void OnEnable()
     {
@@ -27,23 +24,12 @@ public class WorldGenerator : MonoBehaviour
         ChunkExit.OnChunkExited -= PickAndSpawnChunk;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PickAndSpawnChunk();
-            Countchunkname++;
-        }
-    }
-
     void Awake()
     {
         previuosChunk = firstChunk;
+
         for (int i = 0; i < chunkToSpawn; i++)
-        {
             PickAndSpawnChunk();
-            Countchunkname++;
-        }
     }
 
     LevelChunkData PickNextChunk()
@@ -87,26 +73,44 @@ public class WorldGenerator : MonoBehaviour
 
         }
 
-        nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
+        bool souhtNorthChucnk = false;
 
+        for (int i = 0; i < allowedChunkList.Count; i++)
+        {
+            if (allowedChunkList[i].entryDirection == LevelChunkData.Direction.South
+                &&
+                allowedChunkList[i].exitDirection == LevelChunkData.Direction.North)
+            {
+                if (Random.Range(0, 101) <= linearChunkPercentage)
+                {
+                    linearChunkPercentage -= (70f / 3f);
+
+                    nextChunk = allowedChunkList[i];
+
+                    souhtNorthChucnk = true;
+
+                    break;
+                }
+            }
+        }
+
+        if (!souhtNorthChucnk)
+        {
+            linearChunkPercentage = 70;
+
+            nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
+        }
         return nextChunk;
     }
 
     private void PickAndSpawnChunk()
     {
-        Countchunkname++;
+        LevelChunkData chunkToSpawn = PickNextChunk();
 
-        LevelChunkData chunkToSpawn = PickNextChunk(); 
-        
-        GameObject objFromChunk = chunkToSpawn.levelChunks[Random.Range(0, chunkToSpawn.levelChunks.Length)];
+        GameObject NextChunk = chunkToSpawn.levelChunk;
 
         previuosChunk = chunkToSpawn;     
         
-        Instantiate(objFromChunk, spawnPosition + spawnOrigin, Quaternion.identity, transform);
-    }
-
-    public void UpdateSpawnOrigin(Vector3 originDelta)
-    {
-        spawnOrigin = spawnOrigin + originDelta;
+        Instantiate(NextChunk, spawnPosition, Quaternion.identity, transform);
     }
 }

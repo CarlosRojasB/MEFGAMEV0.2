@@ -17,7 +17,7 @@ public class ChunkExit : MonoBehaviour
                 exited = true;
                 OnChunkExited();
 
-                transform.parent.gameObject.SetActive(false);
+                Destroy(transform.parent.gameObject);
             }
         }
     }

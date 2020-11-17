@@ -1,20 +1,9 @@
 ﻿using UnityEngine;
 
-#region Enum
-public enum BezierType
-{
-    linear,
-    curve
-}
-#endregion
-
 namespace PathCreation 
 {
     public class PathCreator : MonoBehaviour 
     {
-        //Custom variables
-        public BezierType type;
-
         /// This class stores data for the path editor, and provides accessors to get the current vertex and bezier path.
         /// Attach to a GameObject to create a new path editor.
 
@@ -90,27 +79,30 @@ namespace PathCreation
             // Only draw path gizmo if the path object is not selected
             // (editor script is resposible for drawing when selected)
             GameObject selectedObj = UnityEditor.Selection.activeGameObject;
-            if (selectedObj != gameObject) {
 
-                if (path != null) {
+            if (selectedObj != gameObject) 
+            {
+
+                if (path != null) 
+                {
                     path.UpdateTransform (transform);
 
-                    if (globalEditorDisplaySettings == null) {
+                    if (globalEditorDisplaySettings == null) 
                         globalEditorDisplaySettings = GlobalDisplaySettings.Load ();
-                    }
 
-                    if (globalEditorDisplaySettings.visibleWhenNotSelected) {
-
+                    if (globalEditorDisplaySettings.visibleWhenNotSelected) 
+                    {
                         Gizmos.color = globalEditorDisplaySettings.bezierPath;
 
-                        for (int i = 0; i < path.NumPoints; i++) {
+                        for (int i = 0; i < path.NumPoints; i++) 
+                        {
                             int nextI = i + 1;
-                            if (nextI >= path.NumPoints) {
-                                if (path.isClosedLoop) {
+                            if (nextI >= path.NumPoints) 
+                            {
+                                if (path.isClosedLoop) 
                                     nextI %= path.NumPoints;
-                                } else {
+                                else 
                                     break;
-                                }
                             }
                             Gizmos.DrawLine (path.GetPoint (i), path.GetPoint (nextI));
                         }
