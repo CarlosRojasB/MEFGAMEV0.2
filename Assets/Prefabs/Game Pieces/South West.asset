@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a0ce720062a514892f4dbab97e9ff9, type: 3}
   m_Name: South West
   m_EditorClassIdentifier: 
-  chunckSize: {x: 100, y: 100}
+  chunckSize: {x: 533, y: 533}
   levelChunk: {fileID: 5623181573025998745, guid: eea5db2b4143cee4fb56b98bfe186934,
     type: 3}
   entryDirection: 2

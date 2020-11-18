@@ -7,7 +7,7 @@ public class TPool : MonoBehaviour
     public GameObject objectToPool;
     public int amountPool;
 
-    private void Start()
+    private void Awake()
     {
         GameObject obj;
 

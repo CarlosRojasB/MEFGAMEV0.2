@@ -13,7 +13,7 @@ public class StalactitaGenerator : MonoBehaviour
 
     private void Start()
     {
-        SpawnStalcktitas();
+      
     }
 
     private void SpawnStalcktitas()
@@ -30,6 +30,12 @@ public class StalactitaGenerator : MonoBehaviour
             Vector3 point = points[index];
 
             points.RemoveAt(index);
+
+            GameObject stalactita = Singleton<Stalactites>.instance.GetPooleObject();
+
+            stalactita.transform.position = point;
+
+            stalactita.SetActive(true);
         }
     }
 }

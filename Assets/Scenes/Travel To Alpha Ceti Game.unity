@@ -308,7 +308,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254289838}
-  - component: {fileID: 254289839}
   - component: {fileID: 254289837}
   m_Layer: 0
   m_Name: Stalactites
@@ -332,7 +331,7 @@ MonoBehaviour:
   pooledObjects: []
   objectToPool: {fileID: 8970175774052868976, guid: 000238f01b5859b4aa6871f2435ba3a8,
     type: 3}
-  amountPool: 10
+  amountPool: 50
 --- !u!4 &254289838
 Transform:
   m_ObjectHideFlags: 0
@@ -347,18 +346,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &254289839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254289836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fe53751756ce94285bcd8c7bae3074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &472827643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4587039558673561025, guid: 0195b3554b514354da0d35eaad6f4b0b,
