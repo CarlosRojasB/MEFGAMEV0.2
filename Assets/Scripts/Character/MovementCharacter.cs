@@ -8,8 +8,9 @@ public class MovementCharacter : MonoBehaviour
 
     #region Information
     [Header("Movimiento")]
-    [Range(0, 150f)]
+    [Range(0, 100f)]
     [SerializeField] float speed = 25f;
+    float initialSpeed;
     float speedscale = 1f;
     [SerializeField] float horizontalLimit = 15f;
     [SerializeField] AnimationCurve horizontalSpeedCurve;
@@ -31,7 +32,6 @@ public class MovementCharacter : MonoBehaviour
     new Transform transform;
     [Header("Components")]
     [SerializeField] Transform model;
-    Transform camera;
     Rigidbody rbPlayer;
     #endregion
 
@@ -41,23 +41,23 @@ public class MovementCharacter : MonoBehaviour
 
         rbPlayer = GetComponent<Rigidbody>();
 
-        camera = model.GetChild(0).gameObject.transform;
-
         pathCreator = chunks.GetChild(0).GetChild(0).gameObject.GetComponent<PathCreator>();
 
         transform.position = pathCreator.path.GetPointAtDistance(0);
 
         initialPosition = transform.position;
 
+        initialSpeed = speed;
+
         lowPassValue = Input.acceleration;
     }
 
     private void FixedUpdate()
     {
-        if (speed < 150f)
+        if (speed < 100f)
             speed += Time.fixedDeltaTime;
-        else if (speed >= 150f)
-            speed = 105f;
+        else if (speed >= 100f)
+            speed = 100f;
 
         ForwardMovement();
 
@@ -102,20 +102,17 @@ public class MovementCharacter : MonoBehaviour
                 if (touch.position.x <= (Screen.width / 2f) - (0.1f * Screen.width))
                 {
                     if (model.localPosition.x >= 0)
-                        model.localPosition += -Vector3.right * speed * Time.fixedDeltaTime;
+                        model.localPosition += -Vector3.right * initialSpeed * Time.fixedDeltaTime;
                     else
-                        model.localPosition += (-Vector3.right * speed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                        model.localPosition += (-Vector3.right * initialSpeed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
                 }
                 else if (touch.position.x >= (Screen.width / 2f) + (0.1f * Screen.width))
                 {
                     if (model.localPosition.x <= 0)
-                        model.localPosition += Vector3.right * speed * Time.fixedDeltaTime;
+                        model.localPosition += Vector3.right * initialSpeed * Time.fixedDeltaTime;
                     else
-                        model.localPosition += (Vector3.right * speed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                        model.localPosition += (Vector3.right * initialSpeed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
                 }
-
-                //Rotacion
-                camera.localEulerAngles = new Vector3(0f, -(((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f), ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f);
             }
         }
         #else
@@ -138,9 +135,6 @@ public class MovementCharacter : MonoBehaviour
                     model.localPosition += (Vector3.right * speed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
 
-            //Rotacion
-            camera.localEulerAngles = new Vector3(0f, -(((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f), ((25f / (horizontalLimit * 2f)) * (model.localPosition.x - horizontalLimit)) + 12.5f);
-        }
         #endif
     }
 

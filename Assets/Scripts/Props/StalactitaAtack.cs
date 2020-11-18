@@ -11,7 +11,7 @@ public class StalactitaAtack : MonoBehaviour
             _plLife = other.GetComponent<PlayerLife>();
             _plLife.PlLifes--;
 
-            ManagerScene.Instance.GoToLose();
+           Singleton<ManagerScene>.instance.GoToLose();
         }
     }
 }

@@ -1,7 +1,13 @@
-﻿using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ManagerScene : TSingleton<ManagerScene>
+public class ManagerScene : MonoBehaviour
 {
+    private void Awake()
+    {
+        new Singleton<ManagerScene>(this);
+    }
+
     public void GoToGameMenu()
     {
         SceneManager.LoadScene("Game Menu", LoadSceneMode.Single);

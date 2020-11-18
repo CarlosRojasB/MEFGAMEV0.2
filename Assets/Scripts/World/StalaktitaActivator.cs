@@ -1,24 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StalaktitaActivator : MonoBehaviour
 {
-    StalackticaGenerator slkGnerator;
+    StalactitaGenerator slkGnerator;
     bool activar=false;
     private void Awake()
     {
-        slkGnerator = GetComponent<StalackticaGenerator>();
+        slkGnerator = GetComponent<StalactitaGenerator>();
     }
     private void OnTriggerEnter(Collider other)
     {      
-
         if (other.gameObject.tag == "Player")
         {
 
-            
-            activar = true;
-            slkGnerator.ActivatorStalacktitas(activar);
         }
     }
 }

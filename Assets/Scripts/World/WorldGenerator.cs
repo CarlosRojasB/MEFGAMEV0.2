@@ -12,7 +12,7 @@ public class WorldGenerator : MonoBehaviour
     public int chunkToSpawn = 8;
     Vector3 spawnPosition;
 
-    float linearChunkPercentage = 70;
+    float linearChunkPercentage = 80;
 
     void OnEnable()
     {

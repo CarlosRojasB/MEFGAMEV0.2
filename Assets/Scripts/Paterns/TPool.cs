@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class TPool : TSingleton<TPool>
-{
+public class TPool : MonoBehaviour
+{ 
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountPool;
@@ -13,7 +13,7 @@ public class TPool : TSingleton<TPool>
 
         for (int i = 0; i < amountPool; i++)
         {
-            obj = Instantiate(objectToPool);
+            obj = Instantiate(objectToPool, transform);
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }

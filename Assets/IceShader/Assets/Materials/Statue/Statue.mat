@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Statue
+  m_Shader: {fileID: 4800000, guid: ef17ca7e9e0302a4bb385f66a1c12826, type: 3}
+  m_ShaderKeywords: _KEYWORD0_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlbedoDetailMain:
+        m_Texture: {fileID: 2800000, guid: 3b8cb1dd3d4c1b14eb151c448cfc93f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlbedoMain:
+        m_Texture: {fileID: 2800000, guid: 3b8cb1dd3d4c1b14eb151c448cfc93f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AoMain:
+        m_Texture: {fileID: 2800000, guid: c58c3b77fec845245930d82314d00b11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 079d3865152eada4b8f2a3af91979ff8, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: 004603b76f5639d47b5bc5e454e8e77d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 3c7946a014646b7459f4690ea68481bd, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _NormalDetail:
+        m_Texture: {fileID: 2800000, guid: 090b5d5b5b61ce9409b92d7c42e0a71a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMain:
+        m_Texture: {fileID: 2800000, guid: 0b7b67d6eb9491b4fa01e84ace21bfa1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularSmAMain:
+        m_Texture: {fileID: 2800000, guid: 9c1bf77c7d5ccb24b94f220ee72a00b7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture1:
+        m_Texture: {fileID: 2800000, guid: d603acd0ed242ad4ea6a8fb04ee90016, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _CracksAreasPower: 0.3
+    - _Cutoff: 0.5
+    - _DarnessAreasPower: 4.56
+    - _DepthFade: 0
+    - _DetailNormalMapScale: 1
+    - _DetailNormalPower: 1
+    - _DetailUVScale: 1
+    - _DstBlend: 0
+    - _EdgeLength: 25.8
+    - _Float0: 0
+    - _FresnalPower: 0.27
+    - _FresnelPower: 0
+    - _FresnelScale: 1.58
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HighIceDepthDark: 0.24
+    - _HighIceDepthPower: 7.57
+    - _HighIceMarchDistance: 0.289
+    - _HighNumSteps: 30
+    - _IcePower: 0
+    - _LowIceDarkness: 0.4
+    - _LowIceDepthDark: 0
+    - _LowIceDepthPower: 13.37
+    - _LowIceHeight: -75.9
+    - _LowIceMarchDistance: 0.091
+    - _LowIceNumSteps: 20
+    - _LowIceScale: 0.001
+    - _LowIceTiling: 0.85
+    - _LowerIceDarkness: 0.2
+    - _LowerIceDepthDark: 1.03
+    - _LowerIceDepthPower: 13.37
+    - _LowerIceHeight: 46.3
+    - _LowerIceMarchDistance: 0.232
+    - _LowerIceNumSteps: 20
+    - _LowerIceScale: -0.0061
+    - _LowerIceTiling: 0.45
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _Specular: 0.62
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _TransAmbient: 0.164
+    - _TransDirect: 1
+    - _TransNormalDistortion: 0.337
+    - _TransScattering: 4.6
+    - _TransShadow: 0
+    - _Translucency: 5
+    - _TransmissionPower: 0.52
+    - _UVSec: 0
+    - _ZWrite: 1
+    - __dirty: 0
+    - _switch: 0
+    m_Colors:
+    - _AlbedoColor: {r: 0.6450305, g: 0.63235295, b: 1, a: 0}
+    - _AlbedoFresnelColor: {r: 0.4568015, g: 0.4769903, b: 0.875, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.8235294, g: 0.8235294, b: 0.8235294, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _IceCracksColor: {r: 1, g: 1, b: 1, a: 0}
+    - _IceCracksColor2: {r: 1, g: 1, b: 1, a: 0}
+    - _IceDepthColor: {r: 0.4720986, g: 0.5140231, b: 0.9716981, a: 0}
+    - _IceDepthColor2: {r: 0.4720986, g: 0.5140231, b: 0.9716981, a: 0}
+    - _SpecularColor: {r: 0.1273356, g: 0.074610725, b: 0.33823532, a: 0}
