@@ -1,7 +1,9 @@
 ﻿public class Stalactites : TPool 
 {
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
+
         new Singleton<Stalactites>(this);
     }
 }

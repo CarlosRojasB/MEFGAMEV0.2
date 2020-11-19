@@ -5,43 +5,32 @@ public class Stalactita : MonoBehaviour
 {
     #pragma warning disable CS0649
 
-    private bool shootACtive;
+    #region Information
+    public float shotSpeed = 1000;
+    #endregion
+
+    #region Components
     [SerializeField]
-    private float timeToShot, velBala;
+    Rigidbody rbStalactita;
+    #endregion
 
-
-    private Rigidbody RbStalactita;
-    public static float sppedBala = 1000;
-
-
-    private void Awake()
-    {
-        RbStalactita = gameObject.GetComponentInChildren<Rigidbody>();
-        // RbStalactita.AddForce(new Vector3(0, 0, 0), ForceMode.Impulse);
-        //  RbStalactita.useGravity = false;
-    }
-
-    private void OnEnable()
-    {
-        StartCoroutine(waitToShot(timeToShot));
-    }
     private void OnDisable()
     {
-        RbStalactita.transform.position = gameObject.transform.position;
-        RbStalactita.velocity = Vector3.zero;
+        rbStalactita.velocity = Vector3.zero;
+
+        rbStalactita.transform.localPosition = Vector3.zero;
     }
+
     void shot()
     {
-        RbStalactita.velocity = new Vector3(0, -sppedBala * Time.deltaTime, 0);
-
-        // RbStalactita.AddForce(-Vector3.up, ForceMode.Impulse);
-        //RbStalactita.useGravity = true;      
+        rbStalactita.velocity = new Vector3(0, -shotSpeed * Time.deltaTime, 0);
     }
-    IEnumerator waitToShot(float _timeToShot)
+
+    IEnumerator waitToShot(float timeToShot)
     {
-        yield return new WaitForSeconds(_timeToShot);
+        yield return new WaitForSeconds(timeToShot);
         shot();
-        StartCoroutine(WaitToRealese(_timeToShot + 2f));
+        StartCoroutine(WaitToRealese(timeToShot + 2f));
     }
 
     IEnumerator WaitToRealese(float _TimeToDisapear)

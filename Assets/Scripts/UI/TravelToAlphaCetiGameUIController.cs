@@ -28,7 +28,6 @@ public class TravelToAlphaCetiGameUIController : MonoBehaviour
     {
         score = score + distance;
 
-        if (score >= 1000)
-            distanceTxt.text = "Distance: " + Math.Round(score / 1000, 1).ToString() + " Mille";
+        distanceTxt.text = "Distance: " + Math.Round(score / 1000f, 1).ToString() + " Mille";
     }
 }

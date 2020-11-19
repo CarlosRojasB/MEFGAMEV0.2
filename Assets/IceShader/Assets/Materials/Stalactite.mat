@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ice_ground
+  m_Name: Stalactite
   m_Shader: {fileID: 4800000, guid: 1f667d6217dbf2e41b71c6c70c9c8f11, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 079d3865152eada4b8f2a3af91979ff8, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
         m_Texture: {fileID: 2800000, guid: 004603b76f5639d47b5bc5e454e8e77d, type: 3}
@@ -67,7 +67,7 @@ Material:
     - _CracksAreasPower: 3.85
     - _DarnessAreasPower: 4.35
     - _DepthFade: 0.1
-    - _EdgeLength: 25.8
+    - _EdgeLength: 43.6
     - _Float0: 0
     - _Float1: 4
     - _Float10: 40.7
@@ -91,18 +91,18 @@ Material:
     - _Float9: 0.232
     - _FresnalPower: 0.32
     - _FresnelPower: 0.47
-    - _FresnelScale: 1.45
+    - _FresnelScale: 6.25
     - _HighIceDepthDark: 0.24
     - _HighIceDepthPower: 7.57
-    - _HighIceMarchDistance: 0.289
+    - _HighIceMarchDistance: 0.19
     - _HighNumSteps: 30
     - _LowIceDarkness: 0.4
-    - _LowIceDepthDark: 0
+    - _LowIceDepthDark: 12
     - _LowIceDepthPower: 13.37
-    - _LowIceHeight: -75.9
-    - _LowIceMarchDistance: 0.091
+    - _LowIceHeight: 0
+    - _LowIceMarchDistance: 0.16
     - _LowIceNumSteps: 20
-    - _LowIceScale: 0.001
+    - _LowIceScale: -0.05
     - _LowIceTiling: 0.85
     - _LowerIceDarkness: 0.2
     - _LowerIceDepthDark: 3.03
@@ -133,7 +133,7 @@ Material:
     - _AlbedoFresnelColor: {r: 1, g: 1, b: 1, a: 0}
     - _Color0: {r: 0.47209862, g: 0.5140231, b: 0.9716981, a: 0}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
-    - _IceCracksColor: {r: 1, g: 1, b: 1, a: 0}
-    - _IceCracksColor2: {r: 1, g: 1, b: 1, a: 0}
-    - _IceDepthColor: {r: 0.42495677, g: 0.4701273, b: 0.9632353, a: 0}
-    - _IceDepthColor2: {r: 0.582234, g: 0.60803574, b: 0.8897059, a: 0}
+    - _IceCracksColor: {r: 0.6746573, g: 0.16456035, b: 0.8113208, a: 0}
+    - _IceCracksColor2: {r: 0.43940184, g: 0.08962262, b: 1, a: 0}
+    - _IceDepthColor: {r: 0.23921566, g: 0.5439647, b: 0.62352943, a: 0}
+    - _IceDepthColor2: {r: 0.25178, g: 0.6185375, b: 0.7735849, a: 0}

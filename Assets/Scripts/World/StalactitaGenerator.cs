@@ -11,9 +11,16 @@ public class StalactitaGenerator : MonoBehaviour
     [SerializeField]
     int amountToSpawn;
 
+    List<Stalactita> stalactites;
+
+    private void Awake()
+    {
+        stalactites = new List<Stalactita>();
+    }
+
     private void Start()
     {
-      
+        SpawnStalcktitas();
     }
 
     private void SpawnStalcktitas()
@@ -33,9 +40,14 @@ public class StalactitaGenerator : MonoBehaviour
 
             GameObject stalactita = Singleton<Stalactites>.instance.GetPooleObject();
 
-            stalactita.transform.position = point;
+            if (stalactita != null)
+            {
+                stalactites.Add(stalactita.GetComponent<Stalactita>());
 
-            stalactita.SetActive(true);
+                stalactita.transform.position = point;
+
+                stalactita.SetActive(true);
+            }
         }
     }
 }

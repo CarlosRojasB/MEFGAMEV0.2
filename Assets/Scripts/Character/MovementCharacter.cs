@@ -52,10 +52,10 @@ public class MovementCharacter : MonoBehaviour
         lowPassValue = Input.acceleration;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (speed < 100f)
-            speed += Time.fixedDeltaTime;
+            speed += Time.deltaTime;
         else if (speed >= 100f)
             speed = 100f;
 
@@ -69,7 +69,7 @@ public class MovementCharacter : MonoBehaviour
         if (finalPosition != Vector3.zero)
             initialPosition = finalPosition;
 
-        float nextDistance = distance + (((speed + Time.fixedDeltaTime) * speedscale) * Time.deltaTime);
+        float nextDistance = distance + (((speed + Time.deltaTime) * speedscale) * Time.deltaTime);
 
         OnMove?.Invoke(nextDistance - distance);
 
@@ -80,7 +80,7 @@ public class MovementCharacter : MonoBehaviour
             pathCreator = chunks.GetChild(pathCreator.gameObject.transform.parent.GetSiblingIndex() + 1).GetChild(0).gameObject.GetComponent<PathCreator>();
         }
         else
-            distance += ((speed * speedscale)* Time.fixedDeltaTime);
+            distance += ((speed * speedscale)* Time.deltaTime);
 
         finalPosition = pathCreator.path.GetPointAtDistance(distance);
 
@@ -102,16 +102,16 @@ public class MovementCharacter : MonoBehaviour
                 if (touch.position.x <= (Screen.width / 2f) - (0.1f * Screen.width))
                 {
                     if (model.localPosition.x >= 0)
-                        model.localPosition += -Vector3.right * initialSpeed * Time.fixedDeltaTime;
+                        model.localPosition += -Vector3.right * initialSpeed * Time.deltaTime;
                     else
-                        model.localPosition += (-Vector3.right * initialSpeed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                        model.localPosition += (-Vector3.right * initialSpeed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
                 }
                 else if (touch.position.x >= (Screen.width / 2f) + (0.1f * Screen.width))
                 {
                     if (model.localPosition.x <= 0)
-                        model.localPosition += Vector3.right * initialSpeed * Time.fixedDeltaTime;
+                        model.localPosition += Vector3.right * initialSpeed * Time.deltaTime;
                     else
-                        model.localPosition += (Vector3.right * initialSpeed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                        model.localPosition += (Vector3.right * initialSpeed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
                 }
             }
         }
@@ -123,19 +123,19 @@ public class MovementCharacter : MonoBehaviour
             if (filteredAccelValue.x <= 0)
             {
                 if (model.localPosition.x >= 0)
-                    model.localPosition += -Vector3.right * speed * Time.fixedDeltaTime;
+                    model.localPosition += -Vector3.right * speed * Time.deltaTime;
                 else
-                    model.localPosition += (-Vector3.right * speed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                    model.localPosition += (-Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
             else if (filteredAccelValue.x > 0)
             {
                 if (model.localPosition.x <= 0)
-                    model.localPosition += Vector3.right * speed * Time.fixedDeltaTime;
+                    model.localPosition += Vector3.right * speed * Time.deltaTime;
                 else
-                    model.localPosition += (Vector3.right * speed * Time.fixedDeltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                    model.localPosition += (Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
 
-        #endif
+    #endif
     }
 
     Vector3 filterAccelValue(bool smooth)
