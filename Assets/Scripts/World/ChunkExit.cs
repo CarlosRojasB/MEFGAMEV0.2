@@ -4,7 +4,10 @@ using UnityEngine;
 public class ChunkExit : MonoBehaviour
 {
     public delegate void ExitAction();
+
     public static event ExitAction OnChunkExited;
+
+    public event ExitAction OnChunkLocalExited;
 
     private bool exited = false;
 
@@ -15,7 +18,10 @@ public class ChunkExit : MonoBehaviour
             if (!exited)
             {
                 exited = true;
+
                 OnChunkExited();
+
+                OnChunkLocalExited();
 
                 Destroy(transform.parent.gameObject);
             }

@@ -10,6 +10,10 @@ public class MovementCharacter : MonoBehaviour
     [Header("Movimiento")]
     [Range(0, 100f)]
     [SerializeField] float speed = 25f;
+    public float Pspeed
+    {
+        get { return speed; }
+    }
     float initialSpeed;
     float speedscale = 1f;
     [SerializeField] float horizontalLimit = 15f;

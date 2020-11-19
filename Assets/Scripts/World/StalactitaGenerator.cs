@@ -8,10 +8,19 @@ public class StalactitaGenerator : MonoBehaviour
 
     [SerializeField]
     Transform[] pointToSpawn;
-    [SerializeField]
-    int amountToSpawn;
+    public static int amountToSpawn = 4;
 
     List<Stalactita> stalactites;
+    public List<Stalactita> Pstalactitas
+    {
+        get { return stalactites; }
+    }
+
+    #region Components
+    [Header("Components")]
+    [SerializeField]
+    ChunkExit chunkExit;
+    #endregion
 
     private void Awake()
     {
@@ -21,6 +30,12 @@ public class StalactitaGenerator : MonoBehaviour
     private void Start()
     {
         SpawnStalcktitas();
+
+        chunkExit.OnChunkLocalExited += () =>
+        {
+            for (int i = 0; i < stalactites.Count; i++)
+                stalactites[i].gameObject.SetActive(false);
+        };
     }
 
     private void SpawnStalcktitas()

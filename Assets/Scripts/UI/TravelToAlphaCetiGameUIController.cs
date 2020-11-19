@@ -7,7 +7,7 @@ public class TravelToAlphaCetiGameUIController : MonoBehaviour
 #pragma warning disable CS0649
 
     #region Score
-    float score;
+    public static float score;
     [Header("Score", order = 0)]
     [SerializeField] TextMeshProUGUI distanceTxt;
     #endregion
