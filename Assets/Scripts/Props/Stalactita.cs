@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Stalactita : MonoBehaviour
 {
-#pragma warning disable CS0649
+    #pragma warning disable CS0649
 
     #region Information
     [Header("Information")]
@@ -65,6 +65,8 @@ public class Stalactita : MonoBehaviour
             MovementCharacter movementCharacter = Singleton<Stalactites>.instance.player.gameObject.GetComponent<MovementCharacter>();
 
             gravityScale = ((45f / 75f) * (movementCharacter.Pspeed - 25f)) + 2f;
+
+            StalactitaGenerator.level = ((int)movementCharacter.Pspeed) / 10;
 
             rbStalactita.velocity = Vector3.zero;
 

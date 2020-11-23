@@ -8,7 +8,7 @@ public class StalactitaGenerator : MonoBehaviour
 
     [SerializeField]
     Transform[] pointToSpawn;
-    public static int amountToSpawn = 4;
+    public static int level = 3;
 
     List<Stalactita> stalactites;
     public List<Stalactita> Pstalactitas
@@ -45,7 +45,7 @@ public class StalactitaGenerator : MonoBehaviour
         foreach (Transform point in pointToSpawn)
             points.Add(point.position);
 
-        for (int i = 0; i < amountToSpawn; i++)
+        for (int i = 0; i < pointToSpawn.Length - ((pointToSpawn.Length - level >= 0) ? (pointToSpawn.Length - level ) : 0); i++)
         {
             int index = Random.Range(0, points.Count);
 
