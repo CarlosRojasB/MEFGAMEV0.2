@@ -1054,6 +1054,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1901892928310091113, guid: 0195b3554b514354da0d35eaad6f4b0b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1901892928310091127, guid: 0195b3554b514354da0d35eaad6f4b0b,
         type: 3}
       propertyPath: m_Size.y

@@ -9,7 +9,7 @@ public class Stalactita : MonoBehaviour
     [Header("Information")]
     [SerializeField]
     AnimationCurve velocityChangeCurve;
-    float gravityScale = 5f;
+    float gravityScale = 2f;
     Coroutine waitToShotCoroutine;
     #endregion
     [Space]
@@ -64,12 +64,7 @@ public class Stalactita : MonoBehaviour
         {
             MovementCharacter movementCharacter = Singleton<Stalactites>.instance.player.gameObject.GetComponent<MovementCharacter>();
 
-            if (movementCharacter.Pspeed >= 100f)
-                gravityScale = 8;
-            else if (movementCharacter.Pspeed >= 75f)
-                gravityScale = 7;
-            else if (movementCharacter.Pspeed >= 50f)
-                gravityScale = 6;
+            gravityScale = ((45f / 75f) * (movementCharacter.Pspeed - 25f)) + 2f;
 
             rbStalactita.velocity = Vector3.zero;
 
