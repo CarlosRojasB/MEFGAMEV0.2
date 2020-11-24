@@ -11,7 +11,6 @@ public class ManagerScene : MonoBehaviour
     }
     private void Start()
     {
-        print("oe");
         StartCoroutine(WaitToDesapearWelcome());
     }
 

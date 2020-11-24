@@ -30,6 +30,5 @@ public class PlayerLife : MonoBehaviour
         {
             Singleton<ManagerScene>.instance.GoToLose();
         });
-
     }
 }

@@ -1,19 +1,28 @@
-﻿public class Singleton<T>
+﻿
+using UnityEngine;
+public class Singleton<T>
 {
 	#region Fields
-	/// <summary>
-	/// The instance.
-	/// </summary>
 	public static T instance;
 	#endregion
 
-	/// <summary>
-	/// Use this for initialization.
-	/// </summary>
 	public Singleton(T @class)
 	{
-		if (instance == null)
-			instance = @class;
-		
+		if (!(@class is MonoBehaviour))
+		{
+			if (instance == null)
+				instance = @class;
+		}
+		else
+		{
+			if (instance == null)
+			{
+				instance = @class;
+
+				Object.DontDestroyOnLoad((@class as MonoBehaviour).gameObject);
+			}
+			else
+				Object.Destroy((@class as MonoBehaviour).gameObject);
+		}
 	}
 }

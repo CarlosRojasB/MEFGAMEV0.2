@@ -5,12 +5,12 @@ using System.Collections;
 
 public class TravelToAlphaCetiGameUIController : MonoBehaviour
 {
-#pragma warning disable CS0649
+    #pragma warning disable CS0649
 
-    #region Score
-    public static float score;
-    double lastScore;
-    [Header("Score", order = 0)]
+    #region Distance
+    public static float distance;
+    double lastDistance;
+    [Header("Distance", order = 0)]
     [SerializeField] TextMeshProUGUI distanceTxt;
     [SerializeField] AnimationCurve @in;
     [SerializeField] AnimationCurve @out;
@@ -31,23 +31,23 @@ public class TravelToAlphaCetiGameUIController : MonoBehaviour
 
     public void UpdateDistance(float distance)
     {
-        score = score + distance;
+        TravelToAlphaCetiGameUIController.distance = TravelToAlphaCetiGameUIController.distance + distance;
 
-        double round = Math.Round(score / 1000f, 1);
+        double round = Math.Round(TravelToAlphaCetiGameUIController.distance / 1000f, 1);
 
-        if (round != 0 && round != lastScore && round % 1 == 0)
+        if (round != 0 && round != lastDistance && round % 1 == 0)
         {
-            distanceTxt.text = Math.Round(score / 1000f, 1).ToString() + " Mille";
+            distanceTxt.text = Math.Round(TravelToAlphaCetiGameUIController.distance / 1000f, 1).ToString() + " Mille";
 
             scoreCoroutine = StartCoroutine(ShowCoroutine());
         }
         else
         {
             if(scoreCoroutine == null)
-                distanceTxt.text = Math.Round(score / 1000f, 1).ToString() + " Mille";
+                distanceTxt.text = Math.Round(TravelToAlphaCetiGameUIController.distance / 1000f, 1).ToString() + " Mille";
         }
 
-        lastScore = round;
+        lastDistance = round;
     }
 
     IEnumerator ShowCoroutine()

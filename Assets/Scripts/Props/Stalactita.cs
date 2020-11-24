@@ -54,7 +54,7 @@ public class Stalactita : MonoBehaviour
     {
         if (Singleton<Stalactites>.instance != null)
         {
-            while (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) >= 42f)
+            while (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) >= 41f)
             {
                 if (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) <= 80f)
                 {
@@ -82,7 +82,7 @@ public class Stalactita : MonoBehaviour
         {
             MovementCharacter movementCharacter = Singleton<Stalactites>.instance.player.gameObject.GetComponent<MovementCharacter>();
 
-            gravityScale = ((45f / 75f) * (movementCharacter.Pspeed - 25f)) + 2f;
+            gravityScale = ((46f / 75f) * (movementCharacter.Pspeed - 25f)) + 2f;
 
             StalactitaGenerator.level = ((int)movementCharacter.Pspeed) / 10;
 
