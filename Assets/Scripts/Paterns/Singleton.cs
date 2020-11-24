@@ -14,5 +14,6 @@
 	{
 		if (instance == null)
 			instance = @class;
+		
 	}
 }

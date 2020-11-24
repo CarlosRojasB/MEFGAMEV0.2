@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class ManagerScene : MonoBehaviour
 {
     private void Awake()
     {
         new Singleton<ManagerScene>(this);
+    }
+    private void Start()
+    {
+        print("oe");
+        StartCoroutine(WaitToDesapearWelcome());
     }
 
     public void GoToGameMenu()
@@ -21,5 +28,16 @@ public class ManagerScene : MonoBehaviour
     public void GoToLose()
     {
         SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+    }
+
+    public void GoToAr()
+    {
+        SceneManager.LoadScene("ElDrakAR", LoadSceneMode.Single);
+    }
+    IEnumerator WaitToDesapearWelcome()
+    {
+        yield return new WaitForSeconds(22f);
+        GoToAr();
+
     }
 }
