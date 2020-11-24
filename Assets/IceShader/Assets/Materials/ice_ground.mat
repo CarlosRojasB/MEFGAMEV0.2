@@ -66,8 +66,8 @@ Material:
     m_Floats:
     - _CracksAreasPower: 3.85
     - _DarnessAreasPower: 4.35
-    - _DepthFade: 0.1
-    - _EdgeLength: 25.8
+    - _DepthFade: -1.03
+    - _EdgeLength: 2.36
     - _Float0: 0
     - _Float1: 4
     - _Float10: 40.7
@@ -91,7 +91,7 @@ Material:
     - _Float9: 0.232
     - _FresnalPower: 0.32
     - _FresnelPower: 0.47
-    - _FresnelScale: 1.45
+    - _FresnelScale: 2.68
     - _HighIceDepthDark: 0.24
     - _HighIceDepthPower: 7.57
     - _HighIceMarchDistance: 0.289
@@ -99,19 +99,19 @@ Material:
     - _LowIceDarkness: 0.4
     - _LowIceDepthDark: 0
     - _LowIceDepthPower: 13.37
-    - _LowIceHeight: -75.9
+    - _LowIceHeight: -74.97
     - _LowIceMarchDistance: 0.091
     - _LowIceNumSteps: 20
-    - _LowIceScale: 0.001
+    - _LowIceScale: 0.0186
     - _LowIceTiling: 0.85
     - _LowerIceDarkness: 0.2
     - _LowerIceDepthDark: 3.03
     - _LowerIceDepthPower: 13.37
     - _LowerIceHeight: 46.3
-    - _LowerIceMarchDistance: 0.232
+    - _LowerIceMarchDistance: 0.054
     - _LowerIceNumSteps: 0
-    - _LowerIceScale: -0.0061
-    - _LowerIceTiling: 0.45
+    - _LowerIceScale: -0.0145
+    - _LowerIceTiling: 1.13
     - _NoisePower: 0.3
     - _NormaPower: 1
     - _NormalRefPlane: 0
@@ -134,6 +134,6 @@ Material:
     - _Color0: {r: 0.47209862, g: 0.5140231, b: 0.9716981, a: 0}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _IceCracksColor: {r: 1, g: 1, b: 1, a: 0}
-    - _IceCracksColor2: {r: 1, g: 1, b: 1, a: 0}
-    - _IceDepthColor: {r: 0.42495677, g: 0.4701273, b: 0.9632353, a: 0}
-    - _IceDepthColor2: {r: 0.582234, g: 0.60803574, b: 0.8897059, a: 0}
+    - _IceCracksColor2: {r: 1, g: 0.33333334, b: 0.8627451, a: 0}
+    - _IceDepthColor: {r: 0.17986828, g: 0.34224188, b: 0.8113208, a: 0}
+    - _IceDepthColor2: {r: 0.25943398, g: 0.8198786, b: 1, a: 0}

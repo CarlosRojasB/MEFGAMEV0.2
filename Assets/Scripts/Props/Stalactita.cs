@@ -11,12 +11,15 @@ public class Stalactita : MonoBehaviour
     AnimationCurve velocityChangeCurve;
     float gravityScale = 2f;
     Coroutine waitToShotCoroutine;
+    bool shot;
     #endregion
     [Space]
     #region Components
     [Header("Components")]
     [SerializeField]
     Rigidbody rbStalactita;
+    [HideInInspector]
+    public ParticlesManager particlesManager;
     #endregion
 
     private void OnEnable()
@@ -27,6 +30,8 @@ public class Stalactita : MonoBehaviour
 
             waitToShotCoroutine = null;
         }
+
+        shot = false;
 
         waitToShotCoroutine = StartCoroutine(WaitToShot());
     }
@@ -49,16 +54,29 @@ public class Stalactita : MonoBehaviour
     {
         if (Singleton<Stalactites>.instance != null)
         {
-            while (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) >= 40f)
-                yield return null;
+            while (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) >= 42f)
+            {
+                if (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) <= 80f)
+                {
+                    if (!shot)
+                    {
+                        shot = true;
 
-            shot();
+                        particlesManager.SnowParticles(transform.position);
+                    }
+
+                }
+
+                yield return null;
+            }
+
+            Shot();
 
             StartCoroutine(WaitToRealese(3f));
         }
     }
 
-    void shot()
+    void Shot()
     {
         if (Singleton<Stalactites>.instance != null)
         {

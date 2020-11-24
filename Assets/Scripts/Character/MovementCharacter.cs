@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using PathCreation;
+using System.Collections;
 using UnityEngine;
 
 public class MovementCharacter : MonoBehaviour
@@ -7,6 +8,7 @@ public class MovementCharacter : MonoBehaviour
     #pragma warning disable CS0649
 
     #region Information
+    bool move;
     [Header("Movimiento")]
     [Range(0, 100f)]
     [SerializeField] float speed = 25f;
@@ -36,11 +38,14 @@ public class MovementCharacter : MonoBehaviour
     new Transform transform;
     [Header("Components")]
     [SerializeField] Transform model;
+    [SerializeField] ParticleSystem speedParticles;
     Rigidbody rbPlayer;
     #endregion
 
     private void Start()
     {
+        move = true;
+
         transform = GetComponent<Transform>();
 
         rbPlayer = GetComponent<Rigidbody>();
@@ -58,14 +63,21 @@ public class MovementCharacter : MonoBehaviour
 
     private void Update()
     {
-        if (speed < 100f)
-            speed += Time.deltaTime;
-        else if (speed >= 100f)
-            speed = 100f;
+        if (move)
+        {
+            if (speed < 100f)
+                speed += Time.deltaTime;
+            else if (speed >= 100f)
+                speed = 100f;
 
-        ForwardMovement();
+            ParticleSystem.MainModule main = speedParticles.main;
 
-        HorizontalMove();
+            main.startSpeed = speed;
+
+            ForwardMovement();
+
+            HorizontalMove();
+        }
     }
 
     void ForwardMovement()
@@ -138,8 +150,29 @@ public class MovementCharacter : MonoBehaviour
                 else
                     model.localPosition += (Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
-
+        }
     #endif
+    }
+
+    public void StopMove(System.Action outputMethod = null)
+    {
+        move = false;
+
+        StartCoroutine(StopMoveCoroutine(outputMethod));
+    }
+
+    IEnumerator StopMoveCoroutine(System.Action outputMethod)
+    {
+        while (speed >= 0)
+        {
+            ForwardMovement();
+
+            speed -= 20 * Time.deltaTime;
+
+            yield return null;
+        }
+
+        outputMethod?.Invoke();
     }
 
     Vector3 filterAccelValue(bool smooth)
@@ -152,7 +185,7 @@ public class MovementCharacter : MonoBehaviour
         return lowPassValue;
     }
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (model != null)
@@ -166,5 +199,5 @@ public class MovementCharacter : MonoBehaviour
             Gizmos.DrawSphere(model.position - (model.right * horizontalLimit), 0.5f);
         }
     }
-#endif
+    #endif
 }

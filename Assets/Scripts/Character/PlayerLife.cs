@@ -2,7 +2,34 @@
 
 public class PlayerLife : MonoBehaviour
 {
-    int plLifes =1;
+    #region Information
+    [Header("Information")]
+    [SerializeField] GameObject model;
+    #endregion
 
-    public int PlLifes { get => plLifes; set => plLifes = value; }
+    #region Components
+    MovementCharacter move;
+    [Header("Components")]
+    public ParticleSystem particleSystem;
+    #endregion
+
+    private void Awake()
+    {
+        move = GetComponent<MovementCharacter>();
+    }
+
+    public void Death()
+    {
+        model.SetActive(false);
+
+        particleSystem.gameObject.SetActive(true);
+
+        particleSystem.Play();
+
+        move.StopMove(() => 
+        {
+            Singleton<ManagerScene>.instance.GoToLose();
+        });
+
+    }
 }
