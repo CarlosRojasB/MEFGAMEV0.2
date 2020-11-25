@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class ActiveButtonForTrivia : MonoBehaviour
 {
     #region Information   
     [Header("Collision objects", order = 0)]
     [SerializeField] Camera mycamera;
-    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer;
+    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter;
 
     Ray ray;
     RaycastHit hit;
@@ -23,7 +24,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [SerializeField]
     AnimationCurve curveNhymphs;
     bool ActiveSound = false;
-
+    
 
 
     [Header("Fondo Objects", order = 4)]
@@ -39,6 +40,8 @@ public class ActiveButtonForTrivia : MonoBehaviour
     RectTransform FadeWhite;
     [SerializeField]
     ParticleSystem parSysHumminButter;
+    [SerializeField]
+    AnimationCurve curveFade;
 
     #endregion
 
@@ -81,7 +84,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
 
         //ActiveHumminButter
-        /*if(Physics.Raycast(ray,out hit,float.MaxValue,TriviaLayer))*/
+        if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter)) StartCoroutine(CallFadeInCoroutine());
 
     }
 
@@ -111,6 +114,35 @@ public class ActiveButtonForTrivia : MonoBehaviour
       
     }
 
+    IEnumerator CallFadeInCoroutine()
+    {
+        FadeWhite.gameObject.SetActive(true);
 
+        Vector3 initialSize = Vector3.zero;
+        Vector3 finalSize =  new Vector3 (70f, 70f, 70f);
 
+        float t = Time.time;
+        while (Time.time <= t + 0.1f)
+        {
+            FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate(Time.time - t));
+            yield return null;
+        }
+        FadeWhite.localScale = finalSize;
+        StartCoroutine(CallfadeOutCoroutine());
+    }
+    IEnumerator CallfadeOutCoroutine()
+    {
+        FadeWhite.gameObject.SetActive(true);
+
+        Vector3 initialSize = new Vector3(70f, 70f, 70f);
+        Vector3 finalSize = Vector3.zero;
+
+        float t = Time.time;
+        while (Time.time <= t + 0.1f)
+        {
+            FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate(Time.time - t));
+            yield return null;
+        }
+        FadeWhite.localScale = finalSize;
+    }
 }
