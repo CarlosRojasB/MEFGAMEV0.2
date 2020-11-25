@@ -26,12 +26,19 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
 
 
-    [Header("Fonndo Objects", order = 4)]
+    [Header("Fondo Objects", order = 4)]
     [SerializeField]
     RectTransform imgFondo;
     [SerializeField]
     AudioSource audSourceFondo;
     bool Activesoundfondo = false;
+
+
+    [Header("HumminButter", order = 5)]
+    [SerializeField]
+    RectTransform FadeWhite;
+    [SerializeField]
+    ParticleSystem parSysHumminButter;
 
     #endregion
 
@@ -70,6 +77,12 @@ public class ActiveButtonForTrivia : MonoBehaviour
         else Activesoundfondo = false;
 
         ActiveFondoSound();
+
+
+
+        //ActiveHumminButter
+        /*if(Physics.Raycast(ray,out hit,float.MaxValue,TriviaLayer))*/
+
     }
 
 
@@ -97,5 +110,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
         }
       
     }
+
+
 
 }

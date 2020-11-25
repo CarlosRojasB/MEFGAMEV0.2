@@ -22,6 +22,7 @@ public class ManagerScene : MonoBehaviour
     public void GoToTravelToAlphaCetiGame()
     {
         SceneManager.LoadScene("Travel To Alpha Ceti Game", LoadSceneMode.Single);
+
     }
 
     public void GoToLose()
@@ -35,7 +36,7 @@ public class ManagerScene : MonoBehaviour
     }
     IEnumerator WaitToDesapearWelcome()
     {
-        yield return new WaitForSeconds(22f);
+        yield return new WaitForSeconds(18f);
         GoToAr();
 
     }
