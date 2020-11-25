@@ -39,15 +39,40 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [SerializeField]
     RectTransform FadeWhite;
     [SerializeField]
-    ParticleSystem parSysHumminButter;
-    [SerializeField]
     AnimationCurve curveFade;
+
+    [SerializeField]
+    ParticleSystem parSysLeaf1;
+    [SerializeField]
+    ParticleSystem parSysLeaf2;
+    [SerializeField]
+    ParticleSystem smokeTwister;
+
+    ParticleSystem.MainModule mainLeaf1;
+    ParticleSystem.MainModule mainLeaf2;
+    ParticleSystem.MainModule mainsmokeTwister;
+
+    ParticleSystemShapeType shapeTypeleaf1;
+    [SerializeField]
+    AnimationCurve curveApearPartycles;
+
+    
+    bool IsActiveFade=false;
 
     #endregion
 
     private void Start()
     {
         mycamera = Camera.main;
+
+
+        parSysLeaf1.GetComponent<ParticleSystem>();
+
+
+        mainLeaf1 = parSysLeaf1.main;
+        mainLeaf2 = parSysLeaf2.main;
+        mainsmokeTwister = smokeTwister.main;
+
     }
 
     private void Update()
@@ -84,7 +109,11 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
 
         //ActiveHumminButter
-        if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter)) StartCoroutine(CallFadeInCoroutine());
+        if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter)) 
+        {
+           // StartCoroutine(CallFadeInCoroutine());
+            print("Entro a Hummin");
+        }
 
     }
 
@@ -114,21 +143,52 @@ public class ActiveButtonForTrivia : MonoBehaviour
       
     }
 
-    IEnumerator CallFadeInCoroutine()
-    {
-        FadeWhite.gameObject.SetActive(true);
+    void CurveAnimationForHummin()
+    {        
+        parSysLeaf1.Play();
+        parSysLeaf2.Play();
+        smokeTwister.Play();     
+       
+        
+    }
 
-        Vector3 initialSize = Vector3.zero;
-        Vector3 finalSize =  new Vector3 (70f, 70f, 70f);
+    /*IEnumerator CrecerHojasCoroutine(ParticleSystem _ParticleSystem,float initialLengthShape,float finalLengthShape,float timeToIncreace)
+    {
+        shapeTypeleaf1
+        
+        _ParticleSystem.Play();
+        float tmpinitial = initialLengthShape;
+        float tmpfinal = finalLengthShape;
+
 
         float t = Time.time;
-        while (Time.time <= t + 0.1f)
+        while (Time.time <= t + timeToIncreace)
         {
-            FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate(Time.time - t));
-            yield return null;
+           
         }
-        FadeWhite.localScale = finalSize;
-        StartCoroutine(CallfadeOutCoroutine());
+
+
+    }*/
+    IEnumerator CallFadeInCoroutine()
+    {
+        if (!IsActiveFade)
+        {
+            FadeWhite.gameObject.SetActive(true);
+
+            Vector3 initialSize = Vector3.zero;
+            Vector3 finalSize = new Vector3(70f, 70f, 70f);
+
+            float t = Time.time;
+            while (Time.time <= t + 0.1f)
+            {
+                FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate(Time.time - t));
+                yield return null;
+            }
+            FadeWhite.localScale = finalSize;
+
+            StartCoroutine(CallfadeOutCoroutine());
+            IsActiveFade = true;
+        }
     }
     IEnumerator CallfadeOutCoroutine()
     {
@@ -144,5 +204,6 @@ public class ActiveButtonForTrivia : MonoBehaviour
             yield return null;
         }
         FadeWhite.localScale = finalSize;
+        IsActiveFade = false;
     }
 }
