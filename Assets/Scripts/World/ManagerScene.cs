@@ -5,9 +5,13 @@ using System.Collections;
 
 public class ManagerScene : MonoBehaviour
 {
+    #region Information
+    Singleton<ManagerScene> sceneManager;
+    #endregion
+
     private void Awake()
     {
-        new Singleton<ManagerScene>(this);
+        sceneManager = new Singleton<ManagerScene>(this);
     }
     private void Start()
     {

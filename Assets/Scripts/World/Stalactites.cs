@@ -2,6 +2,8 @@
 
 public class Stalactites : TPool
 {
+    Singleton<Stalactites> stalactites;
+
     #region Components
     [Header("Components")]
     [SerializeField] public Transform player;
@@ -12,7 +14,7 @@ public class Stalactites : TPool
     {
         base.Awake();
 
-        new Singleton<Stalactites>(this);
+        stalactites = new Singleton<Stalactites>(this);
 
         for (int i = 0; i < transform.childCount; i++)
             transform.GetChild(i).gameObject.GetComponent<Stalactita>().particlesManager = particlesmanager;

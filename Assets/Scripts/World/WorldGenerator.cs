@@ -12,7 +12,7 @@ public class WorldGenerator : MonoBehaviour
     public int chunkToSpawn = 8;
     Vector3 spawnPosition;
 
-    float linearChunkPercentage = 80;
+    float linearChunkPercentage = 80f;
 
     void OnEnable()
     {
@@ -83,7 +83,7 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (Random.Range(0, 101) <= linearChunkPercentage)
                 {
-                    linearChunkPercentage -= (70f / 3f);
+                    linearChunkPercentage -= 20f;
 
                     nextChunk = allowedChunkList[i];
 
@@ -96,7 +96,7 @@ public class WorldGenerator : MonoBehaviour
 
         if (!souhtNorthChucnk)
         {
-            linearChunkPercentage = 70;
+            linearChunkPercentage = 80f;
 
             nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
         }

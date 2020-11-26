@@ -26,7 +26,7 @@ public class TPool : MonoBehaviour
     {
         for (int i = 0; i < amountPool; i++)
         {
-            if (!pooledObjects[i].activeInHierarchy)
+            if (!pooledObjects[i].activeSelf)
                 return pooledObjects[i];
         }
 

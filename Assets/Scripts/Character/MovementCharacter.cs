@@ -108,7 +108,7 @@ public class MovementCharacter : MonoBehaviour
 
     void HorizontalMove()
     {
-        #if UNITY_EDITOR
+ #if UNITY_EDITOR
         {
             if (Input.touches.Length > 0)
             {
@@ -131,7 +131,7 @@ public class MovementCharacter : MonoBehaviour
                 }
             }
         }
-        #else
+#else
         {
             Vector3 filteredAccelValue = filterAccelValue(true);
 
@@ -139,19 +139,19 @@ public class MovementCharacter : MonoBehaviour
             if (filteredAccelValue.x <= 0)
             {
                 if (model.localPosition.x >= 0)
-                    model.localPosition += -Vector3.right * speed * Time.deltaTime;
+                    model.localPosition += -Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;
                 else
-                    model.localPosition += (-Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                    model.localPosition += (-Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
             else if (filteredAccelValue.x > 0)
             {
                 if (model.localPosition.x <= 0)
-                    model.localPosition += Vector3.right * speed * Time.deltaTime;
+                    model.localPosition += Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;
                 else
-                    model.localPosition += (Vector3.right * speed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                    model.localPosition += (Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
             }
         }
-    #endif
+#endif
     }
 
     public void StopMove(System.Action outputMethod = null)

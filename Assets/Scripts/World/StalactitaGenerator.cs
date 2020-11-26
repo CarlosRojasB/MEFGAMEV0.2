@@ -45,24 +45,26 @@ public class StalactitaGenerator : MonoBehaviour
         foreach (Transform point in pointToSpawn)
             points.Add(point.position);
 
-        for (int i = 0; i < pointToSpawn.Length - ((pointToSpawn.Length - level >= 0) ? (pointToSpawn.Length - level ) : 0); i++)
+        for (int i = 0; i < pointToSpawn.Length - ((pointToSpawn.Length - level >= 0) ? (pointToSpawn.Length - level) : 0); i++)
         {
-            int index = Random.Range(0, points.Count);
-
-            Vector3 point = points[index];
-
-            points.RemoveAt(index);
-
             GameObject stalactita = Singleton<Stalactites>.instance.GetPooleObject();
 
             if (stalactita != null)
             {
+                int index = Random.Range(0, points.Count);
+
+                Vector3 point = points[index];
+
+                points.RemoveAt(index);
+
                 stalactites.Add(stalactita.GetComponent<Stalactita>());
 
                 stalactita.transform.position = point;
 
                 stalactita.SetActive(true);
             }
+
+            Debug.Log("Estalactita no enocntrada");
         }
     }
 }
