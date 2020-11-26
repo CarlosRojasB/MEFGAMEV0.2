@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Video;
 
 public class ActiveButtonForTrivia : MonoBehaviour
 {
     #region Information   
     [Header("Collision objects", order = 0)]
     [SerializeField] Camera mycamera;
-    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter;
+    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter,Letras;
 
     Ray ray;
     RaycastHit hit;
@@ -59,20 +60,34 @@ public class ActiveButtonForTrivia : MonoBehaviour
     
     bool IsActiveFade=false;
 
+    [Header("letrasWelcome", order = 6)]
+    [SerializeField]
+    GameObject letrasObj;
+    [SerializeField]
+    GameObject videoPlayer;
+    [SerializeField]
+    AnimationCurve curveToApearLetters;
+    bool IsActiveLetter=false;
+    VideoPlayer _videoPlayer;
+    float CounterLettras;
     #endregion
 
     private void Start()
     {
+        _videoPlayer = videoPlayer.GetComponent<VideoPlayer>();
+        _videoPlayer.playOnAwake = false;
+
+
         mycamera = Camera.main;
 
 
-        parSysLeaf1.GetComponent<ParticleSystem>();
+       /* parSysLeaf1.GetComponent<ParticleSystem>();
 
 
         mainLeaf1 = parSysLeaf1.main;
         mainLeaf2 = parSysLeaf2.main;
         mainsmokeTwister = smokeTwister.main;
-
+*/
     }
 
     private void Update()
@@ -115,6 +130,12 @@ public class ActiveButtonForTrivia : MonoBehaviour
             print("Entro a Hummin");
         }
 
+        //Active videoLetters
+        if (Physics.Raycast(ray, out hit, float.MaxValue, Letras)) IsActiveLetter = true;
+        else IsActiveLetter = false;
+        ActiveLetters();
+
+
     }
 
 
@@ -142,12 +163,23 @@ public class ActiveButtonForTrivia : MonoBehaviour
         }
       
     }
+    void ActiveLetters()
+    {
+        if (IsActiveLetter && !_videoPlayer.isPlaying)
+        {
+            _videoPlayer.Play();
+            CounterLettras += Time.deltaTime;
 
+        }
+        else if (!IsActiveLetter && _videoPlayer.isPlaying) _videoPlayer.Stop();
+            
+        
+    }
     void CurveAnimationForHummin()
     {        
-        parSysLeaf1.Play();
+      /*  parSysLeaf1.Play();
         parSysLeaf2.Play();
-        smokeTwister.Play();     
+        smokeTwister.Play();     */
        
         
     }
@@ -206,4 +238,20 @@ public class ActiveButtonForTrivia : MonoBehaviour
         FadeWhite.localScale = finalSize;
         IsActiveFade = false;
     }
+    IEnumerator CallLetters3D()
+    {
+        letrasObj.SetActive(true);
+
+        Vector3 initialPosition = new Vector3(0f, 0f, 0f);
+        Vector3 finalPosition = new Vector3(0f, 0f, 0.22f);
+
+        float t = Time.time;
+        while (Time.time <= t + 0.1f)
+        {
+            letrasObj.transform.localPosition = initialPosition - ((finalPosition + initialPosition) * curveToApearLetters.Evaluate(Time.time - t));
+            yield return null;
+        }
+        letrasObj.transform.localPosition = finalPosition;
+    }
+
 }
