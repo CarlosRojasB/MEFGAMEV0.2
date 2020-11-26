@@ -331,6 +331,7 @@ MonoBehaviour:
   objectsToPool:
   - {fileID: 8970175774052868976, guid: 000238f01b5859b4aa6871f2435ba3a8, type: 3}
   - {fileID: 8970175774052868976, guid: 110cf45a1f9c0e2488af2d3cc7313d0d, type: 3}
+  - {fileID: 3366598273574653435, guid: 2276de25171c3a04b814e6ba3f2e9f93, type: 3}
   amountPool: 150
   player: {fileID: 1929398202}
   particlesmanager: {fileID: 332947961}

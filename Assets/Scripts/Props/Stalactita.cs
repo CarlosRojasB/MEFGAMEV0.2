@@ -18,9 +18,25 @@ public class Stalactita : MonoBehaviour
     [Header("Components")]
     [SerializeField]
     Rigidbody rbStalactita;
+    Vector3 localMiddlePosition;
+    [SerializeField]
+    Rigidbody anotherRbStalactita;
+    Vector3 anotherLocalMiddlePosition;
+    Vector3 localMiddleAngle;
     [HideInInspector]
     public ParticlesManager particlesManager;
     #endregion
+
+    private void Awake()
+    {
+        localMiddlePosition = rbStalactita.gameObject.transform.localPosition;
+
+        if (anotherRbStalactita != null)
+        {
+            anotherLocalMiddlePosition = anotherRbStalactita.gameObject.transform.localPosition;
+            localMiddleAngle = anotherRbStalactita.gameObject.transform.localEulerAngles;
+        }
+    }
 
     private void OnEnable()
     {
@@ -47,7 +63,18 @@ public class Stalactita : MonoBehaviour
 
         rbStalactita.velocity = Vector3.zero;
 
-        rbStalactita.transform.localPosition = Vector3.zero;
+        rbStalactita.transform.localPosition = localMiddlePosition;
+
+        if (anotherRbStalactita != null)
+        {
+            anotherRbStalactita.useGravity = false;
+
+            anotherRbStalactita.velocity = Vector3.zero;
+
+            anotherRbStalactita.transform.localPosition = anotherLocalMiddlePosition;
+
+            anotherRbStalactita.transform.localEulerAngles = localMiddleAngle;
+        }
     }
 
     IEnumerator WaitToShot()
@@ -87,6 +114,15 @@ public class Stalactita : MonoBehaviour
             StalactitaGenerator.level = ((int)movementCharacter.Pspeed) / 10;
 
             rbStalactita.velocity = Vector3.zero;
+
+            if (anotherRbStalactita != null)
+            {
+                anotherRbStalactita.useGravity = true;
+
+                anotherRbStalactita.AddRelativeForce((transform.position - Singleton<Stalactites>.instance.player.gameObject.transform.position).normalized * 35f, ForceMode.Impulse);
+
+                anotherRbStalactita.AddRelativeTorque(new Vector3(Random.Range(-50f, 50f), Random.Range(-50f, 50f), Random.Range(-50f, 50f)), ForceMode.Impulse);
+            }
 
             StartCoroutine(GetVelocity(-9.81f * gravityScale * Vector3.up));
         }

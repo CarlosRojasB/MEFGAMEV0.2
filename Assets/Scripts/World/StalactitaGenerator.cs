@@ -16,6 +16,9 @@ public class StalactitaGenerator : MonoBehaviour
         get { return stalactites; }
     }
 
+    [SerializeField]
+    Transform[] bigStalactites;
+
     #region Components
     [Header("Components")]
     [SerializeField]
@@ -63,8 +66,16 @@ public class StalactitaGenerator : MonoBehaviour
 
                 stalactita.SetActive(true);
             }
+            else
+                Debug.Log("Estalactita no encontrada");
+        }
 
-            Debug.Log("Estalactita no enocntrada");
+        for (int i = 0; i < bigStalactites.Length; i++)
+        {
+            if (Random.Range(0, 2) == 1)
+                bigStalactites[i].gameObject.SetActive(true);
+            else
+                bigStalactites[i].gameObject.SetActive(false);
         }
     }
 }
