@@ -50,7 +50,7 @@ public class StalactitaGenerator : MonoBehaviour
 
         for (int i = 0; i < pointToSpawn.Length - ((pointToSpawn.Length - level >= 0) ? (pointToSpawn.Length - level) : 0); i++)
         {
-            GameObject stalactita = Singleton<Stalactites>.instance.GetPooleObject();
+            GameObject stalactita = Stalactites.instance.GetPooleObject();
 
             if (stalactita != null)
             {

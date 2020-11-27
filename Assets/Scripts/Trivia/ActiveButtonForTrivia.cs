@@ -4,38 +4,43 @@ using UnityEngine.Video;
 
 public class ActiveButtonForTrivia : MonoBehaviour
 {
-    #region Information   
+    #region Information
+
+    #region Collision Objects
     [Header("Collision objects", order = 0)]
     [SerializeField] Camera mycamera;
-    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter,Letras;
+    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter, Letras;
 
     Ray ray;
     RaycastHit hit;
     bool posibleActive = true;
-
+    #endregion
     [Space(order = 1)]
-
+    #region Trivia
     [Header("Trivia objects", order = 2)]
     [SerializeField] Transform btnForTrivia;
     [SerializeField] GameObject Trivia;
+    #endregion
 
+    #region Nhymphas
     [Header("Nhymphas objects", order = 3)]
     [SerializeField]
     AudioSource audSourceNhymps;
     [SerializeField]
     AnimationCurve curveNhymphs;
     bool ActiveSound = false;
-    
+    #endregion
 
-
+    #region FondoObjects
     [Header("Fondo Objects", order = 4)]
     [SerializeField]
     RectTransform imgFondo;
     [SerializeField]
     AudioSource audSourceFondo;
     bool Activesoundfondo = false;
+    #endregion
 
-
+    #region HumminButter
     [Header("HumminButter", order = 5)]
     [SerializeField]
     RectTransform FadeWhite;
@@ -48,46 +53,48 @@ public class ActiveButtonForTrivia : MonoBehaviour
     ParticleSystem parSysLeaf2;
     [SerializeField]
     ParticleSystem smokeTwister;
-
-    ParticleSystem.MainModule mainLeaf1;
-    ParticleSystem.MainModule mainLeaf2;
-    ParticleSystem.MainModule mainsmokeTwister;
-
-    ParticleSystemShapeType shapeTypeleaf1;
     [SerializeField]
     AnimationCurve curveApearPartycles;
 
-    
-    bool IsActiveFade=false;
+    [SerializeField]
+    GameObject HumminBird, HumminHumanoid;
 
+
+    float CounterFadeHumminButter;
+    bool IsActiveFade = false;
+    bool IsActiveEffecToIncreace = false;
+
+    #endregion
+
+    #region LetrasWelcome
     [Header("letrasWelcome", order = 6)]
     [SerializeField]
     GameObject letrasObj;
     [SerializeField]
-    GameObject videoPlayer;
+    GameObject videoPlayer, videoPlayerLoopS;
     [SerializeField]
     AnimationCurve curveToApearLetters;
-    bool IsActiveLetter=false;
-    VideoPlayer _videoPlayer;
+    [SerializeField]
+    RectTransform lettersInitial, lettersloop;
+
+    bool IsActiveLetter = false;
+    bool IsActive3DLetters = false;
+    VideoPlayer _videoPlayer, _videoPlayerloop;
     float CounterLettras;
+    float counterToLoop;
+
+    #endregion
+
     #endregion
 
     private void Start()
     {
         _videoPlayer = videoPlayer.GetComponent<VideoPlayer>();
         _videoPlayer.playOnAwake = false;
-
+        _videoPlayerloop = videoPlayer.GetComponent<VideoPlayer>();
+        _videoPlayerloop.playOnAwake = false;
 
         mycamera = Camera.main;
-
-
-       /* parSysLeaf1.GetComponent<ParticleSystem>();
-
-
-        mainLeaf1 = parSysLeaf1.main;
-        mainLeaf2 = parSysLeaf2.main;
-        mainsmokeTwister = smokeTwister.main;
-*/
     }
 
     private void Update()
@@ -124,21 +131,53 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
 
         //ActiveHumminButter
-        if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter)) 
+        if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter))
         {
-           // StartCoroutine(CallFadeInCoroutine());
-            print("Entro a Hummin");
+            CounterFadeHumminButter += Time.deltaTime;
+            IsActiveFade = true;
+            IsActiveEffecToIncreace = true;
         }
+        else
+        {
+            HumminBird.SetActive(true);
+            HumminHumanoid.SetActive(false);
+            FadeWhite.gameObject.SetActive(false);
+            CounterFadeHumminButter = 0f;
+            IsActiveFade = false;
+            IsActiveEffecToIncreace = false;
+        }
+        if (CounterFadeHumminButter >= 8f)
+        {
+
+            StartCoroutine(CallFadeInCoroutine());
+            ActiveHumanoidModel();
+        }
+        managerEffectsHumminButter();
 
         //Active videoLetters
-        if (Physics.Raycast(ray, out hit, float.MaxValue, Letras)) IsActiveLetter = true;
-        else IsActiveLetter = false;
+        if (Physics.Raycast(ray, out hit, float.MaxValue, Letras))
+        {
+            CounterLettras += Time.deltaTime;
+            counterToLoop += Time.deltaTime;
+            IsActiveLetter = true;
+        }
+        else
+        {
+            letrasObj.SetActive(false);
+            letrasObj.transform.position = Vector3.zero;
+            IsActiveLetter = false;
+            IsActive3DLetters = false;
+            CounterLettras = 0f;
+            CounterLettras = 0f;
+        }
         ActiveLetters();
-
-
+        if (CounterLettras >= 14f && !IsActive3DLetters) StartCoroutine(CallLetters3D());
+        if (CounterLettras >= 18f) CallLoopVideo();
     }
 
-
+    /// <summary>
+    /// Trivia Logic
+    /// </summary>
     public void GoToTrivia()
     {
         posibleActive = false;
@@ -147,11 +186,18 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// NhymphasLogic 
+    /// </summary>
     void ActiveAudioNhymphas()
     {
         if (ActiveSound && !audSourceNhymps.isPlaying) audSourceNhymps.Play();
         else if (!ActiveSound && audSourceNhymps.isPlaying) audSourceNhymps.Stop();
     }
+
+    /// <summary>
+    /// sound backGround logic
+    /// </summary>
     void ActiveFondoSound()
     {
         if (Activesoundfondo && !audSourceFondo.isPlaying) audSourceFondo.Play();
@@ -159,51 +205,94 @@ public class ActiveButtonForTrivia : MonoBehaviour
         {
             imgFondo.gameObject.SetActive(false);
             audSourceFondo.Stop();
-
         }
-      
+
     }
+
+    /// <summary>
+    /// Welcom images and letters3D
+    /// </summary>
     void ActiveLetters()
     {
         if (IsActiveLetter && !_videoPlayer.isPlaying)
         {
+            lettersInitial.gameObject.SetActive(true);
+            lettersloop.gameObject.SetActive(false);
             _videoPlayer.Play();
-            CounterLettras += Time.deltaTime;
+
 
         }
-        else if (!IsActiveLetter && _videoPlayer.isPlaying) _videoPlayer.Stop();
-            
-        
-    }
-    void CurveAnimationForHummin()
-    {        
-      /*  parSysLeaf1.Play();
-        parSysLeaf2.Play();
-        smokeTwister.Play();     */
-       
-        
-    }
+        else if (!IsActiveLetter && _videoPlayer.isPlaying)
+        {
+            lettersInitial.gameObject.SetActive(true);
+            lettersloop.gameObject.SetActive(false);
+            CounterLettras = 0;
+            _videoPlayer.Stop();
+        }
 
-    /*IEnumerator CrecerHojasCoroutine(ParticleSystem _ParticleSystem,float initialLengthShape,float finalLengthShape,float timeToIncreace)
+    }
+    IEnumerator CallLetters3D()
     {
-        shapeTypeleaf1
-        
-        _ParticleSystem.Play();
-        float tmpinitial = initialLengthShape;
-        float tmpfinal = finalLengthShape;
+        letrasObj.SetActive(true);
 
+        Vector3 initialPosition = new Vector3(0f, 0f, 0f);
+        Vector3 finalPosition = new Vector3(0f, 0.438f, 0f);
 
         float t = Time.time;
-        while (Time.time <= t + timeToIncreace)
+        while (Time.time <= t + 3f)
         {
-           
+            letrasObj.transform.localPosition = initialPosition + ((finalPosition + initialPosition) * curveToApearLetters.Evaluate((Time.time - t) / 3f));
+            yield return null;
         }
+        letrasObj.transform.localPosition = finalPosition;
+        IsActive3DLetters = true;
+    }
+    void CallLoopVideo()
+    {
+        lettersInitial.gameObject.SetActive(false);
+        lettersloop.gameObject.SetActive(true);
 
+        _videoPlayerloop.Play();
+        _videoPlayer.Stop();
+    }
 
-    }*/
+    /// <summary>
+    /// Humminbutter logic
+    /// </summary> 
+    void managerEffectsHumminButter()
+    {
+
+        StartCoroutine(CrecerHojasCoroutine(parSysLeaf1, 0.1f, 27.52f, 5f));
+        StartCoroutine(CrecerHojasCoroutine(parSysLeaf2, 0.1f, 20.63f, 5f));
+        StartCoroutine(CrecerHojasCoroutine(smokeTwister, 0.1f, 23.05f, 5f));
+    }
+    IEnumerator CrecerHojasCoroutine(ParticleSystem _ParticleSystem, float initialLengthShape, float finalLengthShape, float timeToIncreace)
+    {
+        var shapeParticles = _ParticleSystem.shape;
+        if (IsActiveEffecToIncreace && !_ParticleSystem.isPlaying)
+        {
+            _ParticleSystem.Play();
+
+            print(_ParticleSystem.name);
+
+            float t = Time.time;
+            while (Time.time <= t + timeToIncreace)
+            {
+                shapeParticles.length = initialLengthShape + ((finalLengthShape + initialLengthShape) * curveApearPartycles.Evaluate((Time.time - timeToIncreace) / timeToIncreace));
+                yield return null;
+            }
+            shapeParticles.length = finalLengthShape;
+        }
+        else if (!IsActiveEffecToIncreace && _ParticleSystem.isPlaying)
+        {
+            print("Entro Al else");
+            shapeParticles.length = 0.1f;
+            _ParticleSystem.Stop();
+        }
+    }
     IEnumerator CallFadeInCoroutine()
     {
-        if (!IsActiveFade)
+        if (IsActiveFade)
         {
             FadeWhite.gameObject.SetActive(true);
 
@@ -213,18 +302,18 @@ public class ActiveButtonForTrivia : MonoBehaviour
             float t = Time.time;
             while (Time.time <= t + 0.1f)
             {
-                FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate(Time.time - t));
+                FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate((Time.time - t) / 0.1f));
                 yield return null;
             }
             FadeWhite.localScale = finalSize;
 
             StartCoroutine(CallfadeOutCoroutine());
-            IsActiveFade = true;
+
         }
+
     }
     IEnumerator CallfadeOutCoroutine()
     {
-        FadeWhite.gameObject.SetActive(true);
 
         Vector3 initialSize = new Vector3(70f, 70f, 70f);
         Vector3 finalSize = Vector3.zero;
@@ -232,26 +321,22 @@ public class ActiveButtonForTrivia : MonoBehaviour
         float t = Time.time;
         while (Time.time <= t + 0.1f)
         {
-            FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate(Time.time - t));
+            FadeWhite.localScale = initialSize - ((finalSize + initialSize) * curveFade.Evaluate((Time.time - t) / 0.1f));
+            FadeWhite.gameObject.SetActive(false);
             yield return null;
         }
         FadeWhite.localScale = finalSize;
-        IsActiveFade = false;
+
     }
-    IEnumerator CallLetters3D()
+
+    void ActiveHumanoidModel()
     {
-        letrasObj.SetActive(true);
-
-        Vector3 initialPosition = new Vector3(0f, 0f, 0f);
-        Vector3 finalPosition = new Vector3(0f, 0f, 0.22f);
-
-        float t = Time.time;
-        while (Time.time <= t + 0.1f)
+        if (IsActiveFade)
         {
-            letrasObj.transform.localPosition = initialPosition - ((finalPosition + initialPosition) * curveToApearLetters.Evaluate(Time.time - t));
-            yield return null;
+            HumminBird.SetActive(false);
+            HumminHumanoid.SetActive(true);
         }
-        letrasObj.transform.localPosition = finalPosition;
+
     }
 
 }

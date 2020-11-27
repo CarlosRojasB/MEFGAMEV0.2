@@ -2,7 +2,7 @@
 
 public class Stalactites : TPool
 {
-    Singleton<Stalactites> stalactites;
+    public static Stalactites instance;
 
     #region Components
     [Header("Components")]
@@ -14,7 +14,7 @@ public class Stalactites : TPool
     {
         base.Awake();
 
-        stalactites = new Singleton<Stalactites>(this);
+        instance = this;
 
         for (int i = 0; i < transform.childCount; i++)
             transform.GetChild(i).gameObject.GetComponent<Stalactita>().particlesManager = particlesmanager;

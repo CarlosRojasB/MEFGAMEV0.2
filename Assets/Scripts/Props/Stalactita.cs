@@ -79,11 +79,11 @@ public class Stalactita : MonoBehaviour
 
     IEnumerator WaitToShot()
     {
-        if (Singleton<Stalactites>.instance != null)
+        if (Stalactites.instance != null)
         {
-            while (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) >= 41f)
+            while (Vector3.Distance(Stalactites.instance.player.position, transform.position) >= 41f)
             {
-                if (Vector3.Distance(Singleton<Stalactites>.instance.player.position, transform.position) <= 80f)
+                if (Vector3.Distance(Stalactites.instance.player.position, transform.position) <= 80f)
                 {
                     if (!shot)
                     {
@@ -105,9 +105,9 @@ public class Stalactita : MonoBehaviour
 
     void Shot()
     {
-        if (Singleton<Stalactites>.instance != null)
+        if (Stalactites.instance != null)
         {
-            MovementCharacter movementCharacter = Singleton<Stalactites>.instance.player.gameObject.GetComponent<MovementCharacter>();
+            MovementCharacter movementCharacter = Stalactites.instance.player.gameObject.GetComponent<MovementCharacter>();
 
             gravityScale = ((46f / 75f) * (movementCharacter.Pspeed - 25f)) + 2f;
 
@@ -119,7 +119,7 @@ public class Stalactita : MonoBehaviour
             {
                 anotherRbStalactita.useGravity = true;
 
-                anotherRbStalactita.AddRelativeForce((transform.position - Singleton<Stalactites>.instance.player.gameObject.transform.position).normalized * 35f, ForceMode.Impulse);
+                anotherRbStalactita.AddRelativeForce((transform.position - Stalactites.instance.player.gameObject.transform.position).normalized * 35f, ForceMode.Impulse);
 
                 anotherRbStalactita.AddRelativeTorque(new Vector3(Random.Range(-50f, 50f), Random.Range(-50f, 50f), Random.Range(-50f, 50f)), ForceMode.Impulse);
             }
