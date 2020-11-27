@@ -71,15 +71,15 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [SerializeField]
     GameObject letrasObj;
     [SerializeField]
-    GameObject videoPlayer, videoPlayerLoopS;
+    GameObject videoPlayer;
     [SerializeField]
     AnimationCurve curveToApearLetters;
     [SerializeField]
-    RectTransform lettersInitial, lettersloop;
+    RectTransform lettersInitial, lettersStaticImage;
 
     bool IsActiveLetter = false;
     bool IsActive3DLetters = false;
-    VideoPlayer _videoPlayer, _videoPlayerloop;
+    VideoPlayer _videoPlayer;
     float CounterLettras;
     float counterToLoop;
 
@@ -91,9 +91,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     {
         _videoPlayer = videoPlayer.GetComponent<VideoPlayer>();
         _videoPlayer.playOnAwake = false;
-        _videoPlayerloop = videoPlayer.GetComponent<VideoPlayer>();
-        _videoPlayerloop.playOnAwake = false;
-
+        
         mycamera = Camera.main;
     }
 
@@ -163,16 +161,23 @@ public class ActiveButtonForTrivia : MonoBehaviour
         }
         else
         {
+            _videoPlayer.gameObject.SetActive(true);
+            lettersStaticImage.gameObject.SetActive(false);
             letrasObj.SetActive(false);
             letrasObj.transform.position = Vector3.zero;
             IsActiveLetter = false;
             IsActive3DLetters = false;
+           
             CounterLettras = 0f;
-            CounterLettras = 0f;
+            counterToLoop = 0f;
         }
         ActiveLetters();
         if (CounterLettras >= 14f && !IsActive3DLetters) StartCoroutine(CallLetters3D());
-        if (CounterLettras >= 18f) CallLoopVideo();
+        if (CounterLettras >= 18f)
+        {
+            _videoPlayer.Stop();
+            CallLoopVideo();
+        }
     }
 
     /// <summary>
@@ -217,15 +222,11 @@ public class ActiveButtonForTrivia : MonoBehaviour
         if (IsActiveLetter && !_videoPlayer.isPlaying)
         {
             lettersInitial.gameObject.SetActive(true);
-            lettersloop.gameObject.SetActive(false);
+            lettersStaticImage.gameObject.SetActive(false);
             _videoPlayer.Play();
-
-
         }
         else if (!IsActiveLetter && _videoPlayer.isPlaying)
-        {
-            lettersInitial.gameObject.SetActive(true);
-            lettersloop.gameObject.SetActive(false);
+        {           
             CounterLettras = 0;
             _videoPlayer.Stop();
         }
@@ -249,11 +250,10 @@ public class ActiveButtonForTrivia : MonoBehaviour
     }
     void CallLoopVideo()
     {
-        lettersInitial.gameObject.SetActive(false);
-        lettersloop.gameObject.SetActive(true);
-
-        _videoPlayerloop.Play();
         _videoPlayer.Stop();
+        _videoPlayer.gameObject.SetActive(false);
+         lettersInitial.gameObject.SetActive(false);        
+         lettersStaticImage.gameObject.SetActive(true);         
     }
 
     /// <summary>
