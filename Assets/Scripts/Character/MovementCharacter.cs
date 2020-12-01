@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MovementCharacter : MonoBehaviour
 {
-    #pragma warning disable CS0649
+#pragma warning disable CS0649
 
     #region Information
     bool move;
@@ -26,6 +26,11 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField] Transform chunks;
     PathCreator pathCreator;
     Vector3 lowPassValue;
+
+    [SerializeField]
+    float velRotation;
+    Coroutine rotateCoroutine;
+    Coroutine recoveryCorotuine;
     #endregion
 
     #region Events
@@ -40,6 +45,7 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField] Transform model;
     [SerializeField] ParticleSystem speedParticles;
     Rigidbody rbPlayer;
+    [SerializeField] TMPro.TextMeshProUGUI debug;
     #endregion
 
     private void Start()
@@ -96,7 +102,7 @@ public class MovementCharacter : MonoBehaviour
             pathCreator = chunks.GetChild(pathCreator.gameObject.transform.parent.GetSiblingIndex() + 1).GetChild(0).gameObject.GetComponent<PathCreator>();
         }
         else
-            distance += ((speed * speedscale)* Time.deltaTime);
+            distance += ((speed * speedscale) * Time.deltaTime);
 
         finalPosition = pathCreator.path.GetPointAtDistance(distance);
 
@@ -108,7 +114,7 @@ public class MovementCharacter : MonoBehaviour
 
     void HorizontalMove()
     {
- #if UNITY_EDITOR
+#if UNITY_EDITOR
         {
             if (Input.touches.Length > 0)
             {
@@ -121,6 +127,21 @@ public class MovementCharacter : MonoBehaviour
                         model.localPosition += -Vector3.right * initialSpeed * Time.deltaTime;
                     else
                         model.localPosition += (-Vector3.right * initialSpeed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+
+                    if (rotateCoroutine == null)
+                    {
+                        if (recoveryCorotuine != null)
+                            StopCoroutine(recoveryCorotuine);
+
+                        rotateCoroutine = StartCoroutine(RotateCoroutine(1));
+                    }
+                    else
+                    {
+                        StopCoroutine(rotateCoroutine);
+
+                        rotateCoroutine = StartCoroutine(RotateCoroutine(1));
+                    }
+
                 }
                 else if (touch.position.x >= (Screen.width / 2f) + (0.1f * Screen.width))
                 {
@@ -128,6 +149,31 @@ public class MovementCharacter : MonoBehaviour
                         model.localPosition += Vector3.right * initialSpeed * Time.deltaTime;
                     else
                         model.localPosition += (Vector3.right * initialSpeed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+
+                    if (rotateCoroutine == null)
+                    {
+                        if (recoveryCorotuine != null)
+                            StopCoroutine(recoveryCorotuine);
+
+                        rotateCoroutine = StartCoroutine(RotateCoroutine(-1));
+                    }
+                    else
+                    {
+                        StopCoroutine(rotateCoroutine);
+
+                        rotateCoroutine = StartCoroutine(RotateCoroutine(-1));
+                    }
+                }
+            }
+            else
+            {
+                if (rotateCoroutine != null)
+                {
+                    StopCoroutine(rotateCoroutine);
+
+                    rotateCoroutine = null;
+
+                    recoveryCorotuine = StartCoroutine(RecoveryCoroutine());
                 }
             }
         }
@@ -135,20 +181,61 @@ public class MovementCharacter : MonoBehaviour
         {
             Vector3 filteredAccelValue = filterAccelValue(true);
 
+            debug.text = filteredAccelValue.x.ToString();
+
             // Movimiento
-            if (filteredAccelValue.x <= 0)
+            if (filteredAccelValue.x <= -0.1f)
             {
                 if (model.localPosition.x >= 0)
-                    model.localPosition += -Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;
+                    model.localPosition += -Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                   
                 else
                     model.localPosition += (-Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+
+                if (rotateCoroutine == null)
+                {
+                    if (recoveryCorotuine != null)
+                        StopCoroutine(recoveryCorotuine);
+
+                    rotateCoroutine = StartCoroutine(RotateCoroutine(1));
+                }
+                else
+                {
+                    StopCoroutine(rotateCoroutine);
+
+                    rotateCoroutine = StartCoroutine(RotateCoroutine(1));
+                }
             }
-            else if (filteredAccelValue.x > 0)
+            else if (filteredAccelValue.x > 0.1f)
             {
                 if (model.localPosition.x <= 0)
-                    model.localPosition += Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;
+                    model.localPosition += Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                                       
                 else
                     model.localPosition += (Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+
+                if (rotateCoroutine == null)
+                {
+                    if (recoveryCorotuine != null)
+                        StopCoroutine(recoveryCorotuine);
+
+                    rotateCoroutine = StartCoroutine(RotateCoroutine(-1));
+                }
+                else
+                {
+                    StopCoroutine(rotateCoroutine);
+
+                    rotateCoroutine = StartCoroutine(RotateCoroutine(-1));
+                }
+            }
+            else
+            {
+                if (rotateCoroutine != null)
+                {
+                    StopCoroutine(rotateCoroutine);
+
+                    rotateCoroutine = null;
+
+                    recoveryCorotuine = StartCoroutine(RecoveryCoroutine());
+                }
             }
         }
 #endif
@@ -166,13 +253,47 @@ public class MovementCharacter : MonoBehaviour
         while (speed >= 0)
         {
             ForwardMovement();
-
             speed -= 20 * Time.deltaTime;
-
             yield return null;
         }
 
         outputMethod?.Invoke();
+    }
+
+    IEnumerator RotateCoroutine(int sinse)
+    {
+        while (true)
+        {
+            Vector3 nextEuleAngle = model.localEulerAngles + Vector3.forward * sinse * velRotation * Time.deltaTime;
+
+            if (nextEuleAngle.z <= 15 || nextEuleAngle.z >= 345)
+                model.localEulerAngles = nextEuleAngle;
+
+            yield return null;
+        }
+    }
+
+    IEnumerator RecoveryCoroutine()
+    {
+        Vector3 initialEuleRotation = model.localEulerAngles;
+
+        Vector3 finalEulerRotation = new Vector3(0f, 0f, 360f);
+
+        Debug.Log(model.localEulerAngles)
+            ;
+        float t = Time.time;
+
+        while (Time.time < t + 0.5f)
+        {
+            if (model.localEulerAngles.z <= 180f)
+                model.localEulerAngles = initialEuleRotation - (initialEuleRotation * ((Time.time - t) / 0.5f));
+            else
+                model.localEulerAngles = initialEuleRotation + ((finalEulerRotation - initialEuleRotation) * ((Time.time - t) / 0.5f));
+
+            yield return null;
+        }
+
+        model.localEulerAngles = Vector3.zero;
     }
 
     Vector3 filterAccelValue(bool smooth)
@@ -185,7 +306,7 @@ public class MovementCharacter : MonoBehaviour
         return lowPassValue;
     }
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (model != null)
@@ -199,5 +320,5 @@ public class MovementCharacter : MonoBehaviour
             Gizmos.DrawSphere(model.position - (model.right * horizontalLimit), 0.5f);
         }
     }
-    #endif
+#endif
 }
