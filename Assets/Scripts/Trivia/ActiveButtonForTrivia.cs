@@ -9,7 +9,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     #region Collision Objects
     [Header("Collision objects", order = 0)]
     [SerializeField] Camera mycamera;
-    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter, Letras;
+    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter, Letras,ToGameMask;
 
     Ray ray;
     RaycastHit hit;
@@ -178,6 +178,14 @@ public class ActiveButtonForTrivia : MonoBehaviour
             _videoPlayer.Stop();
             CallLoopVideo();
         }
+
+
+        //ToGame
+        if(Physics.Raycast(ray,out hit,float.MaxValue, ToGameMask))
+        {
+            Singleton<ManagerScene>.instance.GoToTravelToAlphaCetiGame();
+        }
+            
     }
 
     /// <summary>

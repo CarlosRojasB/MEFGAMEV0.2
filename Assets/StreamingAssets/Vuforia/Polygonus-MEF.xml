@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Alphaceti" size="21.000000 13.847161" />
     <ImageTarget name="HumminButter" size="21.000000 13.847161" />
     <ImageTarget name="HadasImage" size="21.000000 13.847161" />
     <ImageTarget name="ImageTree" size="21.000000 13.858789" />
