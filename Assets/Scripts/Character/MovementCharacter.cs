@@ -187,9 +187,9 @@ public class MovementCharacter : MonoBehaviour
             if (filteredAccelValue.x <= -0.1f)
             {
                 if (model.localPosition.x >= 0)
-                    model.localPosition += -Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                   
+                    model.localPosition += -Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                   
                 else
-                    model.localPosition += (-Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                    model.localPosition += (-Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
 
                 if (rotateCoroutine == null)
                 {
@@ -208,9 +208,9 @@ public class MovementCharacter : MonoBehaviour
             else if (filteredAccelValue.x > 0.1f)
             {
                 if (model.localPosition.x <= 0)
-                    model.localPosition += Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                                       
+                    model.localPosition += Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                                       
                 else
-                    model.localPosition += (Vector3.right * (speed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+                    model.localPosition += (Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
 
                 if (rotateCoroutine == null)
                 {

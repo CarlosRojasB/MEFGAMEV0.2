@@ -1,0 +1,2816 @@
+fileFormatVersion: 2
+guid: 7118b747cd0aee741a2b2bdd86da6c03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8599663975397047994
+    second: 360_CI_PortalTree_SpriteSheetGreen__0
+  - first:
+      213: -3286340547571996430
+    second: 360_CI_PortalTree_SpriteSheetGreen__1
+  - first:
+      213: 8568234675823400238
+    second: 360_CI_PortalTree_SpriteSheetGreen__2
+  - first:
+      213: -1736473840826123780
+    second: 360_CI_PortalTree_SpriteSheetGreen__3
+  - first:
+      213: 1178030390488398065
+    second: 360_CI_PortalTree_SpriteSheetGreen__4
+  - first:
+      213: -9125633598466074063
+    second: 360_CI_PortalTree_SpriteSheetGreen__5
+  - first:
+      213: -6962942790007330411
+    second: 360_CI_PortalTree_SpriteSheetGreen__6
+  - first:
+      213: 3263248565920367256
+    second: 360_CI_PortalTree_SpriteSheetGreen__7
+  - first:
+      213: -1455411662561973419
+    second: 360_CI_PortalTree_SpriteSheetGreen__8
+  - first:
+      213: 6909732346019972333
+    second: 360_CI_PortalTree_SpriteSheetGreen__9
+  - first:
+      213: -1066726390430611946
+    second: 360_CI_PortalTree_SpriteSheetGreen__10
+  - first:
+      213: -8096191690837424133
+    second: 360_CI_PortalTree_SpriteSheetGreen__11
+  - first:
+      213: -3711952402171509889
+    second: 360_CI_PortalTree_SpriteSheetGreen__12
+  - first:
+      213: 4530896748450541725
+    second: 360_CI_PortalTree_SpriteSheetGreen__13
+  - first:
+      213: 104085041115149832
+    second: 360_CI_PortalTree_SpriteSheetGreen__14
+  - first:
+      213: -6815216159140226346
+    second: 360_CI_PortalTree_SpriteSheetGreen__15
+  - first:
+      213: -3493560347144478108
+    second: 360_CI_PortalTree_SpriteSheetGreen__16
+  - first:
+      213: -6873497799012833184
+    second: 360_CI_PortalTree_SpriteSheetGreen__17
+  - first:
+      213: -4690142022177164015
+    second: 360_CI_PortalTree_SpriteSheetGreen__18
+  - first:
+      213: -7199556088754192499
+    second: 360_CI_PortalTree_SpriteSheetGreen__19
+  - first:
+      213: -5744580153684243911
+    second: 360_CI_PortalTree_SpriteSheetGreen__20
+  - first:
+      213: -4671670174017165277
+    second: 360_CI_PortalTree_SpriteSheetGreen__21
+  - first:
+      213: -1187643245278298184
+    second: 360_CI_PortalTree_SpriteSheetGreen__22
+  - first:
+      213: -8251524735454960812
+    second: 360_CI_PortalTree_SpriteSheetGreen__23
+  - first:
+      213: -7011479490388690539
+    second: 360_CI_PortalTree_SpriteSheetGreen__24
+  - first:
+      213: -2488872442127903118
+    second: 360_CI_PortalTree_SpriteSheetGreen__25
+  - first:
+      213: 4877890682060495801
+    second: 360_CI_PortalTree_SpriteSheetGreen__26
+  - first:
+      213: -4388625373691754050
+    second: 360_CI_PortalTree_SpriteSheetGreen__27
+  - first:
+      213: -4888737085435751272
+    second: 360_CI_PortalTree_SpriteSheetGreen__28
+  - first:
+      213: 3125981443948480122
+    second: 360_CI_PortalTree_SpriteSheetGreen__29
+  - first:
+      213: -4357768260159893290
+    second: 360_CI_PortalTree_SpriteSheetGreen__30
+  - first:
+      213: -8308872102855744357
+    second: 360_CI_PortalTree_SpriteSheetGreen__31
+  - first:
+      213: 3345495606214454370
+    second: 360_CI_PortalTree_SpriteSheetGreen__32
+  - first:
+      213: -177966402529216491
+    second: 360_CI_PortalTree_SpriteSheetGreen__33
+  - first:
+      213: -7271921123520195342
+    second: 360_CI_PortalTree_SpriteSheetGreen__34
+  - first:
+      213: -5743524626284535218
+    second: 360_CI_PortalTree_SpriteSheetGreen__35
+  - first:
+      213: -8032608903754740531
+    second: 360_CI_PortalTree_SpriteSheetGreen__36
+  - first:
+      213: -5764742100632723030
+    second: 360_CI_PortalTree_SpriteSheetGreen__37
+  - first:
+      213: 2891744752824933790
+    second: 360_CI_PortalTree_SpriteSheetGreen__38
+  - first:
+      213: -5463131273379294829
+    second: 360_CI_PortalTree_SpriteSheetGreen__39
+  - first:
+      213: -4593694702153679944
+    second: 360_CI_PortalTree_SpriteSheetGreen__40
+  - first:
+      213: -3234936140136829622
+    second: 360_CI_PortalTree_SpriteSheetGreen__41
+  - first:
+      213: 5647157480389764663
+    second: 360_CI_PortalTree_SpriteSheetGreen__42
+  - first:
+      213: 7897798925243773888
+    second: 360_CI_PortalTree_SpriteSheetGreen__43
+  - first:
+      213: 1763592785315650917
+    second: 360_CI_PortalTree_SpriteSheetGreen__44
+  - first:
+      213: 8924441997829817416
+    second: 360_CI_PortalTree_SpriteSheetGreen__45
+  - first:
+      213: 7617227766218623977
+    second: 360_CI_PortalTree_SpriteSheetGreen__46
+  - first:
+      213: 1944794577202347249
+    second: 360_CI_PortalTree_SpriteSheetGreen__47
+  - first:
+      213: -3020759811393133934
+    second: 360_CI_PortalTree_SpriteSheetGreen__48
+  - first:
+      213: 567752772672171190
+    second: 360_CI_PortalTree_SpriteSheetGreen__49
+  - first:
+      213: -4505003055674518282
+    second: 360_CI_PortalTree_SpriteSheetGreen__50
+  - first:
+      213: 8002685812959858692
+    second: 360_CI_PortalTree_SpriteSheetGreen__51
+  - first:
+      213: 5084958940259292416
+    second: 360_CI_PortalTree_SpriteSheetGreen__52
+  - first:
+      213: -4753484104234821805
+    second: 360_CI_PortalTree_SpriteSheetGreen__53
+  - first:
+      213: -463115927758899391
+    second: 360_CI_PortalTree_SpriteSheetGreen__54
+  - first:
+      213: 7302587868344202997
+    second: 360_CI_PortalTree_SpriteSheetGreen__55
+  - first:
+      213: -4707609330718458684
+    second: 360_CI_PortalTree_SpriteSheetGreen__56
+  - first:
+      213: -708102482587068479
+    second: 360_CI_PortalTree_SpriteSheetGreen__57
+  - first:
+      213: 9014873132200645062
+    second: 360_CI_PortalTree_SpriteSheetGreen__58
+  - first:
+      213: 8658415447353453818
+    second: 360_CI_PortalTree_SpriteSheetGreen__59
+  - first:
+      213: -8344754419380771037
+    second: 360_CI_PortalTree_SpriteSheetGreen__60
+  - first:
+      213: 932728302414583978
+    second: 360_CI_PortalTree_SpriteSheetGreen__61
+  - first:
+      213: 5510254316080818861
+    second: 360_CI_PortalTree_SpriteSheetGreen__62
+  - first:
+      213: -3325657980840949890
+    second: 360_CI_PortalTree_SpriteSheetGreen__63
+  - first:
+      213: 6995441050589666712
+    second: 360_CI_PortalTree_SpriteSheetGreen__64
+  - first:
+      213: -4102052319661954645
+    second: 360_CI_PortalTree_SpriteSheetGreen__65
+  - first:
+      213: -6658402585603429980
+    second: 360_CI_PortalTree_SpriteSheetGreen__66
+  - first:
+      213: 2224789371000539437
+    second: 360_CI_PortalTree_SpriteSheetGreen__67
+  - first:
+      213: 4658259787830855445
+    second: 360_CI_PortalTree_SpriteSheetGreen__68
+  - first:
+      213: -1229603623570554151
+    second: 360_CI_PortalTree_SpriteSheetGreen__69
+  - first:
+      213: 4249067425297336583
+    second: 360_CI_PortalTree_SpriteSheetGreen__70
+  - first:
+      213: 8792122237458461120
+    second: 360_CI_PortalTree_SpriteSheetGreen__71
+  - first:
+      213: 4988954304751316869
+    second: 360_CI_PortalTree_SpriteSheetGreen__72
+  - first:
+      213: 8790182838274714337
+    second: 360_CI_PortalTree_SpriteSheetGreen__73
+  - first:
+      213: 2422173229712647528
+    second: 360_CI_PortalTree_SpriteSheetGreen__74
+  - first:
+      213: -3895278303962692523
+    second: 360_CI_PortalTree_SpriteSheetGreen__75
+  - first:
+      213: 1173374763006131967
+    second: 360_CI_PortalTree_SpriteSheetGreen__76
+  - first:
+      213: -6249674471094272953
+    second: 360_CI_PortalTree_SpriteSheetGreen__77
+  - first:
+      213: -3278072144619628769
+    second: 360_CI_PortalTree_SpriteSheetGreen__78
+  - first:
+      213: -7762374356744934675
+    second: 360_CI_PortalTree_SpriteSheetGreen__79
+  - first:
+      213: -8786670826244201043
+    second: 360_CI_PortalTree_SpriteSheetGreen__80
+  - first:
+      213: 8402022742341559583
+    second: 360_CI_PortalTree_SpriteSheetGreen__81
+  - first:
+      213: 8545017225037710284
+    second: 360_CI_PortalTree_SpriteSheetGreen__82
+  - first:
+      213: 6745704362652857951
+    second: 360_CI_PortalTree_SpriteSheetGreen__83
+  - first:
+      213: -608005621971127946
+    second: 360_CI_PortalTree_SpriteSheetGreen__84
+  - first:
+      213: -3751879346928463776
+    second: 360_CI_PortalTree_SpriteSheetGreen__85
+  - first:
+      213: -8338278261627912728
+    second: 360_CI_PortalTree_SpriteSheetGreen__86
+  - first:
+      213: -2913644612153545964
+    second: 360_CI_PortalTree_SpriteSheetGreen__87
+  - first:
+      213: -5910879334840343104
+    second: 360_CI_PortalTree_SpriteSheetGreen__88
+  - first:
+      213: -4601794982915372706
+    second: 360_CI_PortalTree_SpriteSheetGreen__89
+  - first:
+      213: 619276487489848327
+    second: 360_CI_PortalTree_SpriteSheetGreen__90
+  - first:
+      213: -7649646016470003777
+    second: 360_CI_PortalTree_SpriteSheetGreen__91
+  - first:
+      213: 3068618467484995151
+    second: 360_CI_PortalTree_SpriteSheetGreen__92
+  - first:
+      213: 5038701142225241049
+    second: 360_CI_PortalTree_SpriteSheetGreen__93
+  - first:
+      213: -3238930918406788035
+    second: 360_CI_PortalTree_SpriteSheetGreen__94
+  - first:
+      213: 7619452173459578583
+    second: 360_CI_PortalTree_SpriteSheetGreen__95
+  - first:
+      213: 5963455566005847543
+    second: 360_CI_PortalTree_SpriteSheetGreen__96
+  - first:
+      213: -9048105067999446868
+    second: 360_CI_PortalTree_SpriteSheetGreen__97
+  - first:
+      213: 8539753156647794484
+    second: 360_CI_PortalTree_SpriteSheetGreen__98
+  - first:
+      213: 808394815936620269
+    second: 360_CI_PortalTree_SpriteSheetGreen__99
+  - first:
+      213: -1447631927323072998
+    second: 360_CI_PortalTree_SpriteSheetGreen__0
+  - first:
+      213: -4201548004619384053
+    second: 360_CI_PortalTree_SpriteSheetGreen__1
+  - first:
+      213: 6659822546158551195
+    second: 360_CI_PortalTree_SpriteSheetGreen__2
+  - first:
+      213: -7896030296345367048
+    second: 360_CI_PortalTree_SpriteSheetGreen__3
+  - first:
+      213: 5701767608482452025
+    second: 360_CI_PortalTree_SpriteSheetGreen__4
+  - first:
+      213: 7418158901935354585
+    second: 360_CI_PortalTree_SpriteSheetGreen__5
+  - first:
+      213: 7885911646721428029
+    second: 360_CI_PortalTree_SpriteSheetGreen__6
+  - first:
+      213: 1667070416575388632
+    second: 360_CI_PortalTree_SpriteSheetGreen__7
+  - first:
+      213: 7389059236159035718
+    second: 360_CI_PortalTree_SpriteSheetGreen__8
+  - first:
+      213: -2770493566133988846
+    second: 360_CI_PortalTree_SpriteSheetGreen__9
+  - first:
+      213: 1463885234886973176
+    second: 360_CI_PortalTree_SpriteSheetGreen__10
+  - first:
+      213: 4982169240587541532
+    second: 360_CI_PortalTree_SpriteSheetGreen__11
+  - first:
+      213: 4182947027591969742
+    second: 360_CI_PortalTree_SpriteSheetGreen__12
+  - first:
+      213: 2625444319933547102
+    second: 360_CI_PortalTree_SpriteSheetGreen__13
+  - first:
+      213: -3709289073805075299
+    second: 360_CI_PortalTree_SpriteSheetGreen__14
+  - first:
+      213: -1802050217381868437
+    second: 360_CI_PortalTree_SpriteSheetGreen__15
+  - first:
+      213: -6087666275573838904
+    second: 360_CI_PortalTree_SpriteSheetGreen__16
+  - first:
+      213: 2754987367194568950
+    second: 360_CI_PortalTree_SpriteSheetGreen__17
+  - first:
+      213: 5985922399767313745
+    second: 360_CI_PortalTree_SpriteSheetGreen__18
+  - first:
+      213: 7671246663142324892
+    second: 360_CI_PortalTree_SpriteSheetGreen__19
+  - first:
+      213: 3129686511986960089
+    second: 360_CI_PortalTree_SpriteSheetGreen__20
+  - first:
+      213: 1943380731258328689
+    second: 360_CI_PortalTree_SpriteSheetGreen__21
+  - first:
+      213: -656574635389165755
+    second: 360_CI_PortalTree_SpriteSheetGreen__22
+  - first:
+      213: -1367857605756627071
+    second: 360_CI_PortalTree_SpriteSheetGreen__23
+  - first:
+      213: -2123035449022315800
+    second: 360_CI_PortalTree_SpriteSheetGreen__24
+  - first:
+      213: 461735483660015321
+    second: 360_CI_PortalTree_SpriteSheetGreen__25
+  - first:
+      213: 1628245477130413562
+    second: 360_CI_PortalTree_SpriteSheetGreen__26
+  - first:
+      213: 5113963661779419683
+    second: 360_CI_PortalTree_SpriteSheetGreen__27
+  - first:
+      213: 4476837163461488156
+    second: 360_CI_PortalTree_SpriteSheetGreen__28
+  - first:
+      213: -1293318085391203635
+    second: 360_CI_PortalTree_SpriteSheetGreen__29
+  - first:
+      213: 2755025378534343921
+    second: 360_CI_PortalTree_SpriteSheetGreen__30
+  - first:
+      213: -1935566816830212809
+    second: 360_CI_PortalTree_SpriteSheetGreen__31
+  - first:
+      213: 3558286334197842851
+    second: 360_CI_PortalTree_SpriteSheetGreen__32
+  - first:
+      213: 5826347688135701875
+    second: 360_CI_PortalTree_SpriteSheetGreen__33
+  - first:
+      213: -8293775300860450094
+    second: 360_CI_PortalTree_SpriteSheetGreen__34
+  - first:
+      213: -7822253894958143168
+    second: 360_CI_PortalTree_SpriteSheetGreen__35
+  - first:
+      213: -3723112373279952001
+    second: 360_CI_PortalTree_SpriteSheetGreen__36
+  - first:
+      213: -6104942984432136003
+    second: 360_CI_PortalTree_SpriteSheetGreen__37
+  - first:
+      213: -1948835366247158908
+    second: 360_CI_PortalTree_SpriteSheetGreen__38
+  - first:
+      213: -6748280220761389452
+    second: 360_CI_PortalTree_SpriteSheetGreen__39
+  - first:
+      213: -9122923699851906101
+    second: 360_CI_PortalTree_SpriteSheetGreen__40
+  - first:
+      213: -6391759004598411154
+    second: 360_CI_PortalTree_SpriteSheetGreen__41
+  - first:
+      213: 4254552854358107273
+    second: 360_CI_PortalTree_SpriteSheetGreen__42
+  - first:
+      213: -602496724609756180
+    second: 360_CI_PortalTree_SpriteSheetGreen__43
+  - first:
+      213: -836979054398263054
+    second: 360_CI_PortalTree_SpriteSheetGreen__44
+  - first:
+      213: -8142900840414405673
+    second: 360_CI_PortalTree_SpriteSheetGreen__45
+  - first:
+      213: -3507234116307490667
+    second: 360_CI_PortalTree_SpriteSheetGreen__46
+  - first:
+      213: 6516542156933651237
+    second: 360_CI_PortalTree_SpriteSheetGreen__47
+  - first:
+      213: -129382678852803820
+    second: 360_CI_PortalTree_SpriteSheetGreen__48
+  - first:
+      213: -1859192347151971126
+    second: 360_CI_PortalTree_SpriteSheetGreen__49
+  - first:
+      213: -9158549174970899701
+    second: 360_CI_PortalTree_SpriteSheetGreen__50
+  - first:
+      213: -969708537207607147
+    second: 360_CI_PortalTree_SpriteSheetGreen__51
+  - first:
+      213: 3376036516203356980
+    second: 360_CI_PortalTree_SpriteSheetGreen__52
+  - first:
+      213: -6224889230416790215
+    second: 360_CI_PortalTree_SpriteSheetGreen__53
+  - first:
+      213: -5361245680960961481
+    second: 360_CI_PortalTree_SpriteSheetGreen__54
+  - first:
+      213: -4444439217107477622
+    second: 360_CI_PortalTree_SpriteSheetGreen__55
+  - first:
+      213: 384353384407604768
+    second: 360_CI_PortalTree_SpriteSheetGreen__56
+  - first:
+      213: -2262297501364834060
+    second: 360_CI_PortalTree_SpriteSheetGreen__57
+  - first:
+      213: -8017922968502610160
+    second: 360_CI_PortalTree_SpriteSheetGreen__58
+  - first:
+      213: 6061407050997154438
+    second: 360_CI_PortalTree_SpriteSheetGreen__59
+  - first:
+      213: -6998156852288048582
+    second: 360_CI_PortalTree_SpriteSheetGreen__60
+  - first:
+      213: 4318362032679907272
+    second: 360_CI_PortalTree_SpriteSheetGreen__61
+  - first:
+      213: -514127057012775499
+    second: 360_CI_PortalTree_SpriteSheetGreen__62
+  - first:
+      213: -2350838116058009693
+    second: 360_CI_PortalTree_SpriteSheetGreen__63
+  - first:
+      213: 7298464437347480493
+    second: 360_CI_PortalTree_SpriteSheetGreen__64
+  - first:
+      213: -6548169747381682619
+    second: 360_CI_PortalTree_SpriteSheetGreen__65
+  - first:
+      213: 8107566374389611849
+    second: 360_CI_PortalTree_SpriteSheetGreen__66
+  - first:
+      213: -4005301709114728916
+    second: 360_CI_PortalTree_SpriteSheetGreen__67
+  - first:
+      213: -8566709583861881565
+    second: 360_CI_PortalTree_SpriteSheetGreen__68
+  - first:
+      213: 8948194158780112790
+    second: 360_CI_PortalTree_SpriteSheetGreen__69
+  - first:
+      213: 434143013461317346
+    second: 360_CI_PortalTree_SpriteSheetGreen__70
+  - first:
+      213: -3520773700319445166
+    second: 360_CI_PortalTree_SpriteSheetGreen__71
+  - first:
+      213: -3129174366799542851
+    second: 360_CI_PortalTree_SpriteSheetGreen__72
+  - first:
+      213: -5161279194972620389
+    second: 360_CI_PortalTree_SpriteSheetGreen__73
+  - first:
+      213: 8956452532695523958
+    second: 360_CI_PortalTree_SpriteSheetGreen__74
+  - first:
+      213: -2489722536094861709
+    second: 360_CI_PortalTree_SpriteSheetGreen__75
+  - first:
+      213: 7395495532501240247
+    second: 360_CI_PortalTree_SpriteSheetGreen__76
+  - first:
+      213: 858507829671026268
+    second: 360_CI_PortalTree_SpriteSheetGreen__77
+  - first:
+      213: 5615254439408467465
+    second: 360_CI_PortalTree_SpriteSheetGreen__78
+  - first:
+      213: -11995297318638294
+    second: 360_CI_PortalTree_SpriteSheetGreen__79
+  - first:
+      213: -7131489684757681213
+    second: 360_CI_PortalTree_SpriteSheetGreen__80
+  - first:
+      213: 7517952702209377914
+    second: 360_CI_PortalTree_SpriteSheetGreen__81
+  - first:
+      213: 5113984663932995825
+    second: 360_CI_PortalTree_SpriteSheetGreen__82
+  - first:
+      213: -4637599841918410632
+    second: 360_CI_PortalTree_SpriteSheetGreen__83
+  - first:
+      213: 663694500221219033
+    second: 360_CI_PortalTree_SpriteSheetGreen__84
+  - first:
+      213: -6493694324098515640
+    second: 360_CI_PortalTree_SpriteSheetGreen__85
+  - first:
+      213: 8400457916994464277
+    second: 360_CI_PortalTree_SpriteSheetGreen__86
+  - first:
+      213: 1860782179833991258
+    second: 360_CI_PortalTree_SpriteSheetGreen__87
+  - first:
+      213: 67281084109338016
+    second: 360_CI_PortalTree_SpriteSheetGreen__88
+  - first:
+      213: -6406090574903838124
+    second: 360_CI_PortalTree_SpriteSheetGreen__89
+  - first:
+      213: 5904359210413909513
+    second: 360_CI_PortalTree_SpriteSheetGreen__90
+  - first:
+      213: 5211773838914284070
+    second: 360_CI_PortalTree_SpriteSheetGreen__91
+  - first:
+      213: -3355236271066985072
+    second: 360_CI_PortalTree_SpriteSheetGreen__92
+  - first:
+      213: -933613048944166274
+    second: 360_CI_PortalTree_SpriteSheetGreen__93
+  - first:
+      213: -2173445512700064425
+    second: 360_CI_PortalTree_SpriteSheetGreen__94
+  - first:
+      213: -3752556527740560050
+    second: 360_CI_PortalTree_SpriteSheetGreen__95
+  - first:
+      213: 3670706298988602948
+    second: 360_CI_PortalTree_SpriteSheetGreen__96
+  - first:
+      213: -4781484661994403280
+    second: 360_CI_PortalTree_SpriteSheetGreen__97
+  - first:
+      213: 2968428744167343629
+    second: 360_CI_PortalTree_SpriteSheetGreen__98
+  - first:
+      213: -4670559094889052845
+    second: 360_CI_PortalTree_SpriteSheetGreen__99
+  - first:
+      213: 557433227179979761
+    second: 360_CI_PortalTree_SpriteSheetGreen__100
+  - first:
+      213: 2014110379746855855
+    second: 360_CI_PortalTree_SpriteSheetGreen__101
+  - first:
+      213: 4335256357055641048
+    second: 360_CI_PortalTree_SpriteSheetGreen__102
+  - first:
+      213: -3852607610169488667
+    second: 360_CI_PortalTree_SpriteSheetGreen__103
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16e4669e6af8ebe0800000000000000
+      internalID: -1447631927323072998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b09edb95a11b5c0800000000000000
+      internalID: -4201548004619384053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b900bea02517c6c50800000000000000
+      internalID: 6659822546158551195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdac9ac74aab6290800000000000000
+      internalID: -7896030296345367048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932dc6f3e6fb02f40800000000000000
+      internalID: 5701767608482452025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__5
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2324dd73892f660800000000000000
+      internalID: 7418158901935354585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__6
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a42f08cd2607d60800000000000000
+      internalID: 7885911646721428029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__7
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbd98b16bf922710800000000000000
+      internalID: 1667070416575388632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f690697dd3c05410800000000000000
+      internalID: 1463885234886973176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__11
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c19141788342540800000000000000
+      internalID: 4982169240587541532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__12
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb35edc820dc0a30800000000000000
+      internalID: 4182947027591969742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__13
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52c433e2b37f6420800000000000000
+      internalID: 2625444319933547102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__14
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c5c927d35f58cc0800000000000000
+      internalID: -3709289073805075299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__15
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cc98dffd4ddf6e0800000000000000
+      internalID: -1802050217381868437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__16
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbcb45b6c3448ba0800000000000000
+      internalID: -6087666275573838904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__17
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f82256f96eab3620800000000000000
+      internalID: 2754987367194568950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d660550d41ee6b20800000000000000
+      internalID: 3129686511986960089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176ddf58a7648fa10800000000000000
+      internalID: 1943380731258328689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__22
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54fd81909d063e6f0800000000000000
+      internalID: -656574635389165755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__23
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1875f8931c4640de0800000000000000
+      internalID: -1367857605756627071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__24
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e28677e1867982e0800000000000000
+      internalID: -2123035449022315800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__25
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d69fbbd9f9686600800000000000000
+      internalID: 461735483660015321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__26
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5ae7772a0b89610800000000000000
+      internalID: 1628245477130413562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__27
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3224e9efad278f640800000000000000
+      internalID: 5113963661779419683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4c9ba2cf0db3620800000000000000
+      internalID: 2755025378534343921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7353dc33c3c7325e0800000000000000
+      internalID: -1935566816830212809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__32
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a34dfe7192916130800000000000000
+      internalID: 3558286334197842851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__33
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3753f316a585bd050800000000000000
+      internalID: 5826347688135701875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__34
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2daed416e4796ec80800000000000000
+      internalID: -8293775300860450094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__35
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049aa10d685c17390800000000000000
+      internalID: -7822253894958143168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__36
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7379cbb509d45cc0800000000000000
+      internalID: -3723112373279952001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__37
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0d8e673b2e64ba0800000000000000
+      internalID: -6104942984432136003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3b555fa3dd46180800000000000000
+      internalID: -9122923699851906101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__41
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60e101ec09eb47a0800000000000000
+      internalID: -6391759004598411154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__42
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984a32a87453b0b30800000000000000
+      internalID: 4254552854358107273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__43
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce39c4fcb6083a7f0800000000000000
+      internalID: -602496724609756180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__44
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0362a0cf37264f0800000000000000
+      internalID: -836979054398263054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__45
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db9edd14da9efe80800000000000000
+      internalID: -8142900840414405673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__46
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5986c51472dc35fc0800000000000000
+      internalID: -3507234116307490667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__47
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b53ebc0986f6a50800000000000000
+      internalID: 6516542156933651237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03a9e7ac0c46e080800000000000000
+      internalID: -9158549174970899701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__51
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590b3102937ea82f0800000000000000
+      internalID: -969708537207607147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__52
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4336c0113571ade20800000000000000
+      internalID: 3376036516203356980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__53
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d3adec930cc99a0800000000000000
+      internalID: -6224889230416790215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__54
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73489b055770995b0800000000000000
+      internalID: -5361245680960961481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__55
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b5e76641e2252c0800000000000000
+      internalID: -4444439217107477622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__56
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e95d1ed5f755500800000000000000
+      internalID: 384353384407604768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__57
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f035ee9864ba90e0800000000000000
+      internalID: -2262297501364834060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32b7e0bb6d81ee90800000000000000
+      internalID: -6998156852288048582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__61
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf6b699367edeb30800000000000000
+      internalID: 4318362032679907272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__62
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b526556a247dd8f0800000000000000
+      internalID: -514127057012775499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__63
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afe9ef4035206fd0800000000000000
+      internalID: -2350838116058009693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__64
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3fae1acba594560800000000000000
+      internalID: 7298464437347480493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__65
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54efa56fe4a3025a0800000000000000
+      internalID: -6548169747381682619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__66
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94df46a69acd38070800000000000000
+      internalID: 8107566374389611849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__67
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e93f9015f4a68c0800000000000000
+      internalID: -4005301709114728916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6541345c2660600800000000000000
+      internalID: 434143013461317346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__71
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ffbe139f2b32fc0800000000000000
+      internalID: -3520773700319445166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__72
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5c7a21e70f294d0800000000000000
+      internalID: -3129174366799542851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__73
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99fa05fae37f58b0800000000000000
+      internalID: -5161279194972620389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__74
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672e6fa0026bb4c70800000000000000
+      internalID: 8956452532695523958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__75
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376f7c66b8ab27dd0800000000000000
+      internalID: -2489722536094861709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__76
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b989b8f00412a660800000000000000
+      internalID: 7395495532501240247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__77
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ede6092580aeb00800000000000000
+      internalID: 858507829671026268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbe7ac7aebd70d90800000000000000
+      internalID: -7131489684757681213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__81
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76c06d9622255860800000000000000
+      internalID: 7517952702209377914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__82
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f88580f4f588f640800000000000000
+      internalID: 5113984663932995825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__83
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870ab0cc38fe3afb0800000000000000
+      internalID: -4637599841918410632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__84
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0f01da1aae53900800000000000000
+      internalID: 663694500221219033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__85
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d3324da63c1e5a0800000000000000
+      internalID: -6493694324098515640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__86
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aa21dc7fb649470800000000000000
+      internalID: 8400457916994464277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__87
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50d161a883d2d910800000000000000
+      internalID: 1860782179833991258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906e6035b6f70f150800000000000000
+      internalID: 5904359210413909513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__91
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ae82e71b0f35840800000000000000
+      internalID: 5211773838914284070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__92
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09dcb85636ecf61d0800000000000000
+      internalID: -3355236271066985072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__93
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a7304e0e32b03f0800000000000000
+      internalID: -933613048944166274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__94
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d88d452de56d1e0800000000000000
+      internalID: -2173445512700064425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__95
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d537c48bd3cebc0800000000000000
+      internalID: -3752556527740560050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__96
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44621024ee7f0f230800000000000000
+      internalID: 3670706298988602948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__97
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a48d68801c4adb0800000000000000
+      internalID: -4781484661994403280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__8
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6491493f9363b8660800000000000000
+      internalID: 7389059236159035718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__9
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 7200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2121412c7ca3d89d0800000000000000
+      internalID: -2770493566133988846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__18
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d3f2335b4421350800000000000000
+      internalID: 5985922399767313745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__19
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 6400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9abff4323eb57a60800000000000000
+      internalID: 7671246663142324892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__28
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ea36d4eabe02e30800000000000000
+      internalID: 4476837163461488156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__29
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 5600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc24baabd063d0ee0800000000000000
+      internalID: -1293318085391203635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__38
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bae1d4f8854f4e0800000000000000
+      internalID: -1948835366247158908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__39
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47609b4a4ea4952a0800000000000000
+      internalID: -6748280220761389452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__48
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413e3ea9327543ef0800000000000000
+      internalID: -129382678852803820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__49
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4000
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accc1e22962d236e0800000000000000
+      internalID: -1859192347151971126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__58
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017d4f97a8d9ab090800000000000000
+      internalID: -8017922968502610160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__59
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3200
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682cbb129917e1450800000000000000
+      internalID: 6061407050997154438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__68
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3256af7950fec1980800000000000000
+      internalID: -8566709583861881565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__69
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 2400
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f50578d2f5e2c70800000000000000
+      internalID: 8948194158780112790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__78
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e706869246ded40800000000000000
+      internalID: 5615254439408467465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__79
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2de854375265dff0800000000000000
+      internalID: -11995297318638294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__88
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5b07e1ac70fe000800000000000000
+      internalID: 67281084109338016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__89
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45af0e3209ef817a0800000000000000
+      internalID: -6406090574903838124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__98
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d064725273af13920800000000000000
+      internalID: 2968428744167343629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 360_CI_PortalTree_SpriteSheetGreen__99
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3550ba6bf37de2fb0800000000000000
+      internalID: -4670559094889052845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
