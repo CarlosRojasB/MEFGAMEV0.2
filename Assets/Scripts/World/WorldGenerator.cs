@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -100,6 +99,7 @@ public class WorldGenerator : MonoBehaviour
 
             nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
         }
+
         return nextChunk;
     }
 

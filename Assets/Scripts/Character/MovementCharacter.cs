@@ -114,7 +114,7 @@ public class MovementCharacter : MonoBehaviour
 
     void HorizontalMove()
     {
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         {
             if (Input.touches.Length > 0)
             {
@@ -177,7 +177,7 @@ public class MovementCharacter : MonoBehaviour
                 }
             }
         }
-#else
+        #else
         {
             Vector3 filteredAccelValue = filterAccelValue(true);
 
@@ -238,7 +238,7 @@ public class MovementCharacter : MonoBehaviour
                 }
             }
         }
-#endif
+        #endif
     }
 
     public void StopMove(System.Action outputMethod = null)
