@@ -179,7 +179,7 @@ public class MovementCharacter : MonoBehaviour
         }
         #else
         {
-            Vector3 filteredAccelValue = filterAccelValue(true);
+            Vector3 filteredAccelValue = filterAccelValue(false);
 
             debug.text = filteredAccelValue.x.ToString();
 

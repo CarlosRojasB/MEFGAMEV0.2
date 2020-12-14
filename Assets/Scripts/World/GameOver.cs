@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
 
     void Awake()
     {
-        distanceText.text = Math.Round(TravelToAlphaCetiGameUIController.distance / 1000f, 1) + " Milles";
+        distanceText.text = Math.Round(TravelToAlphaCetiGameUIController.distance / 1000f, 1).ToString("F1");
     }
 
     public void GoToAr()

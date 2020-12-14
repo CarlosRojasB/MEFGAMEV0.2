@@ -28,6 +28,8 @@ public class ActiveButtonForTrivia : MonoBehaviour
     AudioSource audSourceNhymps;
     [SerializeField]
     AnimationCurve curveNhymphs;
+    [SerializeField]
+    RectTransform NhymphasScrollView;
     bool ActiveSound = false;
     #endregion
 
@@ -110,7 +112,11 @@ public class ActiveButtonForTrivia : MonoBehaviour
         }
 
         //Active Nhymphas sound
-        if (Physics.Raycast(ray, out hit, float.MaxValue, NinphasLayer)) ActiveSound = true;
+        if (Physics.Raycast(ray, out hit, float.MaxValue, NinphasLayer))
+        {
+            ActiveSound = true;
+            NhymphasScrollView.gameObject.SetActive(true);
+        }
         else ActiveSound = false;
 
         ActiveAudioNhymphas();
@@ -205,7 +211,11 @@ public class ActiveButtonForTrivia : MonoBehaviour
     void ActiveAudioNhymphas()
     {
         if (ActiveSound && !audSourceNhymps.isPlaying) audSourceNhymps.Play();
-        else if (!ActiveSound && audSourceNhymps.isPlaying) audSourceNhymps.Stop();
+        else if (!ActiveSound && audSourceNhymps.isPlaying)
+        {
+            NhymphasScrollView.gameObject.SetActive(false);
+            audSourceNhymps.Stop();
+        }
     }
 
     /// <summary>
