@@ -25,7 +25,7 @@ public class TravelToAlphaCetiGameUIController : MonoBehaviour
     private void Awake()
     {
         distanceTxt.text = "Distance: 0 Ft";
-
+        distance = 0;
         movementCharacter.OnMove += UpdateDistance;
     }
 

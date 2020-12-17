@@ -5,6 +5,7 @@ public class PlayerLife : MonoBehaviour
     #region Information
     [Header("Information")]
     [SerializeField] GameObject model;
+    [SerializeField] AudioSource audDeath;
     #endregion
 
     #region Components
@@ -24,6 +25,7 @@ public class PlayerLife : MonoBehaviour
 
         particleSystem.gameObject.SetActive(true);
 
+        audDeath.Play();
         particleSystem.Play();
 
         move.StopMove(() => 

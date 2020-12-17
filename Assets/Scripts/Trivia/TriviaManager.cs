@@ -13,6 +13,13 @@ public class TriviaManager : MonoBehaviour
     AnimationCurve curve;
     [SerializeField]
     GameObject btnActiveTrivia;
+
+    [SerializeField]
+    RectTransform InicioBtn;
+    [SerializeField]
+    RectTransform ImagenEnfocada;
+    
+
     #endregion
 
     
@@ -22,14 +29,18 @@ public class TriviaManager : MonoBehaviour
         StartCoroutine(ActiveHistory());       
         btnActiveTrivia.SetActive(false);
    }
-  
+    public void UserPassImage()
+    {
+        StartCoroutine(ActiveTrivia());
+    }
    IEnumerator ActiveHistory()
    {
+        
         trivia.gameObject.SetActive(true);
 
         Vector2 initialPosition = trivia.localPosition;
 
-        Vector2 finalPosition = trivia.localPosition + new Vector3(0f, 2360f, 0f);
+        Vector2 finalPosition = trivia.localPosition + new Vector3(0f, 3000f, 0f);
 
         float t = Time.time;
 
@@ -62,5 +73,49 @@ public class TriviaManager : MonoBehaviour
     public void closeBtn()
     {
         gameObject.SetActive(false);
+    }
+
+    IEnumerator ActiveTrivia()
+    {
+        InicioBtn.gameObject.SetActive(true);
+        
+
+        Vector2 initialPosition = InicioBtn.localPosition;
+
+        Vector2 finalPosition = InicioBtn.localPosition + new Vector3(0f, 3000f, 0f);
+
+        float t = Time.time;
+
+        while (Time.time <= t + 1f)
+        {
+            InicioBtn.localPosition = initialPosition + ((finalPosition - initialPosition) * curve.Evaluate(Time.time - t));
+
+            yield return null;
+        }
+
+        InicioBtn.anchoredPosition = finalPosition;
+
+        initialPosition = ImagenEnfocada.localPosition;
+
+        finalPosition = Vector3.zero;       
+
+        t = Time.time;
+
+        while (Time.time <= t + 1f)
+        {
+            ImagenEnfocada.localPosition = initialPosition + ((finalPosition - initialPosition) * curve.Evaluate(Time.time - t));
+            yield return null;
+        }
+
+        ImagenEnfocada.localPosition = Vector3.zero;
+        trivia.localPosition = Vector3.zero;
+
+        StartCoroutine(ChangeBaseFortrivia());
+    }
+
+    IEnumerator ChangeBaseFortrivia()
+    {
+        yield return new WaitForSeconds(1f);
+        ImagenEnfocada.gameObject.SetActive(false);
     }
 }

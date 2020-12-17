@@ -9,7 +9,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     #region Collision Objects
     [Header("Collision objects", order = 0)]
     [SerializeField] Camera mycamera;
-    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter, Letras,ToGameMask;
+    [SerializeField] LayerMask TriviaLayer, NinphasLayer, _FondoLayer, HumminButter, Letras,ToGameMask,ElDrack;
 
     Ray ray;
     RaycastHit hit;
@@ -20,6 +20,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [Header("Trivia objects", order = 2)]
     [SerializeField] Transform btnForTrivia;
     [SerializeField] GameObject Trivia;
+    
     #endregion
 
     #region Nhymphas
@@ -61,10 +62,16 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [SerializeField]
     GameObject HumminBird, HumminHumanoid;
 
+    [SerializeField]
+    AudioSource FXHummin;
+
 
     float CounterFadeHumminButter;
     bool IsActiveFade = false;
     bool IsActiveEffecToIncreace = false;
+
+
+    bool firstChange = false;
 
     #endregion
 
@@ -78,13 +85,28 @@ public class ActiveButtonForTrivia : MonoBehaviour
     AnimationCurve curveToApearLetters;
     [SerializeField]
     RectTransform lettersInitial, lettersStaticImage;
+    [SerializeField]
+    AudioSource audLettras;
 
+
+    bool IsActiveSound = false;
     bool IsActiveLetter = false;
     bool IsActive3DLetters = false;
     VideoPlayer _videoPlayer;
     float CounterLettras;
     float counterToLoop;
 
+    #endregion
+
+    #region BaseElDrack
+    [Header("Base Eldrack")]
+    [SerializeField]
+    GameObject baseElDrack;
+    [SerializeField]
+    Transform ParentEldrack, ParentHumminButter;
+
+    bool BaseEnElDrack = true;
+    bool BaseEnHummin = true;
     #endregion
 
     #endregion
@@ -137,26 +159,54 @@ public class ActiveButtonForTrivia : MonoBehaviour
         //ActiveHumminButter
         if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter))
         {
+            /*if (BaseEnElDrack)
+            {
+
+                print("Entro a Hummin");
+                baseElDrack.transform.SetParent(ParentHumminButter, true);
+                print("Parent en Hummin"+baseElDrack.transform.parent.name);
+                baseElDrack.transform.localPosition = new Vector3(0f, 0.07f, 0f);
+                baseElDrack.transform.localEulerAngles = new Vector3(0f, 2.5f, 0f);
+                BaseEnElDrack = false;
+                BaseEnHummin = true;
+
+            }       */   
             CounterFadeHumminButter += Time.deltaTime;
             IsActiveFade = true;
             IsActiveEffecToIncreace = true;
+            managerEffectsHumminButter();
         }
         else
-        {
-            HumminBird.SetActive(true);
-            HumminHumanoid.SetActive(false);
+        {          
             FadeWhite.gameObject.SetActive(false);
             CounterFadeHumminButter = 0f;
             IsActiveFade = false;
             IsActiveEffecToIncreace = false;
         }
-        if (CounterFadeHumminButter >= 8f)
+       
+        if (CounterFadeHumminButter >= 8f&&!firstChange)
         {
 
             StartCoroutine(CallFadeInCoroutine());
             ActiveHumanoidModel();
+            firstChange = true;
         }
-        managerEffectsHumminButter();
+        //ElDrack
+       /* if (Physics.Raycast(ray, out hit, float.MaxValue, ElDrack))
+        {
+            if (BaseEnHummin)
+            {
+                print("Entro a eldrack");
+                baseElDrack.transform.SetParent(ParentEldrack, true);
+                print("Parent en eldrack" + baseElDrack.transform.parent.name);
+                baseElDrack.transform.localPosition = new Vector3(0f, 0.07f, 0f);
+                baseElDrack.transform.localEulerAngles = new Vector3(0f, 2.5f, 0f);
+                BaseEnElDrack = true;
+                BaseEnHummin = false;
+            }           
+            
+        }*/
+      
 
         //Active videoLetters
         if (Physics.Raycast(ray, out hit, float.MaxValue, Letras))
@@ -164,9 +214,12 @@ public class ActiveButtonForTrivia : MonoBehaviour
             CounterLettras += Time.deltaTime;
             counterToLoop += Time.deltaTime;
             IsActiveLetter = true;
+            IsActiveSound = true;
+            
         }
         else
         {
+            IsActiveSound = false;
             _videoPlayer.gameObject.SetActive(true);
             lettersStaticImage.gameObject.SetActive(false);
             letrasObj.SetActive(false);
@@ -239,14 +292,26 @@ public class ActiveButtonForTrivia : MonoBehaviour
     {
         if (IsActiveLetter && !_videoPlayer.isPlaying)
         {
+           
             lettersInitial.gameObject.SetActive(true);
             lettersStaticImage.gameObject.SetActive(false);
             _videoPlayer.Play();
         }
         else if (!IsActiveLetter && _videoPlayer.isPlaying)
-        {           
+        {
+          
             CounterLettras = 0;
             _videoPlayer.Stop();
+        }
+        if (IsActiveSound && !audLettras.isPlaying)
+        {
+            print("Entro a play");
+            audLettras.Play();
+        }
+        else if (!IsActiveSound && audLettras.isPlaying)
+        {
+            print("Entro a stop ");
+            audLettras.Stop();
         }
 
     }
@@ -286,13 +351,14 @@ public class ActiveButtonForTrivia : MonoBehaviour
     }
     IEnumerator CrecerHojasCoroutine(ParticleSystem _ParticleSystem, float initialLengthShape, float finalLengthShape, float timeToIncreace)
     {
+        FXHummin.Play();
         var shapeParticles = _ParticleSystem.shape;
         if (IsActiveEffecToIncreace && !_ParticleSystem.isPlaying)
         {
             _ParticleSystem.Play();
 
-            print(_ParticleSystem.name);
-
+           
+       
             float t = Time.time;
             while (Time.time <= t + timeToIncreace)
             {
@@ -307,10 +373,12 @@ public class ActiveButtonForTrivia : MonoBehaviour
             shapeParticles.length = 0.1f;
             _ParticleSystem.Stop();
         }
+        FXHummin.Play();
     }
     IEnumerator CallFadeInCoroutine()
     {
-        if (IsActiveFade)
+       
+        if (IsActiveFade && !firstChange)
         {
             FadeWhite.gameObject.SetActive(true);
 
@@ -326,9 +394,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
             FadeWhite.localScale = finalSize;
 
             StartCoroutine(CallfadeOutCoroutine());
-
-        }
-
+        }        
     }
     IEnumerator CallfadeOutCoroutine()
     {
@@ -349,12 +415,13 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
     void ActiveHumanoidModel()
     {
-        if (IsActiveFade)
+        if (IsActiveFade && !firstChange)
         {
             HumminBird.SetActive(false);
             HumminHumanoid.SetActive(true);
+            firstChange = true;           
         }
-
+       
     }
 
 }
