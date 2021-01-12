@@ -13,8 +13,8 @@ public class GameOver : MonoBehaviour
         distanceText.text = Math.Round(TravelToAlphaCetiGameUIController.distance / 1000f, 1).ToString("F1");
     }
 
-    public void GoToAr()
+    public void GoToGame()
     {
-        Singleton<ManagerScene>.instance.GoToAr();
+        Singleton<ManagerScene>.instance.GoToTravelToAlphaCetiGame();
     }
 }

@@ -73,9 +73,15 @@ public class StalactitaGenerator : MonoBehaviour
         for (int i = 0; i < bigStalactites.Length; i++)
         {
             if (Random.Range(0, 2) == 1)
-                bigStalactites[i].gameObject.SetActive(true);
+            {
+                if (bigStalactites[i] != null)
+                    bigStalactites[i].gameObject.SetActive(true);
+            }
             else
-                bigStalactites[i].gameObject.SetActive(false);
+            {
+                if (bigStalactites[i] != null)
+                    bigStalactites[i].gameObject.SetActive(false);
+            }
         }
     }
 }

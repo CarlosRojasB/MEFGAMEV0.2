@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Menu.unity
     guid: b3360ded7fe21474cba60d19f6f52839
   - enabled: 1
+    path: Assets/Scenes/PanelHadas.unity
+    guid: ac8a8ea0dabdca84a8e4e2bf2785788c
+  - enabled: 1
     path: Assets/Scenes/Travel To Alpha Ceti Game.unity
     guid: 144bae482a603e449b855ca2dd919556
   - enabled: 1

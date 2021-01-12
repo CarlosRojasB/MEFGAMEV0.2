@@ -24,14 +24,14 @@ public class ActiveButtonForTrivia : MonoBehaviour
     #endregion
 
     #region Nhymphas
-    [Header("Nhymphas objects", order = 3)]
+   /* [Header("Nhymphas objects", order = 3)]
     [SerializeField]
     AudioSource audSourceNhymps;
     [SerializeField]
     AnimationCurve curveNhymphs;
     [SerializeField]
     RectTransform NhymphasScrollView;
-    bool ActiveSound = false;
+    bool ActiveSound = false;*/
     #endregion
 
     #region FondoObjects
@@ -41,6 +41,12 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [SerializeField]
     AudioSource audSourceFondo;
     bool Activesoundfondo = false;
+
+    #region ComponentsFondo
+    [SerializeField]
+    LandingManager lndManager;
+    #endregion
+
     #endregion
 
     #region HumminButter
@@ -67,9 +73,10 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
 
     float CounterFadeHumminButter;
+    float CounterFadeHumminBird;
     bool IsActiveFade = false;
     bool IsActiveEffecToIncreace = false;
-
+    bool possibleChangeBird=false;
 
     bool firstChange = false;
 
@@ -108,7 +115,9 @@ public class ActiveButtonForTrivia : MonoBehaviour
     bool BaseEnElDrack = true;
     bool BaseEnHummin = true;
     #endregion
-
+    #region Events
+    System.Action closePanel;
+    #endregion
     #endregion
 
     private void Start()
@@ -136,45 +145,51 @@ public class ActiveButtonForTrivia : MonoBehaviour
         //Active Nhymphas sound
         if (Physics.Raycast(ray, out hit, float.MaxValue, NinphasLayer))
         {
-            ActiveSound = true;
-            NhymphasScrollView.gameObject.SetActive(true);
+            Singleton<ManagerScene>.instance.GoToNhymphas();
+           /* ActiveSound = true;
+            NhymphasScrollView.gameObject.SetActive(true);*/
         }
-        else ActiveSound = false;
+       /* else ActiveSound = false;*/
 
-        ActiveAudioNhymphas();
+       // ActiveAudioNhymphas();
 
         //Active Fondo
         if (Physics.Raycast(ray, out hit, float.MaxValue, _FondoLayer))
         {
-            Activesoundfondo = true;
-            imgFondo.gameObject.SetActive(true);
+            if (!imgFondo.gameObject.activeSelf)
+            {
+                Activesoundfondo = true;
 
+                imgFondo.gameObject.SetActive(true);
+
+                closePanel= () =>
+                {
+                    Activesoundfondo = false;
+
+                    lndManager.Restar();
+                };
+            }
         }
-        else Activesoundfondo = false;
 
         ActiveFondoSound();
 
-
-
         //ActiveHumminButter
         if (Physics.Raycast(ray, out hit, float.MaxValue, HumminButter))
-        {
-            /*if (BaseEnElDrack)
-            {
-
-                print("Entro a Hummin");
-                baseElDrack.transform.SetParent(ParentHumminButter, true);
-                print("Parent en Hummin"+baseElDrack.transform.parent.name);
-                baseElDrack.transform.localPosition = new Vector3(0f, 0.07f, 0f);
-                baseElDrack.transform.localEulerAngles = new Vector3(0f, 2.5f, 0f);
-                BaseEnElDrack = false;
-                BaseEnHummin = true;
-
-            }       */   
+        {           
             CounterFadeHumminButter += Time.deltaTime;
             IsActiveFade = true;
             IsActiveEffecToIncreace = true;
             managerEffectsHumminButter();
+
+            if (possibleChangeBird )
+            {               
+                firstChange = false;
+                CounterFadeHumminBird += Time.deltaTime;  
+                if(CounterFadeHumminBird>=8f)
+                    StartCoroutine(CallFadeInCoroutine());
+                ActiveModelbird();
+            }              
+                
         }
         else
         {          
@@ -189,24 +204,9 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
             StartCoroutine(CallFadeInCoroutine());
             ActiveHumanoidModel();
-            firstChange = true;
-        }
-        //ElDrack
-       /* if (Physics.Raycast(ray, out hit, float.MaxValue, ElDrack))
-        {
-            if (BaseEnHummin)
-            {
-                print("Entro a eldrack");
-                baseElDrack.transform.SetParent(ParentEldrack, true);
-                print("Parent en eldrack" + baseElDrack.transform.parent.name);
-                baseElDrack.transform.localPosition = new Vector3(0f, 0.07f, 0f);
-                baseElDrack.transform.localEulerAngles = new Vector3(0f, 2.5f, 0f);
-                BaseEnElDrack = true;
-                BaseEnHummin = false;
-            }           
             
-        }*/
-      
+            firstChange = true;
+        }       
 
         //Active videoLetters
         if (Physics.Raycast(ray, out hit, float.MaxValue, Letras))
@@ -247,6 +247,13 @@ public class ActiveButtonForTrivia : MonoBehaviour
             
     }
 
+    public void ClosePanel(RectTransform panel)
+    {
+        panel.gameObject.SetActive(false);
+
+        closePanel?.Invoke();
+    }
+
     /// <summary>
     /// Trivia Logic
     /// </summary>
@@ -261,7 +268,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     /// <summary>
     /// NhymphasLogic 
     /// </summary>
-    void ActiveAudioNhymphas()
+  /*  void ActiveAudioNhymphas()
     {
         if (ActiveSound && !audSourceNhymps.isPlaying) audSourceNhymps.Play();
         else if (!ActiveSound && audSourceNhymps.isPlaying)
@@ -269,7 +276,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
             NhymphasScrollView.gameObject.SetActive(false);
             audSourceNhymps.Stop();
         }
-    }
+    }*/
 
     /// <summary>
     /// sound backGround logic
@@ -380,6 +387,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
        
         if (IsActiveFade && !firstChange)
         {
+           
             FadeWhite.gameObject.SetActive(true);
 
             Vector3 initialSize = Vector3.zero;
@@ -419,9 +427,34 @@ public class ActiveButtonForTrivia : MonoBehaviour
         {
             HumminBird.SetActive(false);
             HumminHumanoid.SetActive(true);
-            firstChange = true;           
+            firstChange = true;
+
+            //ModsFinals           
+            possibleChangeBird = true;
+
+          
+        }       
+    }
+
+    void ActiveModelbird()
+    {
+
+        if (CounterFadeHumminBird >= 8f && possibleChangeBird &&IsActiveFade)
+        {
+            IsActiveFade = true;
+
+
+            HumminBird.SetActive(true);
+            HumminHumanoid.SetActive(false);
+
+            CounterFadeHumminButter = 0;
+            CounterFadeHumminBird = 0f;
+            possibleChangeBird = false;
+           
+           
         }
        
     }
+    
 
 }

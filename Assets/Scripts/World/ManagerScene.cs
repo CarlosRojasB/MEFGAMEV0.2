@@ -38,6 +38,11 @@ public class ManagerScene : MonoBehaviour
     {
         SceneManager.LoadScene("ElDrakAR", LoadSceneMode.Single);
     }
+
+    public void GoToNhymphas()
+    {
+        SceneManager.LoadScene("PanelHadas",LoadSceneMode.Single);
+    }
     IEnumerator WaitToDesapearWelcome()
     {
         yield return new WaitForSeconds(18f);

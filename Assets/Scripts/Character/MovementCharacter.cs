@@ -128,6 +128,9 @@ public class MovementCharacter : MonoBehaviour
                     else
                         model.localPosition += (-Vector3.right * initialSpeed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
 
+                    if (model.localPosition.x >= horizontalLimit - 2.5f || model.localPosition.x <= -horizontalLimit + 2.5f)
+                        PlayerLife.staticDeath();
+
                     if (rotateCoroutine == null)
                     {
                         if (recoveryCorotuine != null)
@@ -150,6 +153,9 @@ public class MovementCharacter : MonoBehaviour
                     else
                         model.localPosition += (Vector3.right * initialSpeed * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
 
+                    if (model.localPosition.x >= horizontalLimit - 2.5f || model.localPosition.x <= -horizontalLimit + 2.5f)
+                        PlayerLife.staticDeath();
+
                     if (rotateCoroutine == null)
                     {
                         if (recoveryCorotuine != null)
@@ -177,7 +183,7 @@ public class MovementCharacter : MonoBehaviour
                 }
             }
         }
-        #else
+#else
         {
             Vector3 filteredAccelValue = filterAccelValue(false);
 
@@ -190,6 +196,9 @@ public class MovementCharacter : MonoBehaviour
                     model.localPosition += -Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                   
                 else
                     model.localPosition += (-Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+
+                if (model.localPosition.x >= horizontalLimit - 2.5f || model.localPosition.x <= -horizontalLimit + 2.5f)
+                    PlayerLife.staticDeath();
 
                 if (rotateCoroutine == null)
                 {
@@ -211,6 +220,9 @@ public class MovementCharacter : MonoBehaviour
                     model.localPosition += Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime;                                       
                 else
                     model.localPosition += (Vector3.right * (initialSpeed * 1.25f * Mathf.Abs(filteredAccelValue.x)) * Time.deltaTime) * (1f - horizontalSpeedCurve.Evaluate(Mathf.Abs(model.localPosition.x) / horizontalLimit));
+
+                if (model.localPosition.x >= horizontalLimit - 2.5f || model.localPosition.x <= -horizontalLimit + 2.5f)
+                     PlayerLife.staticDeath();
 
                 if (rotateCoroutine == null)
                 {
@@ -238,7 +250,7 @@ public class MovementCharacter : MonoBehaviour
                 }
             }
         }
-        #endif
+#endif
     }
 
     public void StopMove(System.Action outputMethod = null)

@@ -6,6 +6,7 @@ public class PlayerLife : MonoBehaviour
     [Header("Information")]
     [SerializeField] GameObject model;
     [SerializeField] AudioSource audDeath;
+    public static System.Action staticDeath;
     #endregion
 
     #region Components
@@ -17,6 +18,8 @@ public class PlayerLife : MonoBehaviour
     private void Awake()
     {
         move = GetComponent<MovementCharacter>();
+
+        staticDeath = Death;
     }
 
     public void Death()
