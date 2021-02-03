@@ -211,15 +211,16 @@ public class ActiveButtonForTrivia : MonoBehaviour
         //Active videoLetters
         if (Physics.Raycast(ray, out hit, float.MaxValue, Letras))
         {
-            CounterLettras += Time.deltaTime;
-            counterToLoop += Time.deltaTime;
-            IsActiveLetter = true;
-            IsActiveSound = true;
-            
+            /* CounterLettras += Time.deltaTime;
+             counterToLoop += Time.deltaTime;
+             IsActiveLetter = true;
+             IsActiveSound = true;*/
+            ActiveLetters();
+
         }
         else
         {
-            IsActiveSound = false;
+          /*  IsActiveSound = false;
             _videoPlayer.gameObject.SetActive(true);
             lettersStaticImage.gameObject.SetActive(false);
             letrasObj.SetActive(false);
@@ -228,9 +229,9 @@ public class ActiveButtonForTrivia : MonoBehaviour
             IsActive3DLetters = false;
            
             CounterLettras = 0f;
-            counterToLoop = 0f;
+            counterToLoop = 0f;*/
         }
-        ActiveLetters();
+       
         if (CounterLettras >= 14f && !IsActive3DLetters) StartCoroutine(CallLetters3D());
         if (CounterLettras >= 18f)
         {
@@ -297,7 +298,14 @@ public class ActiveButtonForTrivia : MonoBehaviour
     /// </summary>
     void ActiveLetters()
     {
-        if (IsActiveLetter && !_videoPlayer.isPlaying)
+        if (!_videoPlayer.isPlaying)
+        {
+            print("Entro a ActiveLetterrs");
+            lettersInitial.gameObject.SetActive(true);
+            _videoPlayer.Play();
+        }
+            
+       /* if (IsActiveLetter && !_videoPlayer.isPlaying)
         {
            
             lettersInitial.gameObject.SetActive(true);
@@ -309,7 +317,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
           
             CounterLettras = 0;
             _videoPlayer.Stop();
-        }
+        }*/
         if (IsActiveSound && !audLettras.isPlaying)
         {
             print("Entro a play");
