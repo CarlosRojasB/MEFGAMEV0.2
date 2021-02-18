@@ -7,6 +7,10 @@ public class ManagerScene : MonoBehaviour
 {
     #region Information
     Singleton<ManagerScene> sceneManager;
+
+    [SerializeField] GameObject PanelLoading;
+    [SerializeField] Animator animatorLoading;
+    bool isPlaying = false;
     #endregion
 
     private void Awake()
@@ -36,9 +40,28 @@ public class ManagerScene : MonoBehaviour
 
     public void GoToAr()
     {
-        SceneManager.LoadScene("ElDrakAR", LoadSceneMode.Single);
-    }
+        //SceneManager.LoadScene("ElDrakAR", LoadSceneMode.Single);
 
+        StartCoroutine(LoadAsync());
+    }
+    IEnumerator LoadAsync()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("ElDrakAR");
+        if (PanelLoading != null )
+        {
+            PanelLoading.gameObject.SetActive(true);
+        }        
+        while (!asyncLoad.isDone)
+        {
+           if(animatorLoading != null && !isPlaying)
+           {
+                isPlaying = true;
+                print("Reproducir");
+                animatorLoading.SetTrigger("ToLoading");
+           }
+            yield return null;
+        }
+    }
     public void GoToNhymphas()
     {
         SceneManager.LoadScene("PanelHadas",LoadSceneMode.Single);

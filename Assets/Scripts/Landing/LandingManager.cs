@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class LandingManager : MonoBehaviour
 {
+    private const float V = 0.5f;
     #region Information
     [Header("Pass images")]
     [SerializeField]
@@ -60,9 +61,9 @@ public class LandingManager : MonoBehaviour
 
         float t = Time.time;
 
-        while (Time.time<=t+1f)
+        while (Time.time<=t+ V)
         {
-            imgInitial.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate(Time.time - t));
+            imgInitial.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate((Time.time - t) / V));
             yield return null;
         }
 
@@ -75,10 +76,10 @@ public class LandingManager : MonoBehaviour
 
         t = Time.time;
 
-        while (Time.time<=t+1f)
+        while (Time.time<=t+ V)
         {
-            mdlImage.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate(Time.time - t));
-            imgFinal.localPosition = iniImgFinal + ((finalPosi - iniImgFinal) * curve.Evaluate(Time.time - t));
+            mdlImage.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate((Time.time - t) / V));
+            imgFinal.localPosition = iniImgFinal + ((finalPosi - iniImgFinal) * curve.Evaluate((Time.time - t) / V));
             yield return null;
         }
 
@@ -97,9 +98,9 @@ public class LandingManager : MonoBehaviour
 
         float t = Time.time;
 
-        while (Time.time <= t + 1f)
+        while (Time.time <= t + V)
         {
-            imgFinal.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate(Time.time - t));
+            imgFinal.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate((Time.time - t) / V));
             yield return null;
         }
 
@@ -112,9 +113,9 @@ public class LandingManager : MonoBehaviour
 
         t = Time.time;
 
-        while (Time.time <= t + 1f)
+        while (Time.time <= t + V)
         {
-            imgInitial.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate(Time.time - t));
+            imgInitial.localPosition = iniPosi + ((finalPosi - iniPosi) * curve.Evaluate((Time.time - t) / V));
 
             yield return null;
         }
@@ -124,7 +125,7 @@ public class LandingManager : MonoBehaviour
 
     IEnumerator WaitToApearText()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         mdlImage.gameObject.SetActive(false);
         imgFinal.gameObject.SetActive(true);
     }
