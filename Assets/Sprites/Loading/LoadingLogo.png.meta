@@ -1,12 +1,198 @@
 fileFormatVersion: 2
 guid: 896237e3352f111409548f7ba24d289c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8388738150112845579
+    second: LoadingLogo_0
+  - first:
+      213: -7059890117460654836
+    second: LoadingLogo_1
+  - first:
+      213: 5976294066965683843
+    second: LoadingLogo_2
+  - first:
+      213: -7191202789170352406
+    second: LoadingLogo_3
+  - first:
+      213: 7482113647029074248
+    second: LoadingLogo_4
+  - first:
+      213: -6734479981705979887
+    second: LoadingLogo_5
+  - first:
+      213: 1775610573273635671
+    second: LoadingLogo_6
+  - first:
+      213: -2880894464142040936
+    second: LoadingLogo_7
+  - first:
+      213: -3709624609054189354
+    second: LoadingLogo_8
+  - first:
+      213: -2899275918107563336
+    second: LoadingLogo_9
+  - first:
+      213: 7869712159320235843
+    second: LoadingLogo_10
+  - first:
+      213: 809091070940386027
+    second: LoadingLogo_11
+  - first:
+      213: 1440708926470127628
+    second: LoadingLogo_12
+  - first:
+      213: -804121853750462047
+    second: LoadingLogo_13
+  - first:
+      213: -1730503980127445819
+    second: LoadingLogo_14
+  - first:
+      213: 3318397742491841012
+    second: LoadingLogo_15
+  - first:
+      213: 2406497055725953240
+    second: LoadingLogo_16
+  - first:
+      213: -489227279990529525
+    second: LoadingLogo_17
+  - first:
+      213: -6078755786685108679
+    second: LoadingLogo_18
+  - first:
+      213: -3162992065326079942
+    second: LoadingLogo_19
+  - first:
+      213: 2546543185721361146
+    second: LoadingLogo_20
+  - first:
+      213: -3841171653849425789
+    second: LoadingLogo_21
+  - first:
+      213: 8342904405989015904
+    second: LoadingLogo_22
+  - first:
+      213: 1099016236206688807
+    second: LoadingLogo_23
+  - first:
+      213: -2836754159532454837
+    second: LoadingLogo_24
+  - first:
+      213: 566149488663261813
+    second: LoadingLogo_25
+  - first:
+      213: -5544228685737130438
+    second: LoadingLogo_26
+  - first:
+      213: -1919338158160475006
+    second: LoadingLogo_27
+  - first:
+      213: -4738785464051041835
+    second: LoadingLogo_28
+  - first:
+      213: 4194390260229176955
+    second: LoadingLogo_29
+  - first:
+      213: -551985789444574290
+    second: LoadingLogo_30
+  - first:
+      213: 8866973342955377766
+    second: LoadingLogo_0
+  - first:
+      213: 9044817434598430984
+    second: LoadingLogo_1
+  - first:
+      213: -2807810641036580236
+    second: LoadingLogo_2
+  - first:
+      213: -6206953735071839437
+    second: LoadingLogo_3
+  - first:
+      213: -2995558524832702048
+    second: LoadingLogo_4
+  - first:
+      213: -7990229513717807480
+    second: LoadingLogo_5
+  - first:
+      213: -6784814390206927481
+    second: LoadingLogo_6
+  - first:
+      213: -5465993521509555673
+    second: LoadingLogo_7
+  - first:
+      213: 2416247957344053344
+    second: LoadingLogo_8
+  - first:
+      213: -3774893961680019927
+    second: LoadingLogo_9
+  - first:
+      213: -2598753074206544003
+    second: LoadingLogo_10
+  - first:
+      213: 6900114026110081116
+    second: LoadingLogo_11
+  - first:
+      213: 8981216020543122371
+    second: LoadingLogo_12
+  - first:
+      213: 6834742949865160636
+    second: LoadingLogo_13
+  - first:
+      213: -6676299638596317832
+    second: LoadingLogo_14
+  - first:
+      213: -2344599269039933817
+    second: LoadingLogo_15
+  - first:
+      213: 5167581929227137154
+    second: LoadingLogo_16
+  - first:
+      213: -634351098025875960
+    second: LoadingLogo_17
+  - first:
+      213: 7463296026701186934
+    second: LoadingLogo_18
+  - first:
+      213: -3544360558490623252
+    second: LoadingLogo_19
+  - first:
+      213: 7312101573859359746
+    second: LoadingLogo_20
+  - first:
+      213: 8353669925394826621
+    second: LoadingLogo_21
+  - first:
+      213: 8913582542261985796
+    second: LoadingLogo_22
+  - first:
+      213: -2101369158031915545
+    second: LoadingLogo_23
+  - first:
+      213: -7966406069425123938
+    second: LoadingLogo_24
+  - first:
+      213: 4329377465340321060
+    second: LoadingLogo_25
+  - first:
+      213: 5506455779146804832
+    second: LoadingLogo_26
+  - first:
+      213: -6983412802131590167
+    second: LoadingLogo_27
+  - first:
+      213: -5578277613425302126
+    second: LoadingLogo_28
+  - first:
+      213: 8750915360634173714
+    second: LoadingLogo_29
+  - first:
+      213: 7359358098233762690
+    second: LoadingLogo_30
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +220,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +235,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -71,13 +257,700 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LoadingLogo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6826.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66496b3b641dd0b70800000000000000
+      internalID: 8866973342955377766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_1
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 6826.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809df770985a58d70800000000000000
+      internalID: 9044817434598430984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_2
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 6826.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ae3703917a809d0800000000000000
+      internalID: -2807810641036580236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_3
+      rect:
+        serializedVersion: 2
+        x: 4095
+        y: 6826.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b42cbb6787cd9a0800000000000000
+      internalID: -6206953735071839437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_4
+      rect:
+        serializedVersion: 2
+        x: 5460
+        y: 6826.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1247f8463ad66d0800000000000000
+      internalID: -2995558524832702048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_5
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 6826.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886020167900d1190800000000000000
+      internalID: -7990229513717807480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5461.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78de1c4724f77d1a0800000000000000
+      internalID: -6784814390206927481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_7
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 5461.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72226dd2ad3e424b0800000000000000
+      internalID: -5465993521509555673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_8
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 5461.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06861c227bc388120800000000000000
+      internalID: 2416247957344053344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_9
+      rect:
+        serializedVersion: 2
+        x: 4095
+        y: 5461.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e9b4d21f1ec9bc0800000000000000
+      internalID: -3774893961680019927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_10
+      rect:
+        serializedVersion: 2
+        x: 5460
+        y: 5461.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fe6f809df5febd0800000000000000
+      internalID: -2598753074206544003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_11
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 5461.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c585bfbf52122cf50800000000000000
+      internalID: 6900114026110081116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb258bd260b3ac70800000000000000
+      internalID: 8981216020543122371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_13
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 4096.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf71d93082e9de50800000000000000
+      internalID: 6834742949865160636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_14
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 4096.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dc56be9d40953a0800000000000000
+      internalID: -6676299638596317832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_15
+      rect:
+        serializedVersion: 2
+        x: 4095
+        y: 4096.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786fb34136f467fd0800000000000000
+      internalID: -2344599269039933817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_16
+      rect:
+        serializedVersion: 2
+        x: 5460
+        y: 4096.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280bf47b260f6b740800000000000000
+      internalID: 5167581929227137154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_17
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 4096.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806e94b89055237f0800000000000000
+      internalID: -634351098025875960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2731.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677cb1da134f29760800000000000000
+      internalID: 7463296026701186934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_19
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 2731.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2e243d9d6efcec0800000000000000
+      internalID: -3544360558490623252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_20
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 2731.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c3677e3adc97560800000000000000
+      internalID: 7312101573859359746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_21
+      rect:
+        serializedVersion: 2
+        x: 4095
+        y: 2731.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75c50a99823ee370800000000000000
+      internalID: 8353669925394826621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_22
+      rect:
+        serializedVersion: 2
+        x: 5460
+        y: 2731.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40226a3981863bb70800000000000000
+      internalID: 8913582542261985796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_23
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 2731.6665
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5cb8162ef66d2e0800000000000000
+      internalID: -2101369158031915545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1366.6666
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d466f33e3a17190800000000000000
+      internalID: -7966406069425123938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_25
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1366.6666
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dd030edd9051c30800000000000000
+      internalID: 4329377465340321060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_26
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1366.6666
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e217f4b5cda6c40800000000000000
+      internalID: 5506455779146804832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_27
+      rect:
+        serializedVersion: 2
+        x: 4095
+        y: 1366.6666
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e308016e0fe51f90800000000000000
+      internalID: -6983412802131590167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_28
+      rect:
+        serializedVersion: 2
+        x: 5460
+        y: 1366.6666
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2956549c01af592b0800000000000000
+      internalID: -5578277613425302126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_29
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 1366.6666
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219fb1af72f717970800000000000000
+      internalID: 8750915360634173714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadingLogo_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.666626
+        width: 1365.3334
+        height: 1365.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2832e14e231b12660800000000000000
+      internalID: 7359358098233762690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c92feb03b621df1438eb59c899080f9f
     internalID: 0
     vertices: []
     indices: 

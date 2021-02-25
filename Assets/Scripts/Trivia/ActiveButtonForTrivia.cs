@@ -6,7 +6,11 @@ public class ActiveButtonForTrivia : MonoBehaviour
 {
     #region Information
 
-    bool posibleScan = true;
+    bool posibleScan = false;
+    #region InitialVideo
+    [SerializeField] RectTransform initialVideoWelcome;
+    [SerializeField] VideoPlayer videoInitial;
+    #endregion
 
     #region Collision Objects
     [Header("Collision objects", order = 0)]
@@ -102,7 +106,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     [SerializeField]
     AudioSource audLettras;
 
-    bool activeLetersCanvas;
+    bool activeLetersCanvas=false;
 
     bool IsActiveSound = false;
     bool IsActiveLetter = false;
@@ -131,19 +135,38 @@ public class ActiveButtonForTrivia : MonoBehaviour
     private void Start()
     {
         _videoPlayer = videoPlayer.GetComponent<VideoPlayer>();
-        _videoPlayer.playOnAwake = false;
+
 
         _videoPlayerFondo = videoPlayerFondo.GetComponent<VideoPlayer>();
+
         _videoPlayerFondo.playOnAwake = false;
 
-        
-        
         mycamera = Camera.main;
-    }
 
+        //initialVideoWelcome.gameObject.SetActive(true);
+
+        videoInitial.Play();
+
+
+       
+    }
     private void Update()
     {
+        if (!videoInitial.isPlaying)
+        {
+            print("Entro a finalizar");
+            initialVideoWelcome.gameObject.SetActive(false);
+            posibleScan = true;
+        }
+        if (!initialVideoWelcome.gameObject.activeSelf )
+        {
+            videoInitial.Stop();
+           
+           // Destroy(videoInitial);
+        }
         //Raycast hit from the center of the camera
+
+
         Vector3 CameraCenter = mycamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, mycamera.nearClipPlane));
 
         ray = new Ray(CameraCenter, transform.forward);
@@ -255,7 +278,9 @@ public class ActiveButtonForTrivia : MonoBehaviour
             {
                 activeLetersCanvas = true;
 
-                audLettras.Play();
+               // audLettras.Play();
+
+                print("Reconocio las letras");
 
                 PanelLetras.gameObject.SetActive(true);
 
@@ -263,16 +288,17 @@ public class ActiveButtonForTrivia : MonoBehaviour
 
                 closePanel = () =>
                 {
-                    posibleScan = true;
-
                     activeLetersCanvas = false;
+
+                    posibleScan = true;
+                   
                 };
             }
 
         }       
-        else
+        /*else
         {
-          /*  IsActiveSound = false;
+          *//*  IsActiveSound = false;
             _videoPlayer.gameObject.SetActive(true);
             lettersStaticImage.gameObject.SetActive(false);
             letrasObj.SetActive(false);
@@ -281,16 +307,16 @@ public class ActiveButtonForTrivia : MonoBehaviour
             IsActive3DLetters = false;
            
             CounterLettras = 0f;
-            counterToLoop = 0f;*/
-        }
+            counterToLoop = 0f;*//*
+        }*/
         ActiveLetters();
 
-        if (CounterLettras >= 14f && !IsActive3DLetters) StartCoroutine(CallLetters3D());
+       /* if (CounterLettras >= 14f && !IsActive3DLetters) StartCoroutine(CallLetters3D());
         if (CounterLettras >= 18f)
         {
             _videoPlayer.Stop();
             CallLoopVideo();
-        }
+        }*/
 
 
         //ToGame
@@ -326,6 +352,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     {
         if (ActiveSound && !audSourceNhymps.isPlaying)
         {
+            
             videoPlayerNhymphas.Play();
             audSourceNhymps.Play();
         }
@@ -342,7 +369,7 @@ public class ActiveButtonForTrivia : MonoBehaviour
     /// </summary>
     void ActiveFondoSound()
     {
-        if (Activesoundfondo && !_videoPlayerFondo.isPlaying && !audSourceFondo.isPlaying)
+        if (Activesoundfondo /*&& !_videoPlayerFondo.isPlaying*/ && !audSourceFondo.isPlaying)
         {
             audSourceFondo.Play();
             _videoPlayerFondo.Play();
@@ -362,15 +389,15 @@ public class ActiveButtonForTrivia : MonoBehaviour
     /// </summary>
     void ActiveLetters()
     {
-        if (activeLetersCanvas && !_videoPlayer.isPlaying && !audLettras.isPlaying)
+        if (activeLetersCanvas /* && !_videoPlayer.isPlaying*/ /*&& !audLettras.isPlaying*/)
         {
             print("Entro a ActiveLetterrs");
             /*lettersInitial.gameObject.SetActive(true);*/
-            PanelLetras.SetActive(true);
+            /*PanelLetras.SetActive(true);*/
             _videoPlayer.Play();
             audLettras.Play();
         }
-        else if(!activeLetersCanvas && audLettras.isPlaying)
+        else if(!activeLetersCanvas /*&& audLettras.isPlaying*/)
         {
             print("Salio a ActiveLetterrs");
             audLettras.Stop();
@@ -418,13 +445,13 @@ public class ActiveButtonForTrivia : MonoBehaviour
         letrasObj.transform.localPosition = finalPosition;
         IsActive3DLetters = true;
     }
-    void CallLoopVideo()
+    /*void CallLoopVideo()
     {
         _videoPlayer.Stop();
         _videoPlayer.gameObject.SetActive(false);
          lettersInitial.gameObject.SetActive(false);        
          lettersStaticImage.gameObject.SetActive(true);         
-    }
+    }*/
 
     /// <summary>
     /// Humminbutter logic
