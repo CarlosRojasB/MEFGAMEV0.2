@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Menu.unity
     guid: b3360ded7fe21474cba60d19f6f52839
   - enabled: 1
+    path: Assets/Scenes/SceneVerifyObb.unity
+    guid: 145eebf075890cd4cb745d0f8c1cec88
+  - enabled: 1
     path: Assets/Scenes/ElDrakAR.unity
     guid: 3c82e6f4d65a68047805e1519e5d6713
   - enabled: 0

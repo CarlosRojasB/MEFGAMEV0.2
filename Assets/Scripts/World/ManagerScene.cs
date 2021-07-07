@@ -47,6 +47,7 @@ public class ManagerScene : MonoBehaviour
 
     public void GoToAr()
     {
+
         SceneManager.LoadScene("ElDrakAR", LoadSceneMode.Single);
 
        /* StartCoroutine(LoadAsync());
